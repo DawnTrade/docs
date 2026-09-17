@@ -1,10 +1,10 @@
 ---
 title: "Supported Chains"
-description: "The five networks Dawn trades on, and how one balance reaches all of them."
+description: "The six networks Dawn trades on, and how one balance reaches all of them."
 icon: "globe"
 ---
 
-Dawn trades on five networks. You do not choose one — the coin's contract address decides, and Dawn reaches it from the same balance.
+Dawn trades on six networks. You do not choose one — the coin's contract address decides, and Dawn reaches it from the same balance.
 
 | Chain | Coin | Explorer |
 | --- | --- | --- |
@@ -12,19 +12,22 @@ Dawn trades on five networks. You do not choose one — the coin's contract addr
 | 🟡 **BNB Chain** | BNB | [BscScan](https://bscscan.com) |
 | 🟢 **Robinhood Chain** | ETH | [Etherscan](https://robin.etherscan.io) |
 | 🔵 **Base** | ETH | [BaseScan](https://basescan.org) |
-| ⚪ **Arc** | USDC | — |
+| ⚪ **Arc** | USDC | [Arc Explorer](https://explorer.arc.io) |
+| 🟦 **Ink** | ETH | [Ink Explorer](https://explorer.inkonchain.com) |
 
 ## Naming the chain yourself
 
 Most of the time you paste an address and Dawn works out the rest. Two cases need help:
 
-- **The same address exists on several chains.** EVM addresses can be identical across BNB Chain, Robinhood Chain, Base and Arc. Dawn asks which one you meant.
+- **The same address exists on several chains.** EVM addresses can be identical across BNB Chain, Robinhood Chain, Base, Arc and Ink. Dawn asks which one you meant.
 - **Dawn cannot find the coin.** Put the chain in front of the address to skip the search:
 
 ```text
 bnb 0x0000000000000000000000000000000000000000
 rh 0x0000000000000000000000000000000000000000
 base 0x0000000000000000000000000000000000000000
+arc 0x0000000000000000000000000000000000000000
+ink 0x0000000000000000000000000000000000000000
 ```
 
 Solana addresses are unambiguous, so they never need a prefix.
