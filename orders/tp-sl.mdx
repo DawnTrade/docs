@@ -1,0 +1,109 @@
+---
+title: "Take Profit And Stop Loss"
+sidebarTitle: "TP / SL"
+description: "Automatic exits on a position you hold, in one level or several."
+icon: "shield-halved"
+---
+
+A **take profit** sells after a rise. A **stop loss** sells after a fall. Both sit on a position you already hold and watch it for you.
+
+Open the coin from your [portfolio](/trading/portfolio) and choose **TP/SL**, or **Edit TP/SL** from `/limitorders`.
+
+## Setting a level
+
+Each side — 📈 Take Profit and 📉 Stop Loss — switches on and off independently and has its own levels.
+
+You can write a level four ways:
+
+| Form | Example | Means |
+| --- | --- | --- |
+| Percent | `+100%`, `-30%` | Relative to your entry |
+| Multiple | `2x`, `5x` | Relative to your entry |
+| Market cap | `\$2m`, `450k` | An absolute level |
+| Price | `0.0034` | An absolute level |
+
+A take profit has to be **above** your entry and a stop loss **below** it. Dawn says so rather than accepting a level that could never make sense.
+
+### Quick levels
+
+| Side | One tap |
+| --- | --- |
+| 📉 Stop Loss | −10% · −20% · −30% · −50% |
+| 📈 Take Profit | +50% · +100% · +200% · +500% |
+
+## Several levels
+
+A side can hold **up to 5 levels**, each selling its own share. This is the difference between one exit and a plan.
+
+Enter them comma separated:
+
+```text
++60%, +120%, +250%
+```
+
+Each level sells an equal share, and the last one sells whatever is left. To size them yourself, put the share after a colon:
+
+```text
++60%:30, +120%:30, +250%:40
+```
+
+<Note>
+  **A level set to 100% sells everything remaining at that point.** So `50% here, 100% there` sells half at the first level and the rest at the second — not half and then half of the half.
+</Note>
+
+### Ready-made ladders
+
+<Tabs>
+  <Tab title="Take Profit">
+    | Preset | Levels |
+    | --- | --- |
+    | 🟢 **Steady** | +30%, +80% |
+    | 🟡 **Balanced** | +60%, +120%, +250% |
+    | 🔴 **Moonshot** | +150%, +500% |
+  </Tab>
+
+  <Tab title="Stop Loss">
+    | Preset | Levels |
+    | --- | --- |
+    | 🟢 **Relaxed** | −20%, −40% |
+    | 🟡 **Balanced** | −12%, −25%, −45% |
+    | 🔴 **Strict** | −6%, −12% |
+  </Tab>
+</Tabs>
+
+A tighter stop protects more capital and gets knocked out more often. On a coin that routinely moves 30% in an hour, a −6% stop will be hit by noise rather than by a trend.
+
+## Defaults for every new position
+
+Rather than setting exits coin by coin, set them once for the profile: `/settings` → **Stop Loss & Take Profit**.
+
+Every new position then gets those levels automatically, and you can still change any individual position from its own page afterwards.
+
+Defaults can only use the **relative** forms — a percent or a multiple — because there is no coin yet to have a market cap.
+
+<Tip>
+  A default stop loss is the single most useful setting in Dawn. It turns "I'll watch it" into something that happens whether or not you are awake.
+</Tip>
+
+## Slippage on a stop
+
+Stops have their own slippage, separate from your trading slippage, because a stop that refuses to fill has not protected anything. The default is **20%**, and you can set **10%**, **20%** or **50%**.
+
+Higher gets you out of a falling coin more reliably, at a worse price. Lower protects the price and risks not filling at all.
+
+## What happens when one fires
+
+A card lands in the chat with the result and the market cap it fired at.
+
+| Card | What it means |
+| --- | --- |
+| **filled** | It sold. The position updates. |
+| **failed** | It could not sell — the card names why, and what happens next. |
+| **expired** | The level was not reached in time. Set a new one from the coin's page. |
+| **paused** | There is no live price feed for the coin yet. The level is still being watched, and it fires as normal once the feed is back. |
+
+<Warning>
+  A stop loss is not a floor. It is an instruction to sell when a level is reached, filled at whatever the market gives it then. A coin that gaps down, loses its liquidity, or blocks selling can leave you far below the level you set — or unable to exit at all.
+
+  Note also that a stop needing more gas than your [Gas Surplus](/settings/guardrails#gas-surplus) allows will not fire. If you rely on stops, set a surplus limit.
+</Warning>

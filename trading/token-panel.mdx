@@ -1,0 +1,105 @@
+---
+title: "Read The Token Panel"
+sidebarTitle: "Token Panel"
+description: "Every line and every button on a coin's page, and what the numbers actually tell you."
+icon: "table-columns"
+---
+
+The token panel is where trading happens. Paste a contract address into the chat and it opens.
+
+## Opening a coin
+
+<Columns cols={3}>
+  <Card title="Contract address" icon="hashtag">
+    The exact way. Paste it and Dawn works out the chain.
+  </Card>
+
+  <Card title="Ticker search" icon="magnifying-glass">
+    Send `$PEPE`. Best-traded first; tiny and flagged pools are left out.
+  </Card>
+
+  <Card title="Chain prefix" icon="link">
+    `bnb 0x…`, `rh 0x…`, `base 0x…` when an address is ambiguous.
+  </Card>
+</Columns>
+
+Searching by ticker is convenient and imprecise — anyone can deploy a coin called PEPE. Check the address on the panel before you buy.
+
+## The market block
+
+| Line | What it means |
+| --- | --- |
+| **MC** | Market cap. Every order and alert target is set against this figure, not the token price. The arrow beside it shows how far it has moved since you opened the panel. |
+| **Liq** | How much money is in the coin's pool, and what that is as a share of its market cap. |
+| **Price** | Price per token. Long runs of zeros are shortened — `0.0₇5544` is `0.00000005544`, the small number counting the zeros after the point. |
+
+<Tip>
+  The percentage next to **Liq** is the number to look at. A coin with a \$2M cap and \$20k of liquidity is 1% — your own buy will move the price hard, and getting out is worse than getting in.
+</Tip>
+
+## The stats block
+
+| Line | What it means |
+| --- | --- |
+| **Holders** | How many addresses hold it, and what share of supply the **Top 10** hold between them. |
+| **5m / 1h / 6h / 24h** | Price change over each window. Missing windows are left out rather than shown as a dash. |
+| **Age** | How long ago the coin was created. |
+| **1h** | Buys and sells in the last hour — a read on whether anyone is still trading it. |
+| *prices as of … ago* | The feed is stale. Treat the numbers as indicative. |
+
+A high **Top 10** share means a handful of wallets can exit into your bid. A coin minutes old with few holders is the highest-risk thing on the screen.
+
+## Coins still on a launchpad curve
+
+On Solana (pump.fun) and Robinhood Chain (Pons), a coin that has not graduated to a normal pool shows a different first block:
+
+| Line | What it means |
+| --- | --- |
+| **Bonding curve** | How far along the curve it is, as a percentage, and how much has gone in. At 100% it graduates to a regular pool. |
+| **💸 Cashback coin** | This coin pays a share of every trade back to you. See [Pump.fun cashback](/rewards/pump-fun). |
+
+You can trade these directly, before they graduate, and set [orders](/orders/overview) on them like any other coin. A coin this new may have no live price feed for a moment. Orders on it are still watched in the meantime, and Dawn marks them **paused** so you can see why.
+
+## Your holding
+
+Once you own some, the panel gains a **Holding** block:
+
+- How many tokens you hold, and what share of total supply that is.
+- **Invested** — what you put in — and what it is worth **now**.
+- **PnL** in dollars and percent.
+- A link to generate a [PnL banner](/trading/pnl-cards).
+
+These figures cover the wallet in use. With several wallets holding the same coin, see [Multi-wallet trading](/trading/multi-wallet).
+
+## The buttons
+
+| Control | What it does |
+| --- | --- |
+| **Buying ⇄ / Selling ⇄** | Switches the side the panel is on. |
+| Amount buttons | Dollar amounts when buying, percentages of your holding when selling. **Tapping one sends the trade.** |
+| **\$x** / **X%** | Type any amount or share. |
+| 📋 **Limit Order** | A buy or a sell that waits for a market cap you set. The badge counts orders already waiting on this coin. |
+| 🪜 **Ladder** | Spread one amount over several orders across a market-cap range. |
+| 🔁 **DCA** | Buy a fixed amount on a repeating schedule. Buy side only. |
+| 🔗 **Share** | A referral link, or a one-tap buy card for a group. See [Share links](/social/share-links). |
+| 👥 **Multi-Wallet** | Trade the same coin from several wallets. Appears once the profile holds more than one. |
+| **Degen** | Toggles [Degen Mode](/settings/guardrails#degen-mode) for the profile. |
+| **Chart** | Opens the coin's chart. |
+
+Change which amounts appear in [Presets](/settings/presets).
+
+Take-profit and stop-loss levels are set from the position rather than from this row — open the coin from your [portfolio](/trading/portfolio) and choose **TP/SL**, or **Edit TP/SL** in `/limitorders`. See [Take profit and stop loss](/orders/tp-sl).
+
+When something is already waiting on the coin, the panel says so in a line of its own above the buttons.
+
+## What the panel cannot tell you
+
+<Warning>
+  Market data describes a coin's market. It does not describe the contract's intentions.
+
+  A contract can be written so its deployer can mint more supply, freeze balances, block selling entirely, or raise its tax after you have bought. Liquidity can be pulled in a single transaction. None of that shows up as a bad number beforehand.
+
+  Treat every panel as the beginning of your own check, not the end of it.
+</Warning>
+
+If Dawn cannot find a coin at all, it says so and suggests naming the chain yourself. That usually means the address is wrong, or the coin is not on one of the five chains Dawn trades.

@@ -1,0 +1,81 @@
+---
+title: "Managing Orders"
+sidebarTitle: "Managing Orders"
+description: "Find what is armed, cancel it, and work out why something has not fired."
+icon: "list-check"
+---
+
+Send `/limitorders`, or tap **Limit Orders** from the home screen. Everything armed lives here: limit buys and sells, ladder rungs, DCA plans, and the take-profit and stop-loss levels on your positions.
+
+A coin's own panel also carries a badge counting the orders waiting on it.
+
+## Cancelling
+
+| Action | Effect |
+| --- | --- |
+| **Cancel** on an order | Removes that one order |
+| **Cancel ladder** | Removes every rung of that ladder that has not fired |
+| **Cancel all** | Clears the list |
+| Stopping a DCA plan | Ends the buys that are left |
+
+Cancelling never undoes something that already happened. A ladder that has filled two rungs keeps those two positions; cancelling removes the rest.
+
+## What the list tells you
+
+Each order shows what it is waiting for, how long until it expires, and a link to cancel or edit it. Two of them carry an extra word:
+
+| Marked | What it means | What to do |
+| --- | --- | --- |
+| **paused** | There is no live price feed for the coin yet. It is still being watched | Nothing — it is still armed |
+| **filling** | Its condition was met and the trade is being attempted | Wait for the card |
+
+Anything without a marker is simply waiting for its level.
+
+## The cards you get
+
+An order that finishes sends a card to your chat:
+
+| Card | What it means | What to do |
+| --- | --- | --- |
+| **filled** | It traded. The card shows what happened | Check the result |
+| **failed** | It could not complete | Read the reason; place a new one if you still want it |
+| **expired** | Its time ran out before the level was reached | Place a new one |
+| **paused** | The price feed dropped out | Nothing — it is still armed |
+
+<Note>
+  **Failed** and **expired** orders do not retry themselves. If the protection mattered, put it back.
+</Note>
+
+## Why an order has not fired
+
+<AccordionGroup>
+  <Accordion title="The level has not been reached" icon="clock">
+    The common case. Compare the target against the coin's current market cap on its panel.
+  </Accordion>
+
+  <Accordion title="The price gapped through it" icon="arrow-down-up-across-line">
+    If the market jumped past your level by more than your slippage allows, Dawn will not fill into that gap. The order stays armed and waits for the price to come back into range.
+
+    This is why an order can look overdue and still be correct.
+  </Accordion>
+
+  <Accordion title="Gas is above what you allow" icon="gas-pump">
+    A trade needing more gas than Dawn's \$5 cap covers is declined unless you have set a [Gas Surplus](/settings/guardrails#gas-surplus) limit. This matters most for stop-losses.
+  </Accordion>
+
+  <Accordion title="You are looking in the wrong profile" icon="users-gear">
+    The list is scoped to the wallet and profile you are in. Orders keep running everywhere — check each profile with `/profiles`.
+  </Accordion>
+
+  <Accordion title="Not enough balance behind it" icon="wallet">
+    Orders reserve nothing. A limit buy with no USDC behind it fails when it fires.
+  </Accordion>
+</AccordionGroup>
+
+## Orders outlive the screen
+
+Closing a message cancels nothing. Neither does switching profile, archiving a wallet, or closing Telegram.
+
+<Warning>
+  Before you step away from a coin, check `/limitorders` in **every profile**. A forgotten DCA plan keeps buying, and a forgotten limit buy keeps waiting.
+</Warning>

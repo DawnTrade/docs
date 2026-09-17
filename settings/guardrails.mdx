@@ -1,0 +1,76 @@
+---
+title: "Guardrails"
+description: "Degen Mode, Auto-Adjust and Gas Surplus — the three settings that change what Dawn will let a trade do."
+icon: "shield-halved"
+---
+
+`/settings` → **Guardrails**. All three belong to the profile.
+
+## Degen Mode
+
+**Off by default.**
+
+| | Buys behave like this |
+| --- | --- |
+| **Off** | Your slippage applies, and a buy that would move the price more than **30%** is declined. |
+| **On** | **100% slippage** and **no liquidity protection**. A buy goes through however far it moves the price, and fills can land a long way from the quote. |
+
+Auto Buy and limit buys follow the same rule while it is on.
+
+**Sells always keep your normal slippage**, whichever way this is set. That is deliberate: it keeps the fee inside the minimum you have agreed to accept.
+
+<Warning>
+  Degen Mode exists for the case where a fill at any price beats no fill at all — a launch moving faster than any sane slippage setting can follow.
+
+  On a thin pool it is also how you buy the top of your own candle. It does not make a restricted token sellable, and it does not guarantee a fill.
+</Warning>
+
+Toggle it from Guardrails, or from the **Degen** button on any token panel.
+
+## Auto-Adjust
+
+**Off by default.**
+
+| | A buy bigger than your balance |
+| --- | --- |
+| **Off** | Is refused. Nothing is spent. |
+| **On** | Is **reduced** to the largest buy your balance covers, and goes through. |
+
+The trade card names the amount it settled on, so a smaller buy is never a surprise after the fact.
+
+This is the setting that stops "tap \$50, have \$47.30, get nothing" — useful if you often trade close to your full balance, and harmless otherwise.
+
+## Gas Surplus
+
+**Off by default.**
+
+Dawn pays up to **\$5** of network gas on every trade. When a trade needs more than that, this setting decides what happens.
+
+| Gas Surplus | Behaviour |
+| --- | --- |
+| **Off** | The trade is declined so you can decide. Nothing is spent. |
+| **Set to a limit** | The extra comes out of your USDC, up to your limit. Past the limit, still declined. |
+
+Presets are **\$1 · \$2 · \$5 · \$10**, or type your own up to **\$50**.
+
+### It applies to stops too
+
+<Warning>
+  Take-profit and stop-loss sells follow the same limit. **A stop-loss that needs more gas than you allow will not fire.**
+
+  If you rely on stops — and especially on a volatile chain where gas spikes exactly when you need to exit — set a surplus limit rather than leaving it off.
+</Warning>
+
+## Choosing a set
+
+<Columns cols={2}>
+  <Card title="Careful" icon="shield-halved" horizontal>
+    Degen off, Auto-Adjust on, Gas Surplus \$2. Nothing surprising happens, and your stops still fire.
+  </Card>
+
+  <Card title="Fast" icon="fire" horizontal>
+    Degen on, Auto-Adjust on, Gas Surplus \$10. You will fill on almost anything, sometimes badly.
+  </Card>
+</Columns>
+
+Keep them in [separate profiles](/wallets/profiles) rather than toggling between them — that way you can never be in the wrong mode by accident.

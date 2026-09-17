@@ -1,0 +1,72 @@
+---
+title: "Dawn In Your Group"
+sidebarTitle: "Groups"
+description: "Turn every contract address posted in your chat into a card with one-tap buy buttons."
+icon: "users"
+---
+
+Add Dawn to a Telegram group and it watches for contract addresses. When someone posts one, Dawn replies with the coin's market card and a row of buy buttons.
+
+Every trade started from your group is attributed to your [referral code](/rewards/referrals), so the group earns for you as it trades.
+
+## Set it up
+
+<Steps>
+  <Step title="Add the bot">
+    From the Rewards or Share screen, use the **add to group** link. Telegram asks which group, and adds Dawn as an admin so it can read the messages people post.
+  </Step>
+
+  <Step title="Confirm the owner">
+    Whoever adds the bot becomes the group's owner in Dawn, and their referral code is the one attached to its cards.
+
+    If the bot is already there and you want to take it over as an admin, run `/setup` in the group.
+
+    <Note>
+      A forwarded invite link cannot hand your group to somebody else.
+    </Note>
+  </Step>
+
+  <Step title="Post an address">
+    Dawn replies with the coin's card: name, chain, contract, market data and stats, with buy buttons underneath.
+  </Step>
+</Steps>
+
+## Admin commands
+
+Run these **in the group**.
+
+| Command | What it does |
+| --- | --- |
+| `/setup` | Register the group, or take it over as an admin |
+| `/amounts 5 10 25 50` | Set the buy buttons. One to four amounts |
+| `/compact on` | Shorten the card. `/compact off` restores the full one |
+
+The default buttons are **\$5 · \$10 · \$25 · \$50**.
+
+Pick amounts that suit the room. Buttons that are too big for your members do not get tapped.
+
+## What members get
+
+Whoever taps a button buys **from their own Dawn wallet, in their own private chat with Dawn**. The trade never happens in the group, and the group never sees anyone's balance.
+
+| | |
+| --- | --- |
+| Whose money | The tapper's own |
+| How much | Never more than **their own** [auto-buy amount](/settings/overview#auto-buy) |
+| Someone who has never used Dawn | Is taken through starting the bot first |
+| Someone who does not tap | Nothing happens at all |
+| Someone with [group links](/social/group-links) off | The coin simply opens for them to decide |
+
+<Note>
+  The buy amounts you set on the card are a suggestion, not a power. Each member's own cap always wins.
+</Note>
+
+## Being a good host
+
+- **Keep the card useful.** `/compact on` is worth it in a busy chat where full cards flood the feed.
+- **Every card carries your referral code.** Members should know that — say so in the group description.
+- **Dawn posts what it is asked to.** It does not check whether a coin is worth buying, and a card is not an endorsement by you or by Dawn.
+
+<Warning>
+  A card appearing in your group is not a recommendation. Anyone can paste any address, including a scam, and the card will render for it exactly as it would for anything else.
+</Warning>

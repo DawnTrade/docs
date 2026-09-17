@@ -1,0 +1,68 @@
+---
+title: "Multi-Wallet Trading"
+sidebarTitle: "Multi-Wallet"
+description: "Buy or sell the same coin from every wallet in a profile, and land Solana buys in one block."
+icon: "layer-group"
+---
+
+A profile can hold up to **5 wallets**. The multi-wallet panel trades the same coin from several of them without switching wallet between each one.
+
+Open a coin and choose the multi-wallet view from the panel. Each of your wallets appears with its own row of amounts.
+
+## Buying from several wallets
+
+Tap an amount under a wallet and that wallet buys. **Each tap is its own trade**, with its own quote, its own result card and its own fee.
+
+That is deliberate: one wallet failing does not take the others with it, and you can size each wallet differently.
+
+## All wallets at once
+
+The **All Wallets** button buys from every wallet in the profile in one action. What that means depends on the chain.
+
+<Tabs>
+  <Tab title="Solana">
+    A **⚡ Bundle** toggle appears.
+
+    **Bundle: On** lands every buy together: the **same block**, the **same price**, all or nothing. Nobody can slip a trade in between your own wallets, and no wallet gets a worse entry than another.
+
+    Each wallet still pays its own trading fee and its own tip.
+
+    **Bundle: Off** sends each buy separately, as if you had tapped them one by one.
+
+    <Note>
+      A wallet that cannot take part — no balance, or no route for it — is listed as left out rather than failing the whole thing for everyone else.
+    </Note>
+  </Tab>
+
+  <Tab title="BNB, Robinhood, Base, Arc">
+    Every buy is sent on its own. There is no bundling on the EVM chains, so the fills land in whatever order the chain gives them and the prices can differ slightly between wallets.
+  </Tab>
+</Tabs>
+
+### Why you would bundle
+
+- **One entry price.** Five separate buys walk the price up; five bundled buys do not.
+- **No sandwiching between your own wallets.** Nothing can get in between them.
+- **All or nothing.** Either every wallet gets in or none does, so you are never left half-positioned.
+
+## Selling from several wallets
+
+The sell panel works the same way, with **shares of each wallet's own holding** instead of dollar amounts. It also tells you how many of your profiles hold the coin, so you can see at a glance whether the rest of it is somewhere else.
+
+Tap a share under a wallet to sell from that wallet. Each tap is its own trade.
+
+## Reading the results
+
+A bundle draws **one card** for the whole thing, and redraws it as each wallet's fill lands. Wallets that were left out are named separately, with the reason.
+
+Individual taps each produce their own card, exactly like a normal trade.
+
+<Warning>
+  Buying the same coin from five wallets spends five times the amount you tapped. The amount under each wallet is what *that wallet* buys, not a total to be divided.
+</Warning>
+
+## Where the positions end up
+
+Each wallet holds its own position with its own cost basis and its own PnL. The [portfolio](/trading/portfolio) shows the wallet you are in; switch wallet, or use the filters, to see the rest.
+
+Orders are per-wallet too: a stop-loss set from one wallet protects that wallet's holding only.

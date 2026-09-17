@@ -1,0 +1,47 @@
+---
+title: "Activity"
+description: "Every position you have closed, with the profit you actually took."
+icon: "clock-rotate-left"
+---
+
+Send `/activity`, or `/history`. Where the [portfolio](/trading/portfolio) is what you still hold, Activity is what you have finished with.
+
+A position lands here once you have sold out of it. The profit shown is **realised** — already banked, and it will not move again.
+
+## Reading a closed position
+
+```text
+🟡 WIF
+├ Invested: $180.00 → $402.50 back
+├ PnL: +$222.50 (+123.6%)
+└ Sells: 3 · 6d ago
+```
+
+| Line | What it means |
+| --- | --- |
+| **Invested** | What you spent getting in. |
+| **back** | What you got out, after fees. |
+| **PnL** | The difference. This is money you have. |
+| **Sells** | How many sells it took, and how long ago the last one was. |
+
+The header line totals it: your realised PnL, and the capital it was made on.
+
+## Filters
+
+| Filter | What it does |
+| --- | --- |
+| **Chains** | Show only the chains you pick. |
+| **Wins / Losses** | Look at one side on its own. |
+| **Token** | Paste a contract address to narrow the list to that coin. Send `all` to clear it. |
+
+Filtering to losses is the more useful half of that pair, and the one most people skip.
+
+## What is not here
+
+- **Open positions.** They are in the [portfolio](/trading/portfolio) until you sell out.
+- **Partial sells.** Selling half a position realises half the profit, but the position stays open and stays in the portfolio. It arrives here when the last of it is sold.
+- **Coins you moved out.** Sending a coin to another address is not a sale, so there is no realised profit to record.
+
+<Note>
+  A coin that came in from outside Dawn — transferred to your address rather than bought — has no purchase for Dawn to price against, so its cost basis may be incomplete. The profit figure is only as good as the history behind it.
+</Note>

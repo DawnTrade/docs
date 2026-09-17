@@ -1,0 +1,72 @@
+---
+title: "Limit Orders"
+description: "Buy or sell automatically when a coin reaches the market cap you name."
+icon: "bullseye"
+---
+
+A limit order waits for a market cap and then fires as a market trade.
+
+Open a coin and tap 📋 **Limit Order**. The panel's buttons become the order you are building.
+
+## Place a limit buy
+
+<Steps>
+  <Step title="Set the market cap">
+    Tap **Mcap** and send a level. The prompt shows the coin's cap right now so you have something to aim from.
+
+    Shorthand works: `110k`, `2.5m`, `\$2m`.
+
+    | Where you put it | What you get |
+    | --- | --- |
+    | **Below** the current cap | A dip buy — it fires if the coin falls to your level |
+    | **Above** the current cap | A breakout buy — it fires if the coin rises to it |
+  </Step>
+
+  <Step title="Set the spend">
+    Tap a dollar button, or type an amount like `12.50`. Minimum **\$1**.
+
+    This is what the order spends **when it fires**, not now. Nothing leaves your balance until then.
+  </Step>
+
+  <Step title="Set the expiry">
+    **24 hours** by default. Choose 1h, 24h, 3d, 7d or `never`, or type something like `36h`.
+  </Step>
+
+  <Step title="Create it">
+    **✅ Create Limit Order** appears once the level and the amount are both set. The coin's panel then carries a badge showing how many orders are waiting on it.
+  </Step>
+</Steps>
+
+## Place a limit sell
+
+The same flow from the **Selling** side of the panel. The one difference is the size: you choose a **percentage of what you hold**, not a dollar amount.
+
+A limit sell is the manual version of a take-profit. If you want several exits, or you want them attached to the position rather than to a target you chose today, use [TP/SL](/orders/tp-sl) instead.
+
+## When the price gaps past your level
+
+Markets jump. If a coin blows straight through your level by more than your [slippage](/trading/execution#slippage) allows, Dawn **does not** fire the order into that gap — filling there would mean paying far more than you asked for.
+
+The order stays armed and waits for the price to come back into range.
+
+<Note>
+  This is why an order can look like it "should have fired" and still be active. The level was passed, but only at a price you had already said no to.
+</Note>
+
+## Limits
+
+| | |
+| --- | --- |
+| Limit buys per coin, per wallet | **5** |
+| Minimum spend | **\$1** |
+| Expiry | 5 minutes to 30 days, or never |
+
+## After it fires
+
+You get a card in the chat exactly like a manual trade, and the position appears in your [portfolio](/trading/portfolio).
+
+If it fails, the card says why and your USDC stays on your balance. A failed order does not automatically retry — place a new one if you still want it.
+
+## Editing and cancelling
+
+Send `/limitorders`, or tap the badge on the coin's panel. See [Managing orders](/orders/manage).

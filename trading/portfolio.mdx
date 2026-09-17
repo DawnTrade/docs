@@ -1,0 +1,81 @@
+---
+title: "Portfolio And PnL"
+sidebarTitle: "Portfolio"
+description: "Everything you hold, what it is worth, and how to read the profit figures."
+icon: "chart-pie"
+---
+
+Send `/portfolio`, or tap **Portfolio** on the home screen. `/positions` opens the same screen.
+
+The top of the list is your account: spendable **Balance** and total **Portfolio** worth. Below that, your realised profit, and then every open position.
+
+## Reading a position
+
+```text
+🟣 PEPE · MC: $4.10M
+├ Invested: $250.00 → $412.80 now
+├ PnL: +$162.80 (+65.1%)
+└ Buy · Sell · Chart
+```
+
+| Line | What it means |
+| --- | --- |
+| **MC** | The coin's market cap right now. |
+| **Invested** | What you put in, and what the holding is worth at the current price. |
+| **PnL** | The difference, in dollars and percent. |
+
+Tap the coin to open its [token panel](/trading/token-panel) and trade it.
+
+## What the numbers include
+
+**Invested** is your cost basis for the position you currently hold — what you spent to get the tokens still in the wallet.
+
+**PnL** is always **net of fees**. The trading fee is already inside the figure, so the number you see is the number you would have.
+
+<Tip>
+  Turn on **Fees in PnL** in [Trading settings](/settings/overview#trading) to also see what a position has paid in fees — Dawn's, the routing cost and the venue's — broken out beside its profit. It changes what is displayed, not what is counted.
+</Tip>
+
+A position's worth is an **estimate** at the current quoted price. What you actually receive depends on liquidity when you sell — on a thin coin the gap can be large.
+
+## Realised versus unrealised
+
+| | What it is |
+| --- | --- |
+| **Unrealised** | Profit on coins you still hold. It moves with the price and is not yours until you sell. |
+| **Realised** | Profit already banked by selling. It does not move again. |
+
+The portfolio shows open positions and the realised total. Closed positions live in [Activity](/trading/activity).
+
+## Filters
+
+Long lists fill up with dust and dead coins. **Filters** cuts them down:
+
+| Filter | What it does |
+| --- | --- |
+| **Wallets** | Show only the wallets you pick. |
+| **Chains** | Show only the chains you pick. |
+| **Minimum worth** | Hide positions worth less than an amount you set. `0` shows everything. |
+| **Low liquidity** | Hide coins whose pool is under **$10,000**. |
+| **Hidden tokens** | Show the ones you have hidden, so you can unhide them. |
+
+The list tells you how many rows the filters left out, so a filter never quietly loses a position. **Reset** clears all of them at once.
+
+<Note>
+  Hiding a coin removes it from the list. It does not sell it, and it does not cancel its orders.
+</Note>
+
+## If a position is missing
+
+Check these in order:
+
+1. **The wallet.** Positions belong to the wallet that bought them. If the coin was bought from another wallet in this profile, switch wallet — Dawn also tells you when the wallet in use holds nothing and falls back to showing all of them.
+2. **The profile.** Switch with `/profiles`.
+3. **The filters.** A minimum-worth or low-liquidity filter may be hiding it.
+4. **Hidden tokens.** Turn them on and look again.
+
+A position that is still missing after all four is worth raising with [support](/help/support).
+
+## Sharing a result
+
+Any position can be turned into an image you can post — see [PnL banners](/trading/pnl-cards).

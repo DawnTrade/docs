@@ -1,0 +1,70 @@
+---
+title: "Profiles"
+description: "Keep separate strategies apart, each with its own settings and its own wallets."
+icon: "users-gear"
+---
+
+A **profile** is a set of trading settings shared by the wallets inside it. Each wallet keeps its own balance, positions and orders; the profile decides how they trade.
+
+Open it with `/profiles`, or **Switch profile** on the home screen.
+
+Everyone starts with one profile. You can have up to **5**.
+
+## Why you would want a second one
+
+Because settings are the thing that differs, not the money. A profile lets you run two styles at once without editing anything between trades:
+
+<Columns cols={2}>
+  <Card title="A careful one" icon="shield-halved" horizontal>
+    Low slippage, auto-buy off, a stop-loss on every position by default.
+  </Card>
+
+  <Card title="A fast one" icon="bolt" horizontal>
+    Degen mode on, auto-buy armed at a fixed size, bigger buy buttons.
+  </Card>
+</Columns>
+
+## What belongs to the profile
+
+| Setting | Where it is |
+| --- | --- |
+| Slippage | [Trading settings](/settings/overview#trading) |
+| Auto Buy, and its amount | [Trading settings](/settings/overview#trading) |
+| MEV protection, Gas preset | [Trading settings](/settings/overview#trading) |
+| Degen Mode, Auto-Adjust, Gas Surplus | [Guardrails](/settings/guardrails) |
+| Default Stop Loss and Take Profit | [Auto sell defaults](/settings/overview#auto-sell) |
+| Buy and sell buttons | [Presets](/settings/presets) |
+| Group links | [Group links](/social/group-links) |
+| Fees in PnL | [Trading settings](/settings/overview#trading) |
+
+Wallets, balances, positions, orders and history belong to the **wallet**, not the profile.
+
+## Create a profile
+
+<Steps>
+  <Step title="Name it">
+    In `/profiles`, tap **New profile** and send a name. Up to **20 characters** — letters, digits, spaces, dashes and underscores.
+  </Step>
+
+  <Step title="Choose its starting settings">
+    Dawn offers to start the new profile with the settings of the one you were just using. Accept to copy them, or decline to start from the defaults.
+
+    Only settings are copied. Wallets, funds and positions are not.
+  </Step>
+
+  <Step title="Fund a wallet in it">
+    A new profile comes with a fresh, empty wallet. Deposit into it, or move USDC across from another profile with [Send](/funds/withdraw#send-to-your-own-wallets).
+  </Step>
+</Steps>
+
+## Switch profiles
+
+Tap any profile row in `/profiles`. The home screen, the token panel and the portfolio all follow the profile you are in.
+
+<Warning>
+  Switching profiles does not stop automation. Stop-losses, take-profits, limit orders and DCA plans keep running in every profile, whether or not you are looking at it. Check `/limitorders` in each profile before you assume nothing is armed.
+</Warning>
+
+## Finding a missing position
+
+If a coin you are sure you hold is not in the portfolio, it is almost always in another profile, or in another wallet in the same profile. Check both before anything else — [Troubleshooting](/help/troubleshooting) has the full list.

@@ -1,0 +1,63 @@
+---
+title: "Move Coins To Your Balance"
+sidebarTitle: "Move To Balance"
+description: "Turn coins sitting in your wallet into spendable USDC."
+icon: "box-archive"
+---
+
+Your **balance** and your **wallet** are two different places.
+
+| | Where it is | What you can do with it |
+| --- | --- | --- |
+| **Balance** | Dawn's spendable USDC | Buy coins, place orders, withdraw |
+| **Wallet** | The addresses themselves | Nothing, until you move it across |
+
+Most of the time this distinction is invisible: you deposit through a route, and the money lands on your balance. It becomes visible when something arrives **outside** a deposit route.
+
+## What ends up in the wallet
+
+<Columns cols={2}>
+  <Card title="SOL you deposit" icon="circle" horizontal>
+    SOL sent to your Solana address lands in the wallet. Dawn tells you it arrived and offers to move it.
+  </Card>
+
+  <Card title="Coins sent to you" icon="inbox" horizontal>
+    Anything transferred to your address by someone else, or by you from another wallet.
+  </Card>
+
+  <Card title="A refunded deposit" icon="rotate-left" horizontal>
+    A deposit that was refunded rather than credited can land here.
+  </Card>
+
+  <Card title="Native coin left over" icon="coins" horizontal>
+    Small amounts of a chain's own coin from earlier activity.
+  </Card>
+</Columns>
+
+## Move it across
+
+Anything sitting in a wallet shows up on the **wallet screen** (`/wallets`), listed under the chain it is on. The home screen also flags SOL directly.
+
+<Steps>
+  <Step title="Tap the coin">
+    From the wallet screen, or from the card Dawn sent when it arrived.
+  </Step>
+
+  <Step title="Check the conversion">
+    Dawn shows what is moving, roughly how much USDC lands on your balance, and how many seconds it takes. If the amount is large enough to move the market against itself, it warns you.
+  </Step>
+
+  <Step title="Confirm">
+    The card updates itself when it lands. If it fails, the funds simply stay in your wallet and you can retry.
+  </Step>
+</Steps>
+
+<Note>
+  **Nothing left to move** means it is already on your balance, or you moved it from another screen. Refresh the wallet list.
+</Note>
+
+## Moving is a trade
+
+Anything that is not already USDC has to be swapped, so the usual rules apply: the market price decides what you get, thin liquidity costs you more, and the amount shown is an estimate until it lands.
+
+If you want to keep a coin rather than convert it, leave it in the wallet or [send it out](/funds/withdraw#send-a-coin-instead-of-usdc) as-is.

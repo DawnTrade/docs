@@ -1,0 +1,48 @@
+---
+title: "Group Links"
+description: "Decide what happens when you tap a one-tap trade someone posted in a chat."
+icon: "hand-pointer"
+---
+
+This setting is about **links you tap**, not links you post. It decides whether a one-tap trade in a group trades for you immediately, or just opens the coin.
+
+`/settings` → **Group Links**. It belongs to the profile, and it is **off** by default.
+
+## The two states
+
+| | What tapping a trade link does |
+| --- | --- |
+| **Off** (default) | Opens the coin's panel. You choose the amount yourself, as with any other coin. |
+| **On** | Buys immediately — never more than your [auto-buy amount](/settings/overview#auto-buy) — or sells the share the link names, from this profile's wallet. |
+
+With it on, the cap is **yours**. Whatever amount the person who made the link chose, your own auto-buy amount is the ceiling.
+
+## What it does not do
+
+<Note>
+  Only you are ever affected by a link **you** tap.
+
+  Nobody can trade for you without your tap, and nothing happens to anyone who does not tap. There is no setting anywhere in Dawn that lets one person trade from another person's wallet.
+</Note>
+
+## Should you turn it on?
+
+<Columns cols={2}>
+  <Card title="Leave it off" icon="shield-halved" horizontal>
+    The sensible default. You still get one-tap access to the coin; you just approve the amount. Costs you one extra tap.
+  </Card>
+
+  <Card title="Turn it on" icon="bolt" horizontal>
+    For calls where seconds matter and you already trust the source. Set a small auto-buy amount first — that number becomes what a tap can spend.
+  </Card>
+</Columns>
+
+<Warning>
+  With this on, a tap is a trade. In a fast-moving group that is exactly the point, and it is also how people buy things they did not mean to buy. Set the auto-buy amount to something you would be relaxed about losing to a mis-tap.
+</Warning>
+
+## Related
+
+- [Auto Buy](/settings/overview#auto-buy) sets the amount that caps a group buy.
+- [Share links](/social/share-links) is the other side: making the links.
+- [Dawn in your group](/social/groups) puts cards in a chat automatically.

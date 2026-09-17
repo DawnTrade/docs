@@ -1,0 +1,97 @@
+---
+title: "Buy And Sell"
+description: "Place a market trade and read its result."
+icon: "arrow-right-arrow-left"
+---
+
+A market trade goes as soon as it can fill at the price available. It is the default way to trade in Dawn, and the fastest.
+
+<Warning>
+  **Tapping an amount sends the trade.** There is no separate confirm step on a normal buy or sell. Check the coin, the chain and the wallet before your finger is over a button.
+</Warning>
+
+## Before you tap
+
+Four things decide what actually happens:
+
+| Check | Where |
+| --- | --- |
+| The right **coin** | The address on the panel |
+| The right **wallet** | The account line at the bottom of the panel |
+| Enough **balance** | The home screen, or the panel's account line |
+| Your **slippage** | [Trading settings](/settings/overview#trading), default **15%** |
+
+## Buy a coin
+
+<Steps>
+  <Step title="Open the coin">
+    Paste its contract address. Make sure the panel is on **Buy**.
+  </Step>
+
+  <Step title="Choose a size">
+    Tap a dollar button — **\$1 · \$5 · \$10 · \$25 · \$50** by default — or **\$x** to type any amount.
+
+    The minimum is **$1**. Some bridged routes ask for more.
+  </Step>
+
+  <Step title="Watch the card">
+    Dawn quotes, signs and submits. One card updates itself in place: **Buying** → **submitted** → **filled**.
+
+    The finished card shows what you spent and what you received. The panel behind it updates with your new holding.
+  </Step>
+</Steps>
+
+### Buying without opening the panel
+
+With [Auto Buy](/settings/overview#auto-buy) on, pasting a contract address buys a fixed amount immediately, and the panel follows the trade card. It is off by default, and it spends money on a paste — turn it on deliberately.
+
+## Sell a coin
+
+<Steps>
+  <Step title="Open your holding">
+    Send `/portfolio` and tap the coin, or paste its address again.
+  </Step>
+
+  <Step title="Switch to Sell">
+    The sell buttons are **shares of what you hold**, not dollar amounts — **10% · 25% · 50% · 75% · 100%** by default.
+  </Step>
+
+  <Step title="Choose a share">
+    Tap one, or **x%** to type your own. **100%** sells the position out completely.
+  </Step>
+
+  <Step title="Read the result">
+    The card shows the USDC you received. It goes back onto your balance, ready to spend again.
+  </Step>
+</Steps>
+
+## Reading the result card
+
+| Card | What it means |
+| --- | --- |
+| **Buying / Selling** | Quoting and signing. Nothing has been sent yet. |
+| **submitted** | It is on chain and filling. The card updates itself. |
+| **filled** | Done. The amounts shown are what actually happened. |
+| **failed** | It did not go through. Your USDC is back on your balance, and the card names the reason. |
+| **unconfirmed** | Dawn could not confirm how it ended. Check your wallet balance before trying again. |
+
+<Note>
+  A failed trade is not a lost trade. When a fill would land outside your slippage, Dawn refuses it and returns the USDC rather than filling you at a worse price.
+</Note>
+
+## Why a trade gets refused
+
+| Reason | What to do |
+| --- | --- |
+| Price moved past your slippage | Raise [slippage](/trading/execution#slippage), or trade a smaller size. |
+| Not enough balance | Deposit, or turn on [Auto-Adjust](/settings/guardrails#auto-adjust) to shrink the buy to what you can afford. |
+| Buy would move the price over 30% | [Liquidity protection](/settings/guardrails#degen-mode) stopped it. The pool is too thin for that size. |
+| Below the minimum | The route needs more than $1. The panel names the figure. |
+| Gas above the sponsored cap | Set a [Gas Surplus](/settings/guardrails#gas-surplus) limit, or wait for the chain to quieten. |
+| No route found | Nothing could fill it right now. Liquidity may have moved or been pulled. |
+
+## Selling everything at once
+
+There is no bulk exit across coins. Sell each position from its own panel with the **100%** button.
+
+If you want an exit that does not need you watching, set a [stop-loss or take-profit](/orders/tp-sl) instead.

@@ -1,0 +1,135 @@
+---
+title: "Your First Trade"
+description: "Start the bot, add USDC, buy a coin, and find it in your portfolio."
+sidebarTitle: "Quickstart"
+icon: "rocket"
+---
+
+This walks you from an empty chat to a coin in your portfolio. It takes about five minutes, most of which is waiting for a deposit to confirm.
+
+<Note>
+  The amounts below are examples, not recommendations. Start with an amount you would not mind losing — the minimum trade is **\$1**.
+</Note>
+
+<Steps>
+  <Step title="Start the bot">
+    Open [Dawn](https://t.me/DawnTradeBot) in Telegram and tap **Start**, or send `/start`.
+
+    ![Start Button](/images/start-button.png "Start Button")
+
+    Dawn creates your first profile and your first wallet. The wallet is a pair of addresses — one EVM, one Solana — created and secured by [Privy](https://privy.io). Nobody at Dawn holds your keys, and you can export them whenever you like.
+
+    The home screen shows your **Balance**, your **Portfolio**, and the buttons for everything else.
+  </Step>
+  <Step title="Add USDC">
+    Tap **Deposit** or send `/deposit`, then pick the chain you are sending **from** and the token you are sending.
+
+    <Frame>
+      <img
+        src="/images/deposit-screen-initial.png"
+        alt="Deposit Screen Initial"
+        title="Deposit Screen Initial"
+        style={{ width:"77%" }}
+      />
+    </Frame>
+
+    Choose a chain to send funds from. 
+
+    <Frame>
+      <img
+        src="/images/choose-funds.png"
+        alt="Choose Funds"
+        title="Choose Funds"
+        style={{ width:"77%" }}
+      />
+    </Frame>
+
+    <br /><br />Dawn shows an address and a minimum. Copy the address, and in the wallet or exchange you are sending from, select the same token and the same network.
+
+    <Frame>
+      <img
+        src="/images/address-and-minimum.png"
+        alt="Address And Minimum"
+        title="Address And Minimum"
+        style={{ width:"67%" }}
+      />
+    </Frame>
+
+    <Warning>
+      Send only the token and chain the panel names. Anything else cannot be recovered. Check the minimum on the panel before you send.
+    </Warning>
+
+    USDC on Solana is the most direct route: it lands on your balance with no fee and no conversion. Everything else is swapped and bridged for you, and the panel tells you roughly how long that takes.
+
+    Wait for **Deposit received**, then check that **Balance** has gone up.
+  </Step>
+  <Step title="Open a coin">
+    Paste the coin's contract address into the chat.
+
+    Dawn finds it, works out which chain it is on, and replies with its panel: market cap, liquidity, the token's own checks, and a row of buy buttons. If the same address exists on more than one chain, Dawn asks which one you meant.
+
+    <Frame>
+      <img
+        src="/images/coin-information.png"
+        alt="Coin Information"
+        title="Coin Information"
+        style={{ width:"65%" }}
+      />
+    </Frame>
+
+    Check the address and the chain before you go further. You can also search by ticker — send `$PEPE` — but an address is exact and a ticker is not.
+  </Step>
+  <Step title="Buy">
+    Tap one of the dollar buttons. The default set is **\$1 · \$5 · \$10 · \$25 · \$50**, and **\$x** lets you type any amount.
+
+    <Frame>
+      <img
+        src="/images/buy-buttons.png"
+        alt="Buy Buttons"
+        title="Buy Buttons"
+      />
+    </Frame>
+
+    <Warning>
+      Tapping an amount sends the trade. There is no second confirmation step.
+    </Warning>
+
+    Dawn quotes, signs and submits. The card updates itself through **submitted** to **filled**, and shows what you spent and what you received. If the trade cannot fill inside your slippage, it is refunded and your USDC stays where it was.
+  </Step>
+  <Step title="Find it in your portfolio">
+    Send `/portfolio`, or tap **Portfolio** on the home screen.
+
+    Your coin is listed with what you put in, what it is worth now, and its PnL. Tap it to reopen the panel and buy more, sell, or set an order.
+  </Step>
+</Steps>
+
+## What next
+
+<Columns cols={2}>
+  <Card title="Protect the position" icon="shield-halved" href="/orders/tp-sl">
+    Set a take-profit and a stop-loss so an exit happens without you watching.
+  </Card>
+
+  <Card title="Sell some of it" icon="arrow-down-right" href="/trading/buy-and-sell#sell-a-coin">
+    Sell a share of what you hold, or all of it.
+  </Card>
+
+  <Card title="Tune your settings" icon="sliders" href="/settings/overview">
+    Slippage, buy buttons, auto buy, gas and guardrails.
+  </Card>
+
+  <Card title="Earn on every trade" icon="gift" href="/rewards/cashback">
+    Cashback pays part of your trading fee back to you, starting at 25%.
+  </Card>
+</Columns>
+
+## If the buy doesn't go through
+
+| What you see | What to do |
+| --- | --- |
+| Not enough balance | Check which wallet is in use and whether the deposit has landed. Turn on [Auto-Adjust](/settings/guardrails#auto-adjust) to shrink a buy to what you can afford instead of refusing it. |
+| Buy failed, USDC returned | The price moved further than your [slippage](/trading/execution#slippage) allowed. Raise it, or try a smaller size. |
+| No token at this address | The address is wrong, or the coin is not on a chain Dawn trades. Try `bnb 0x…`, `rh 0x…` or `base 0x…` to name the chain yourself. |
+| Nothing happens on paste | Check you pasted the contract address, not a link to a chart. |
+
+More in [Troubleshooting](/help/troubleshooting).

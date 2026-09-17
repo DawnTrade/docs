@@ -1,0 +1,78 @@
+---
+title: "Ladders"
+description: "Spread one amount over several orders across a market-cap range."
+icon: "stairs"
+---
+
+A ladder is a set of limit orders across a range instead of a single order at one level. Each rung waits for its own market cap, and they can be cancelled together.
+
+Use it when you have a view on a **range** rather than a price — which, with memecoins, is most of the time.
+
+Open a coin and tap 🪜 **Ladder**, or send `/ladder <address>`.
+
+## Build one
+
+<Steps>
+  <Step title="Set both ends of the range">
+    Send a market cap for one end, then the other. Shorthand works: `250k`, `2m`, `\$1.5m`.
+
+    The order you give them in does not matter — Dawn spreads the rungs between them either way.
+  </Step>
+
+  <Step title="Choose how many rungs">
+    The button steps through **3 · 4 · 5 · 6 · 8 · 10**. The default is **4**.
+
+    More rungs means a smoother average and more individual fills to pay a fee on.
+  </Step>
+
+  <Step title="Set the total">
+    | Side | What you enter |
+    | --- | --- |
+    | Buy | A **total in dollars**, divided evenly between the rungs |
+    | Sell | A **percentage of the position**, divided evenly between the rungs |
+
+    This is the total for the whole ladder, not per rung. A \$400 ladder over 4 rungs buys \$100 at each.
+  </Step>
+
+  <Step title="Place it">
+    The card reports the whole plan: how many orders, the range, what each one does, the total, and when it expires. **🗑 Cancel ladder** on that card removes all of them at once.
+  </Step>
+</Steps>
+
+## How the rungs are spaced
+
+Evenly by **percentage move**, not by dollars.
+
+Across a range from \$250k to \$2m, each rung is the same percentage step above the last. Spacing them by equal dollar gaps would bunch most of your money at the top of the range, where the same dollar amount is a much smaller move.
+
+The effect is that a ladder spreads your money evenly over the *move*, which is what you actually wanted.
+
+## Buy ladder or sell ladder
+
+<Columns cols={2}>
+  <Card title="Buying a range" icon="arrow-trend-down" horizontal>
+    Set the range **below** the current cap to average into a fall, or **above** it to add into strength. You are not forced to guess one entry.
+  </Card>
+
+  <Card title="Selling a range" icon="arrow-trend-up" horizontal>
+    Set the range above the current cap to take profit in stages rather than picking one exit. Each rung sells its slice of the position.
+  </Card>
+</Columns>
+
+## Things worth knowing
+
+- **Rungs fire independently.** If the market runs through the whole range, several can fire close together. If it never reaches a rung, that rung sits until expiry.
+- **Nothing is reserved.** A \$400 buy ladder needs the money on your balance when the rungs fire.
+- **Each rung is its own trade**, with its own fee, its own slippage check and its own result card.
+- **Cancelling the ladder** removes the rungs that have not fired. It does not undo the ones that have.
+
+## Ladder or DCA?
+
+They sound similar and are not.
+
+| | Triggered by |
+| --- | --- |
+| **Ladder** | **Price.** Rungs wait for market caps, and may never fire. |
+| **[DCA](/orders/dca)** | **Time.** Buys happen on a schedule whatever the price does. |
+
+Use a ladder when you have a range in mind. Use DCA when you want to build a position steadily and ignore the chart.

@@ -1,0 +1,84 @@
+---
+title: "Welcome To Dawn"
+description: "Trade memecoins in Telegram with one USDC balance across Solana, BNB Chain, Robinhood Chain, Base and Arc."
+sidebarTitle: "Introduction"
+icon: "sun"
+---
+
+Dawn is a Telegram bot for trading memecoins. You hold **one USDC balance** and spend it on **Solana, BNB Chain, Robinhood Chain, Base and Arc**. Dawn does the routing, pays the gas and handles the bridging in the background, so reaching a coin on another chain takes no extra steps and no second balance.
+
+Paste a contract address into the chat and the coin opens with buy buttons ready.
+
+<Columns cols={2}>
+  <Card title="Make your first trade" icon="rocket" href="/quickstart">
+    Start the bot, add USDC, buy a coin, and find it in your portfolio.
+  </Card>
+
+  <Card title="Add money" icon="arrow-down-to-bracket" href="/funds/deposit">
+    Send USDC from any supported chain and watch it land on your balance.
+  </Card>
+
+  <Card title="Set an order that runs without you" icon="crosshairs" href="/orders/overview">
+    Limit buys, ladders, DCA plans, take-profits and stop-losses.
+  </Card>
+
+  <Card title="Earn from your trading" icon="gift" href="/rewards/overview">
+    Cashback on your own fees, and three levels of referral earnings.
+  </Card>
+</Columns>
+
+## One balance, five chains
+
+Most bots make you keep a separate bag of gas on every chain. Dawn doesn't.
+
+<Columns cols={3}>
+  <Card title="No gas to hold" icon="gas-pump">
+    Dawn covers the network fee on every trade, up to **\$5**. You never buy SOL or BNB just to move.
+  </Card>
+
+  <Card title="No bridging to do" icon="bridge">
+    Buy a Base coin with the same USDC that bought a Solana one. The route is picked for you, and [what crossing costs](/fees#trading-on-another-chain) is quoted before you buy.
+  </Card>
+
+  <Card title="Keys you own" icon="shield-check">
+    Wallets are created and secured by [Privy](https://privy.io). You can export the private key at any time.
+  </Card>
+</Columns>
+
+## How Dawn fits together
+
+| Part | What it is |
+| --- | --- |
+| **Balance** | Your spendable USDC. Every buy comes out of it, every sell goes back into it. |
+| **Wallet** | One EVM address and one Solana address, with its own balance, positions and orders. Up to **5** per profile. |
+| **Profile** | A set of trading settings shared by its wallets — slippage, presets, guardrails. Up to **5**. |
+| **Portfolio** | Everything you currently hold, with live worth and PnL. |
+| **Activity** | Everything you have closed, with realised PnL. |
+
+<Note>
+  Your balance and your wallet are not the same thing. A coin someone sends you — or SOL you deposit — lands **in the wallet**, not on your balance. Moving it across is one tap: see [Move coins to your balance](/funds/move-to-balance).
+</Note>
+
+## Find your way around
+
+<Columns cols={2}>
+  <Card title="Read the token panel" icon="table-columns" href="/trading/token-panel">
+    Market data, warnings, your holding, and every button explained.
+  </Card>
+
+  <Card title="Fees and minimums" icon="receipt" href="/fees">
+    What a trade costs, what gas Dawn covers, and the smallest trade you can make.
+  </Card>
+
+  <Card title="Every command" icon="terminal" href="/help/commands">
+    A one-line reference for each slash command.
+  </Card>
+
+  <Card title="Something went wrong" icon="life-ring" href="/help/troubleshooting">
+    Missing deposits, failed trades, and orders that didn't fire.
+  </Card>
+</Columns>
+
+<Warning>
+  Memecoins are volatile and caution must be taken with every trade. Dawn shows you what it knows about a coin before you buy, but a clean panel is not a safety guarantee. Never trade money you cannot afford to lose.
+</Warning>

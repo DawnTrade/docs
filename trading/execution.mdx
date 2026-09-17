@@ -1,0 +1,82 @@
+---
+title: "How Trades Execute"
+sidebarTitle: "Execution"
+description: "Slippage, price impact, MEV protection and how hard your trades bid to land."
+icon: "bolt"
+---
+
+Four settings decide how a trade behaves between your tap and the fill. All four belong to the **profile**, so each profile can execute differently.
+
+## Slippage
+
+Slippage is **how far the price may move against you** between quoting and filling. Past that line, the trade is refused and your USDC is returned rather than filled at a worse price.
+
+| | |
+| --- | --- |
+| Default | **15%** |
+| Range | 0.1% – 50% |
+| Presets | 5% · 10% · 15% · 20% · 30% |
+| Where | `/settings` → Trading → Slippage, or **change** on the token panel |
+
+It cuts both ways:
+
+- **Higher** — more trades go through, and some of them at a price you would not have chosen.
+- **Lower** — a better price when you fill, and fast-moving coins bounce more often.
+
+<Tip>
+  Slippage is a limit, not a target. Setting 30% does not mean you pay 30% more; it means you have agreed to fill anywhere up to that. On a calm pool you will usually fill far inside it.
+</Tip>
+
+### Slippage is not price impact
+
+**Slippage** is the market moving while your trade is in flight — other people's trades.
+
+**Price impact** is *your own* trade moving the price, because you are buying a meaningful share of a pool. It is set by the size of your trade against the liquidity available, and no setting makes it go away.
+
+The **Liq** percentage on the [token panel](/trading/token-panel#the-market-block) is the figure to watch for impact.
+
+## Liquidity protection
+
+Dawn refuses a buy that would move the price by more than **30%**. That is a floor under how badly a thin pool can treat you, and it is on unless you turn it off.
+
+[Degen Mode](/settings/guardrails#degen-mode) removes it and raises slippage to 100%, which means a buy goes through however far it moves the price. Sells keep your normal slippage either way.
+
+## MEV protection
+
+**On by default. Solana only.**
+
+A public Solana transaction can be seen before it lands, which lets a bot buy in front of you, let your trade push the price up, and sell into it — a sandwich. You get a worse fill and they take the difference.
+
+With MEV protection on, your swaps go through a **private lane** instead, so nobody sees the trade in time to trade in front of it.
+
+The EVM chains do not have this option; leaving it on costs nothing there.
+
+<Note>
+  Protection is about visibility, not speed. In a fast market the price can still move between your tap and your fill — that is what [slippage](#slippage) covers.
+</Note>
+
+## Gas preset
+
+How hard your trades **bid to land fast and protected**.
+
+| Preset | Behaviour | When it suits |
+| --- | --- | --- |
+| 🐢 **Low** | Cheapest, and can be slower when the network is busy | A quiet chain, and you are not racing anyone |
+| ⚡ **Medium** | Balanced — **default** | Almost everything |
+| 🚀 **High** | Bids hardest to land in contested blocks | A launch, where landing in this block matters |
+
+A higher bid does not improve your price. It improves your odds of landing in a block while there is competition for space — which, in a fast market, amounts to the same thing.
+
+Dawn pays this gas for you, up to [$5 per trade](/fees#gas). The preset changes what Dawn bids, not what you pay, unless the cost goes over the cap — see [Gas Surplus](/settings/guardrails#gas-surplus).
+
+## Putting it together
+
+<Columns cols={2}>
+  <Card title="A quiet, deep-liquidity coin" icon="circle-check" horizontal>
+    Low slippage, Medium gas. You will fill close to the quote.
+  </Card>
+
+  <Card title="A launch, minutes old" icon="fire" horizontal>
+    Higher slippage, High gas, small size. Expect impact and expect some trades to bounce.
+  </Card>
+</Columns>

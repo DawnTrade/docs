@@ -1,0 +1,78 @@
+---
+title: "DCA"
+description: "Buy the same amount on a repeating schedule, whatever the price does."
+icon: "repeat"
+---
+
+DCA buys a fixed amount at a fixed interval. It is driven by **time**, not price — the schedule runs whether the coin is up or down.
+
+Open a coin and tap 🔁 **DCA**, or send `/dca <address>`.
+
+## Set up a plan
+
+<Steps>
+  <Step title="Amount per buy">
+    What each individual buy spends — not the total for the plan.
+  </Step>
+
+  <Step title="How often">
+    Tap a preset, or type an interval like `30m`, `2h` or `1d`.
+
+    From **15 minutes** to **7 days**.
+  </Step>
+
+  <Step title="How many buys">
+    Up to **100**. The plan ends once it has done them all.
+  </Step>
+
+  <Step title="Start it">
+    The card confirms the amount, the interval, the number of buys and the wallet.
+
+    **The first buy goes out within a minute**, not after the first interval.
+  </Step>
+</Steps>
+
+A plan spending \$25 every 6 hours for 20 buys commits **\$500 over five days**.
+
+## Following it
+
+Each buy reports into the chat as it happens, with a running count and the time until the next one.
+
+| Card | What it means |
+| --- | --- |
+| **DCA buy 3/20** | It bought. The next one is timed from here. |
+| **missed** | The buy did not go out this time. It tries again at the next interval. |
+| **didn't go through** | It was attempted and failed. The card names the reason. |
+| **unconfirmed** | Dawn could not tell how it ended. It counts as neither bought nor missed. |
+| **DCA finished** | All the buys are done. The card totals what was bought and spent. |
+
+## When a plan stops early
+
+**Three failures in a row end the plan.** Nothing more is spent, and the card says what it managed before stopping.
+
+That is usually a sign something has changed about the coin or the balance rather than bad luck — no liquidity left, not enough USDC, or a token that has started blocking trades. Look at the reason on the card before starting another plan.
+
+A plan that finishes its last buy with one failure still reports as **finished**, with a note that the last buy did not go through.
+
+## Limits
+
+| | |
+| --- | --- |
+| Interval | 15 minutes – 7 days |
+| Buys per plan | up to 100 |
+| Active plans | **5** at a time |
+| Consecutive failures before stopping | 3 |
+
+## Stopping a plan
+
+Send `/limitorders` and stop it there. Stopping ends the remaining buys; it does not sell what the plan has already bought.
+
+<Note>
+  A DCA plan keeps running when you close Telegram and when you switch profile. If you have stepped away from a coin, stop its plan — it will keep buying otherwise.
+</Note>
+
+## Is your balance enough?
+
+DCA does not reserve money. Each buy takes from your balance when it fires, and a buy with nothing behind it simply fails and counts a strike.
+
+If a plan matters to you, keep enough USDC on the balance to cover the buys that are left.

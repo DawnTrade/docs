@@ -1,0 +1,158 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "maple",
+  "name": "Dawn",
+  "colors": {
+    "primary": "#F84616",
+    "light": "#FF8A5B",
+    "dark": "#D93A0F"
+  },
+  "favicon": "/favicon.svg",
+  "navigation": {
+    "pages": [
+      {
+        "group": "Getting Started",
+        "pages": [
+          "index",
+          "quickstart"
+        ]
+      }
+    ],
+    "groups": [
+      {
+        "group": "Get Started",
+        "icon": "rocket",
+        "pages": [
+          "index",
+          "quickstart",
+          "chains",
+          "fees"
+        ]
+      },
+      {
+        "group": "Wallets & Profiles",
+        "icon": "wallet",
+        "pages": [
+          "wallets/wallets",
+          "wallets/profiles",
+          "wallets/import-export",
+          "wallets/security"
+        ]
+      },
+      {
+        "group": "Funding",
+        "icon": "arrow-right-arrow-left",
+        "pages": [
+          "funds/deposit",
+          "funds/withdraw",
+          "funds/move-to-balance"
+        ]
+      },
+      {
+        "group": "Trading",
+        "icon": "chart-candlestick",
+        "pages": [
+          "trading/token-panel",
+          "trading/buy-and-sell",
+          "trading/multi-wallet",
+          "trading/execution",
+          "trading/portfolio",
+          "trading/activity",
+          "trading/pnl-cards"
+        ]
+      },
+      {
+        "group": "Automated Orders",
+        "icon": "crosshairs",
+        "pages": [
+          "orders/overview",
+          "orders/limit",
+          "orders/ladder",
+          "orders/dca",
+          "orders/tp-sl",
+          "orders/manage"
+        ]
+      },
+      {
+        "group": "Rewards",
+        "icon": "gift",
+        "pages": [
+          "rewards/overview",
+          "rewards/cashback",
+          "rewards/referrals",
+          "rewards/codes",
+          "rewards/pump-fun"
+        ]
+      },
+      {
+        "group": "Sharing & Groups",
+        "icon": "users",
+        "pages": [
+          "social/share-links",
+          "social/group-links",
+          "social/groups"
+        ]
+      },
+      {
+        "group": "Settings",
+        "icon": "sliders",
+        "pages": [
+          "settings/overview",
+          "settings/guardrails",
+          "settings/presets"
+        ]
+      },
+      {
+        "group": "Help",
+        "icon": "life-ring",
+        "pages": [
+          "help/commands",
+          "help/troubleshooting",
+          "help/glossary",
+          "help/support"
+        ]
+      }
+    ]
+  },
+  "navbar": {
+    "links": [
+      {
+        "href": "https://dawn.trade",
+        "label": "Website"
+      },
+      {
+        "label": "Support",
+        "href": "https://t.me/DawnContactBot"
+      }
+    ],
+    "primary": {
+      "type": "button",
+      "label": "Open Dawn",
+      "href": "https://t.me/DawnTradeBot"
+    }
+  },
+  "contextual": {
+    "options": [
+      "copy",
+      "view",
+      "chatgpt",
+      "claude",
+      "perplexity",
+      "mcp",
+      "cursor",
+      "vscode"
+    ]
+  },
+  "footer": {
+    "socials": {
+      "x": "https://x.com/dawndottrade",
+      "telegram": "https://t.me/DawnTradeBot",
+      "website": "https://dawn.trade"
+    }
+  },
+  "description": "Dawn is a Telegram trading bot for memecoins. One USDC balance, five chains, no gas and no bridging to manage.",
+  "logo": {
+    "light": "/images/Orange-LogoOnly.png",
+    "dark": "/images/Orange-LogoOnly.png"
+  }
+}

@@ -1,0 +1,82 @@
+---
+title: "Withdraw And Send"
+sidebarTitle: "Withdraw & Send"
+description: "Move money out to an address, or across to your own wallets and profiles."
+icon: "paper-plane"
+---
+
+One flow covers both. Send `/send` for the menu, or `/withdraw` to go straight to picking a chain.
+
+You can send **USDC**, a chain's own coin, or **any token you hold**, to an external address or to one of your own wallets.
+
+## Withdraw to an address
+
+<Steps>
+  <Step title="Choose the chain it should arrive on">
+    Solana, BNB Chain, Robinhood Chain or Base. This is the recipient's network, not yours.
+  </Step>
+
+  <Step title="Choose what should arrive">
+    The panel lists the tokens available on that chain.
+  </Step>
+
+  <Step title="Add the recipient">
+    Paste the destination address, or pick one of your own profiles or wallets from the buttons.
+
+    Add more than one recipient and the amount is **split evenly** between them. Tap a recipient to remove it.
+  </Step>
+
+  <Step title="Enter an amount">
+    Type a figure like `12.50`, a percentage of what is available, or `max` for all of it.
+  </Step>
+
+  <Step title="Check the confirmation and send">
+    Dawn shows what leaves, what arrives, the destination address and chain, and roughly how many seconds it takes. The amount is fixed when it goes; the price can move a little on the way.
+
+    The card updates itself from **Sent** to confirmed.
+  </Step>
+</Steps>
+
+<Warning>
+  Check the address and the chain yourself. A sent transaction cannot be recalled, and an address that is right on one network can be wrong on another. Never paste a token's contract address as the recipient.
+</Warning>
+
+## What it costs
+
+| Route | Cost |
+| --- | --- |
+| **USDC on Solana** | A flat **\$0.10 per recipient**, straight from your balance. It pays the transaction, and the cost of opening a USDC account for an address that has never held any. |
+| Any other chain or token | Delivered by the bridge. Its cost comes out of what is delivered, and the confirmation shows the amount that will arrive. |
+
+With several recipients, the per-address fee applies to each one.
+
+## Send to your own wallets
+
+The recipient picker lists your own profiles and wallets, so moving money internally is the same flow with a different destination.
+
+This is how you:
+
+- fund a new wallet from an existing one,
+- move money between profiles,
+- gather funds spread across several wallets into one.
+
+Select several of your own wallets as recipients to split an amount across them in one go.
+
+## Send a coin instead of USDC
+
+To move a coin you hold without selling it, choose it in the send flow rather than USDC. It stays on its own chain and arrives as the same coin.
+
+<Note>
+  Some contracts restrict transfers. A balance you can see is not always a balance you can move, and that is a property of the token rather than of Dawn.
+</Note>
+
+## If a withdrawal does not go through
+
+| What you see | What to do |
+| --- | --- |
+| **Transfer failed** | Read the reason on the card. Recipients marked ❌ received nothing. |
+| **Withdrawal refunded** | The route could not deliver. The USDC is back on your balance. |
+| Not enough available | The fee is charged on top of the amount unless you sent `max`. Leave room for it, or use `max`. |
+| Address rejected | Wrong chain for that address shape, or a contract address rather than a wallet. |
+
+A card that says **Sent** and is still confirming is not finished. Wait for it rather than starting a second withdrawal.

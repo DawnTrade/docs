@@ -1,0 +1,72 @@
+---
+title: "Wallets"
+description: "Create, rename, switch and archive the wallets your trades come from."
+icon: "wallet"
+---
+
+A Dawn wallet is a **pair of addresses** — one EVM, one Solana — that travel together as one entry. It has its own balance, its own positions and its own orders.
+
+Open it with `/wallets`, or **Wallets** on the home screen.
+
+<Note>
+  Your very first wallet is created for you when you send `/start`. You do not need to make another one to begin trading.
+</Note>
+
+## Read the list
+
+Each row shows the wallet's label, its spendable **USDC**, the worth of its **Portfolio**, and both addresses.
+
+| Mark | Meaning |
+| --- | --- |
+| ⭐ **Default** | The wallet currently in use. Trades, orders and deposits go here unless you pick another. |
+| **Set as default** | Tap to make that wallet the one in use. |
+| **Manage** | Opens the wallet's own page: rename, archive, send from it. |
+
+## Create a wallet
+
+<Steps>
+  <Step title="Pick the profile">
+    Wallets belong to a profile, and a profile's settings apply to every wallet in it. Switch to the profile you want first — see [Profiles](/wallets/profiles).
+  </Step>
+
+  <Step title="Add it">
+    In `/wallets`, tap **New wallet**. Dawn creates the address pair through [Privy](https://privy.io) and names it **Wallet 2**, **Wallet 3**, and so on.
+  </Step>
+
+  <Step title="Fund it">
+    A new wallet starts empty. Deposit into it, or send USDC across from another wallet with [Send](/funds/withdraw#send-to-your-own-wallets).
+  </Step>
+</Steps>
+
+Each profile holds up to **5 wallets**. With 5 profiles, that is **25** in total.
+
+## Rename a wallet
+
+Open the wallet's **Manage** page and choose **Rename**. Up to **20 characters** — letters, digits, spaces, dashes and underscores.
+
+A good label is worth setting early. Once you are trading from several wallets at once, "Wallet 3" tells you nothing.
+
+## Archive and restore
+
+Archiving takes a wallet out of the list without touching anything inside it.
+
+- Nothing is sold and nothing is sent.
+- The keys stay with Privy.
+- The positions and the history stay with the wallet.
+- Restoring puts it back in its profile, **not in use**, so nothing starts trading from it by surprise.
+
+If the wallet still holds funds, Dawn says so before archiving and gives you the chance to move them first.
+
+<Warning>
+  Archiving does not stop orders that are already placed. Cancel anything you do not want to fire before you archive — see [Managing orders](/orders/manage).
+</Warning>
+
+Restore from **Archived wallets**. If the destination profile is already full, Dawn tells you which wallet to archive to make room.
+
+## Trading from several wallets
+
+You can buy the same coin from every wallet in a profile in one go, and on Solana land all of those buys in the same block. See [Multi-wallet trading](/trading/multi-wallet).
+
+## Where the keys are
+
+Dawn does not hold your private keys. They are created and held by [Privy](https://privy.io), and you can export them at any time — see [Import and export](/wallets/import-export) and [Security](/wallets/security).

@@ -1,0 +1,34 @@
+---
+title: "Supported Chains"
+description: "The five networks Dawn trades on, and how one balance reaches all of them."
+icon: "globe"
+---
+
+Dawn trades on five networks. You do not choose one — the coin's contract address decides, and Dawn reaches it from the same balance.
+
+| Chain | Coin | Explorer |
+| --- | --- | --- |
+| 🟣 **Solana** | SOL | [Solscan](https://solscan.io) |
+| 🟡 **BNB Chain** | BNB | [BscScan](https://bscscan.com) |
+| 🟢 **Robinhood Chain** | ETH | [Etherscan](https://robin.etherscan.io) |
+| 🔵 **Base** | ETH | [BaseScan](https://basescan.org) |
+| ⚪ **Arc** | USDC | — |
+
+## Naming the chain yourself
+
+Most of the time you paste an address and Dawn works out the rest. Two cases need help:
+
+- **The same address exists on several chains.** EVM addresses can be identical across BNB Chain, Robinhood Chain, Base and Arc. Dawn asks which one you meant.
+- **Dawn cannot find the coin.** Put the chain in front of the address to skip the search:
+
+```text
+bnb 0x0000000000000000000000000000000000000000
+rh 0x0000000000000000000000000000000000000000
+base 0x0000000000000000000000000000000000000000
+```
+
+Solana addresses are unambiguous, so they never need a prefix.
+
+## Moving money in and out
+
+You can deposit from more chains than Dawn trades on. The live lists are on the panels themselves — see [Deposit](/funds/deposit) and [Withdraw and send](/funds/withdraw).

@@ -1,0 +1,52 @@
+---
+title: "Security"
+description: "Who holds your keys, and how to keep your account safe."
+icon: "shield-check"
+---
+
+## Who holds the keys
+
+Dawn does not. Your wallets are created and held by [Privy](https://privy.io), which signs on your instruction.
+
+- Each wallet has its **own private key**. There is no shared seed phrase, so one key never exposes another.
+- You can **export any key at any time** — see [Import and export](/wallets/import-export).
+- Exporting changes nothing else. The wallet keeps working in Dawn.
+
+Your login is your Telegram account. Protecting that account is the single most important thing you can do.
+
+<Tip>
+  Turn on **Two-Step Verification** in Telegram: Settings → Privacy and Security → Two-Step Verification. Without it, anyone who takes over your phone number takes over your Telegram, and with it your Dawn account.
+</Tip>
+
+## What Dawn will never ask for
+
+| Never | Why |
+| --- | --- |
+| Your private key | Dawn never needs it. Importing happens encrypted, inside the app. |
+| A seed phrase | Dawn wallets do not have one. |
+| A Telegram login code | Anyone asking for one is taking over your account. |
+| Payment to unlock funds | Withdrawals never require a deposit first. |
+
+Support is reached through [@DawnContactBot](https://t.me/DawnContactBot) and asks for none of these. Treat anyone who does — including an account using the Dawn name and logo — as an impostor.
+
+## Every trade is checked against what you approved
+
+Before a trade is sent, Dawn confirms it still matches the quote you were shown. If it has drifted — a different amount, a different destination, less coming back than you agreed — it is refused rather than sent.
+
+You see this as a trade that fails safely instead of one that fills badly.
+
+## Archiving is not deleting
+
+[Archiving a wallet](/wallets/wallets#archive-and-restore) removes it from your list. It does not sell its coins, revoke anything, or cancel its orders. The keys stay with Privy and restoring brings everything back.
+
+If you want to leave, export the keys first. Then the wallet is yours independently of Dawn.
+
+## Risks Dawn cannot remove
+
+The token panel shows a coin's market — its market cap, liquidity, holders and how it has been trading. None of that makes a coin safe.
+
+<Warning>
+  A contract can be written to let its deployer mint more supply, freeze your balance, block selling, or raise its tax after you buy. Many memecoins are built exactly this way. A clean panel means nothing was detected, not that nothing is there.
+</Warning>
+
+See [Read the token panel](/trading/token-panel#what-the-panel-cannot-tell-you) for what each signal does and does not mean.
