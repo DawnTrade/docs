@@ -7,35 +7,34 @@ icon: "layer-group"
 
 A profile can hold up to **5 wallets**. The multi-wallet panel trades the same coin from several of them without switching wallet between each one.
 
-Open a coin and choose the multi-wallet view from the panel. Each of your wallets appears with its own row of amounts.
+Open a coin and choose the multi-wallet view from the panel. Each of your wallets appears with its own row of sizes.
 
-## Buying from several wallets
+## Two ways to buy
 
-Tap an amount under a wallet and that wallet buys. **Each tap is its own trade**, with its own quote, its own result card and its own fee.
+|  |  |
+| --- | --- |
+| **Tap a size under a wallet** | That wallet alone buys. |
+| **Tick wallets, then a size at the bottom** | All the ticked wallets buy together, at once. |
 
-That is deliberate: one wallet failing does not take the others with it, and you can size each wallet differently.
+The first is for topping up one wallet. The second is for entering from several at the same moment.
 
-## All wallets at once
+## Buying from several at once
 
-The **All Wallets** button buys from every wallet in the profile in one action. What that means depends on the chain.
+What "at once" means depends on the chain.
 
 <Tabs>
   <Tab title="Solana">
     A **⚡ Bundle** toggle appears.
 
-    **Bundle: On** lands every buy together: the **same block**, the **same price**, all or nothing. Nobody can slip a trade in between your own wallets, and no wallet gets a worse entry than another.
+    **Bundle on** lands the buys together: the **same block**, the **same price**, all or nothing. Nobody can slip a trade in between your own wallets, and no wallet gets a worse entry than another.
 
     Each wallet still pays its own trading fee and its own tip.
 
-    **Bundle: Off** sends each buy separately, as if you had tapped them one by one.
-
-    <Note>
-      A wallet that cannot take part — no balance, or no route for it — is listed as left out rather than failing the whole thing for everyone else.
-    </Note>
+    **Bundle off** sends the buys at the same moment but each on its own, so one can fail without taking the others with it.
   </Tab>
 
-  <Tab title="BNB, Robinhood, Base, Arc">
-    Every buy is sent on its own. There is no bundling on the EVM chains, so the fills land in whatever order the chain gives them and the prices can differ slightly between wallets.
+  <Tab title="BNB, Robinhood, Base, Arc, Ink">
+    The buys go out at the same moment, each on its own. One can fail without affecting the others, and the fills can land at slightly different prices.
   </Tab>
 </Tabs>
 
@@ -45,11 +44,13 @@ The **All Wallets** button buys from every wallet in the profile in one action. 
 - **No sandwiching between your own wallets.** Nothing can get in between them.
 - **All or nothing.** Either every wallet gets in or none does, so you are never left half-positioned.
 
+### Why you might not
+
+A bundle is all or nothing, so one wallet that cannot take part stops the whole thing. Sending them separately gets the rest of your wallets in regardless.
+
 ## Selling from several wallets
 
-The sell panel works the same way, with **shares of each wallet's own holding** instead of dollar amounts. It also tells you how many of your profiles hold the coin, so you can see at a glance whether the rest of it is somewhere else.
-
-Tap a share under a wallet to sell from that wallet. Each tap is its own trade.
+The sell panel works the same way, with **shares of each wallet's own holding** instead of dollar sizes. It also tells you how many of your profiles hold the coin, so you can see at a glance whether the rest of it is somewhere else.
 
 ## Reading the results
 
@@ -58,7 +59,7 @@ A bundle draws **one card** for the whole thing, and redraws it as each wallet's
 Individual taps each produce their own card, exactly like a normal trade.
 
 <Warning>
-  Buying the same coin from five wallets spends five times the amount you tapped. The amount under each wallet is what *that wallet* buys, not a total to be divided.
+  Buying from five wallets spends five times the size you chose. The size applies to **each** ticked wallet; it is not a total divided between them.
 </Warning>
 
 ## Where the positions end up
