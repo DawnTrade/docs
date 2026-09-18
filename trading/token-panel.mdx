@@ -14,8 +14,8 @@ The token panel is where trading happens. Paste a contract address into the chat
     The exact way. Paste it and Dawn works out the chain.
   </Card>
 
-  <Card title="Ticker search" icon="magnifying-glass">
-    Send `$PEPE`. Best-traded first; tiny and flagged pools are left out.
+  <Card title="Ticker search" icon="magnifying-glass" href="/trading/trending">
+    Send `$PEPE`, or `/search pepe`. Best-traded first; tiny and flagged pools are left out.
   </Card>
 
   <Card title="Chain prefix" icon="link">
@@ -24,6 +24,8 @@ The token panel is where trading happens. Paste a contract address into the chat
 </Columns>
 
 Searching by ticker is convenient and imprecise — anyone can deploy a coin called PEPE. Check the address on the panel before you buy.
+
+Not looking for anything in particular? **🔥 Trending** on the home screen, or `/trending`, lists the top coins right now and lets you narrow them by chain — see [Trending and search](/trading/trending).
 
 ## The market block
 
@@ -78,9 +80,7 @@ These figures cover the wallet in use. With several wallets holding the same coi
 | **Buying ⇄ / Selling ⇄** | Switches the side the panel is on. |
 | Amount buttons | Dollar amounts when buying, percentages of your holding when selling. **Tapping one sends the trade.** |
 | **\$x** / **X%** | Type any amount or share. |
-| 📋 **Limit Order** | A buy or a sell that waits for a market cap you set. The badge counts orders already waiting on this coin. |
-| 🪜 **Ladder** | Spread one amount over several orders across a market-cap range. |
-| 🔁 **DCA** | Buy a fixed amount on a repeating schedule. Buy side only. |
+| ⚙️ **Automations** | Unfolds the order-setting buttons below. The badge counts what is already waiting on this coin. |
 | 🔗 **Share** | A referral link, or a one-tap buy card for a group. See [Share links](/social/share-links). |
 | 👥 **Multi-Wallet** | Trade the same coin from several wallets. Appears once the profile holds more than one. |
 | **Degen** | Toggles [Degen Mode](/settings/guardrails#degen-mode) for the profile. |
@@ -88,9 +88,27 @@ These figures cover the wallet in use. With several wallets holding the same coi
 
 Change which amounts appear in [Presets](/settings/presets).
 
+### Behind Automations
+
+Tapping **⚙️ Automations** unfolds one more row:
+
+| Control | What it does |
+| --- | --- |
+| 📋 **Limit Order** | A buy or a sell that waits for a market cap you set. |
+| 🪜 **Ladder** | Spread one amount over several orders across a market-cap range. |
+| 🔁 **DCA** | Buy a fixed amount on a repeating schedule. Buy side only. |
+
+Dawn remembers whether you left the row open, so if you use orders it stays unfolded on every panel.
+
 Take-profit and stop-loss levels are set from the position rather than from this row — open the coin from your [portfolio](/trading/portfolio) and choose **TP/SL**, or **Edit TP/SL** in `/limitorders`. See [Take profit and stop loss](/orders/tp-sl).
 
-When something is already waiting on the coin, the panel says so in a line of its own above the buttons.
+When something is already waiting on the coin, the panel says so in a line of its own above the buttons — and it shows the orders themselves, not just a count:
+
+```text
+📋 Buy $5 @ $170K, $10 @ $90K · 🎯 TP $1.2M · SL $340K
+```
+
+Limit buys come first, each as its size and the market cap it is waiting for, oldest first. Take-profit and stop-loss levels follow. Past two of either, the rest are summed as `+3` rather than listed — the line has one row to live in.
 
 ## What the panel cannot tell you
 
