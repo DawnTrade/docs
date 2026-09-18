@@ -15,6 +15,12 @@ Dawn trades on six networks. You do not choose one — the coin's contract addre
 | ⚪ **Arc** | USDC | [Arc Explorer](https://explorer.arc.io) |
 | 🟦 **Ink** | ETH | [Ink Explorer](https://explorer.inkonchain.com) |
 
+## How one balance reaches six chains
+
+Your balance is USDC on Solana. A Solana coin is bought from it directly. A coin on any of the other five means moving value across, and Dawn does that as part of the trade — there is no bridging step for you to run and no second balance to keep.
+
+Dawn is not tied to a single bridge. If the route it normally uses has no path for a hop, or is having a bad day, it falls back to another one automatically rather than failing the trade. You never pick a bridge, and the cost of whichever route is used is [inside the quote](/fees#trading-on-another-chain) before you confirm.
+
 ## Naming the chain yourself
 
 Most of the time you paste an address and Dawn works out the rest. Two cases need help:

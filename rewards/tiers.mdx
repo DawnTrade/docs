@@ -4,3 +4,61 @@ sidebarTitle: "All Tiers"
 description: "Every cashback and referral rung, what it takes to reach it, and what it pays."
 icon: "ranking-star"
 ---
+
+Dawn has **two separate ladders**. You sit on a rung of each, and they are reached in different ways.
+
+<Columns cols={2}>
+  <Card title="Cashback tier" icon="rotate-left" href="/rewards/cashback">
+    Set by **your own** 30-day trading volume. Decides how much of every fee you pay comes back to you.
+  </Card>
+
+  <Card title="Referral tier" icon="user-plus" href="/rewards/referrals">
+    Set by the 30-day volume of the people **you invited directly**. Decides your Level 1 share.
+  </Card>
+</Columns>
+
+Your own trading never moves your referral tier, and your network never moves your cashback tier.
+
+## Cashback ladder
+
+Seven rungs, on your own 30-day volume. The effective fee is what a [1% trading fee](/fees#the-trading-fee) actually costs you once cashback is back in your pocket.
+
+| Tier | 30-day volume | Cashback | Effective fee |
+| --- | --: | --: | --: |
+| **Silver** | \$0 – \$8.5k | 25% | 0.75% |
+| **Copper** | \$8.5k – \$85k | 30% | 0.70% |
+| **Ruby** | \$85k – \$450k | 35% | 0.65% |
+| **Gold** | \$450k – \$2M | 40% | 0.60% |
+| **Platinum** | \$2M – \$10M | 45% | 0.55% |
+| **Diamond** | \$10M – \$50M | 50% | 0.50% |
+| **Ultra** | \$50M+ | 55% | 0.45% |
+
+## Referral ladder
+
+Five rungs, on the 30-day volume of your direct invites. Only **Level 1** climbs; the two levels below it are flat at every tier.
+
+| Tier | 30-day referred volume | Level 1 | Level 2 | Level 3 |
+| --- | --: | --: | --: | --: |
+| **Silver** | \$0 – \$450k | 25% | 3% | 2% |
+| **Ruby** | \$450k – \$4.5M | 30% | 3% | 2% |
+| **Gold** | \$4.5M – \$22M | 35% | 3% | 2% |
+| **Platinum** | \$22M – \$90M | 40% | 3% | 2% |
+| **Diamond** | \$90M+ | 50% | 3% | 2% |
+
+<Note>
+  The two ladders do not share their rung names. There is no Copper or Ultra on the referral side, and **Ruby** sits at \$85k of your own volume but \$450k of referred volume. Being Gold on one says nothing about the other.
+</Note>
+
+Referral shares are taken from the fee **left after the trader's own cashback** — see [what the share is taken from](/rewards/referrals#what-the-share-is-taken-from).
+
+## How the window works
+
+Both ladders read a **rolling 30-day window**. Each day, volume from more than 30 days ago drops out and the tier is recalculated, so your rung follows recent activity rather than a lifetime total.
+
+<Tip>
+  Dropping a rung changes what you earn **from now on**. Everything already credited stays yours — moving down never claws anything back.
+</Tip>
+
+## Where to see yours
+
+Open **Rewards**. Each ladder shows your current rung, the next one, and how far along you are. Earnings from both land in one claimable balance — minimum **\$5**, once an hour. See [claiming](/rewards/overview#claiming).
