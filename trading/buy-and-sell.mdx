@@ -6,9 +6,9 @@ icon: "arrow-right-arrow-left"
 
 A market trade goes as soon as it can fill at the price available. It is the default way to trade in Dawn, and the fastest.
 
-<Warning>
+<Tip>
   **Tapping an amount sends the trade.** There is no separate confirm step on a normal buy or sell. Check the coin, the chain and the wallet before your finger is over a button.
-</Warning>
+</Tip>
 
 ## Before you tap
 
@@ -27,13 +27,11 @@ Four things decide what actually happens:
   <Step title="Open the coin">
     Paste its contract address. Make sure the panel is on **Buy**.
   </Step>
-
   <Step title="Choose a size">
     Tap a dollar button — **\$1 · \$5 · \$10 · \$25 · \$50** by default — or **\$x** to type any amount.
 
-    The minimum is **$1**. Some bridged routes ask for more.
+    The minimum is **\$1**. Some bridged routes ask for more.
   </Step>
-
   <Step title="Watch the card">
     Dawn quotes, signs and submits. One card updates itself in place: **Buying** → **submitted** → **filled**.
 
@@ -51,15 +49,12 @@ With [Auto Buy](/settings/overview#auto-buy) on, pasting a contract address buys
   <Step title="Open your holding">
     Send `/portfolio` and tap the coin, or paste its address again.
   </Step>
-
   <Step title="Switch to Sell">
     The sell buttons are **shares of what you hold**, not dollar amounts — **10% · 25% · 50% · 75% · 100%** by default.
   </Step>
-
   <Step title="Choose a share">
     Tap one, or **x%** to type your own. **100%** sells the position out completely.
   </Step>
-
   <Step title="Read the result">
     The card shows the USDC you received. It goes back onto your balance, ready to spend again.
   </Step>
@@ -86,7 +81,7 @@ With [Auto Buy](/settings/overview#auto-buy) on, pasting a contract address buys
 | Price moved past your slippage | Raise [slippage](/trading/execution#slippage), or trade a smaller size. |
 | Not enough balance | Deposit, or turn on [Auto-Adjust](/settings/guardrails#auto-adjust) to shrink the buy to what you can afford. |
 | Buy would move the price over 30% | [Liquidity protection](/settings/guardrails#degen-mode) stopped it. The pool is too thin for that size. |
-| Below the minimum | The route needs more than $1. The panel names the figure. |
+| Below the minimum | The route needs more than \$1. The panel names the figure. |
 | Gas above the sponsored cap | Set a [Gas Surplus](/settings/guardrails#gas-surplus) limit, or wait for the chain to quieten. |
 | No route found | Nothing could fill it right now. Liquidity may have moved or been pulled. |
 
