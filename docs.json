@@ -26,8 +26,7 @@
         "tab": "Home",
         "pages": [
           "index"
-        ],
-        "hidden": true
+        ]
       },
       {
         "tab": "Start Here",
