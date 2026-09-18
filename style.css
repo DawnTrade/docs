@@ -1,24 +1,31 @@
-/* On the landing page, don't highlight any top nav tab.
-   The root URL doesn't map to any visible tab, but Mintlify defaults
-   to the first tab as active. Neutralize the active state on / only. */
+/* Landing page: neutralize the auto-highlighted first tab.
+   Mintlify defaults to highlighting the first visible tab when the current
+   URL doesn't match any tab. Kill every possible active-state style on / */
 
-html[data-current-path="/"] nav-tabs-item[data-active],
-html[data-current-path="/"] .nav-tabs-item[data-active],
-html[data-current-path="/"] nav-tabs a[data-active],
-html[data-current-path="/"] nav-tabs [data-active],
-html[data-current-path="/"] [data-component-name="nav-tabs-item"][data-active] {
-  color: inherit !important;
+html[data-current-path="/"] nav-tabs a,
+html[data-current-path="/"] nav-tabs a *,
+html[data-current-path="/"] [class*="nav-tabs"] a,
+html[data-current-path="/"] [class*="nav-tabs"] a * {
+  color: rgb(113 113 122) !important;
   border-color: transparent !important;
   border-bottom-color: transparent !important;
   box-shadow: none !important;
   background-color: transparent !important;
-  font-weight: inherit !important;
+  font-weight: 400 !important;
+  opacity: 1 !important;
 }
 
-html[data-current-path="/"] nav-tabs-item[data-active]::after,
-html[data-current-path="/"] nav-tabs-item[data-active]::before,
-html[data-current-path="/"] .nav-tabs-item[data-active]::after,
-html[data-current-path="/"] .nav-tabs-item[data-active]::before {
+html[data-current-path="/"] nav-tabs a::after,
+html[data-current-path="/"] nav-tabs a::before,
+html[data-current-path="/"] [class*="nav-tabs"] a::after,
+html[data-current-path="/"] [class*="nav-tabs"] a::before {
   display: none !important;
   background-color: transparent !important;
+  border-color: transparent !important;
+}
+
+/* Match the light-mode default too */
+html[data-current-path="/"].dark nav-tabs a,
+html[data-current-path="/"] .dark nav-tabs a {
+  color: rgb(161 161 170) !important;
 }
