@@ -1,0 +1,91 @@
+---
+title: "Trending And Search"
+sidebarTitle: "Trending & Search"
+description: "Browse the top coins right now, narrow them to a chain, and order them by what you care about."
+icon: "fire"
+---
+
+When you already know the coin, paste its contract address. When you don't, the screener is where you look.
+
+## Opening it
+
+| Do this | And you get |
+| --- | --- |
+| Tap **🔥 Trending** on the home screen | The top coins right now |
+| `/trending` | The same screen |
+| `/search pepe` | Coins matching that phrase |
+| `/search` on its own | The screener again |
+| `$PEPE` | A search for that ticker |
+
+Each result is a link. Tap the ticker and the coin's [token panel](/trading/token-panel) opens with buy buttons ready.
+
+## Reading a result
+
+```text
+🟣 $PEPE · Pepe The Frog
+├ MC: $4.10M · Liq: $312K
+├ Vol: $1.20M · 1h: $84.2K · 1h +12.4%
+└ Holders: 3,204 · Age: 6d · ✅ Dex paid
+```
+
+| Line | What it means |
+| --- | --- |
+| **MC** | Market cap. |
+| **Liq** | How much money is in the coin's pool. |
+| **Vol** | Traded in the last 24 hours, and separately in the last **1h**. |
+| Price moves | Change over the windows the source has. |
+| **Holders** | How many addresses hold it. |
+| **Age** | How long ago the coin was created. |
+| **✅ Dex paid** | The team bought this coin's DexScreener profile. |
+
+Dawn asks the source for 30 coins and shows the best **8** after your filters.
+
+<Warning>
+  **Dex paid** means somebody paid for a listing profile. It is a sign of spend, not of safety — a scam with a budget can buy one too. Read [what the panel cannot tell you](/trading/token-panel#what-the-panel-cannot-tell-you) before you buy anything you found here.
+</Warning>
+
+## Narrowing the list
+
+### Chains
+
+The top row is **All** plus every chain Dawn trades. Picking one is not a filter over what you already have — Dawn asks that chain for **its own** best coins, so a quiet chain still fills a screen.
+
+### Order
+
+| Sort | What it ranks by |
+| --- | --- |
+| **Vol 24h** | Traded value over 24 hours |
+| **Vol 1h** | Traded value over the last hour — what is moving *now* |
+| **Trending** | The source's own momentum ranking |
+| **MCap** | Market cap |
+| **Liquidity** | Pool depth |
+| **Holders** | Number of holders |
+
+The screener opens on **Trending**. A typed search opens on **Vol 24h**.
+
+<Note>
+  **Vol 24h** and **Trending** are the source's own rankings, so they change which coins come back. The other four reorder the coins already on the list rather than asking for a fresh set — a deeper pool or an older coin further down the rankings will not be pulled up into view.
+</Note>
+
+### Toggles
+
+| Toggle | What it does |
+| --- | --- |
+| 🎓 **Graduated** | Only coins that have left their launchpad curve for a normal pool. |
+| ✅ **Dex paid** | Only coins whose DexScreener profile was bought. |
+
+Tap a lit toggle to switch it off. If a combination empties the list the buttons stay put, so you can always undo it.
+
+## What Dawn remembers
+
+The **chain** and the **sort** you last used are saved to your [profile](/wallets/profiles), so the screen opens the way you left it. Toggles are not saved — they start off each time.
+
+Results are cached for a minute, so tapping through filters is instant and everyone asking the same question costs the source one call.
+
+## If nothing comes back
+
+- **Searching a ticker?** Put a `$` in front — `$PEPE`.
+- **Know the coin?** Paste the contract address instead. Ticker search is a guess; an address is exact.
+- **Filters on?** Turn off Graduated or Dex paid, or go back to **All** chains.
+
+Coins on chains Dawn cannot trade are left out of every list, so a coin you have seen elsewhere may simply not be on [one of the six](/chains).

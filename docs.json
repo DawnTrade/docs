@@ -44,6 +44,7 @@
             "group": "Trading",
             "icon": "chart-candlestick",
             "pages": [
+              "trading/trending",
               "trading/token-panel",
               "trading/buy-and-sell",
               "trading/multi-wallet",
@@ -110,6 +111,7 @@
               "rewards/overview",
               "rewards/cashback",
               "rewards/referrals",
+              "rewards/tiers",
               "rewards/codes",
               "rewards/pump-fun"
             ]
