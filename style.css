@@ -1,12 +1,24 @@
 /* On the landing page, don't highlight any top nav tab.
    The root URL doesn't map to any visible tab, but Mintlify defaults
-   to the first tab as active. Hide that active state on / only. */
-html[data-current-path="/"] .nav-tabs-item[data-active] {
+   to the first tab as active. Neutralize the active state on / only. */
+
+html[data-current-path="/"] nav-tabs-item[data-active],
+html[data-current-path="/"] .nav-tabs-item[data-active],
+html[data-current-path="/"] nav-tabs a[data-active],
+html[data-current-path="/"] nav-tabs [data-active],
+html[data-current-path="/"] [data-component-name="nav-tabs-item"][data-active] {
   color: inherit !important;
+  border-color: transparent !important;
   border-bottom-color: transparent !important;
+  box-shadow: none !important;
+  background-color: transparent !important;
+  font-weight: inherit !important;
 }
 
+html[data-current-path="/"] nav-tabs-item[data-active]::after,
+html[data-current-path="/"] nav-tabs-item[data-active]::before,
 html[data-current-path="/"] .nav-tabs-item[data-active]::after,
 html[data-current-path="/"] .nav-tabs-item[data-active]::before {
   display: none !important;
+  background-color: transparent !important;
 }
