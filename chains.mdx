@@ -21,23 +21,6 @@ Your balance is USDC on Solana. A Solana coin is bought from it directly. A coin
 
 Dawn is not tied to a single bridge. If the route it normally uses has no path for a hop, or is having a bad day, it falls back to another one automatically rather than failing the trade. You never pick a bridge, and the cost of whichever route is used is [inside the quote](/fees#trading-on-another-chain) before you confirm.
 
-## Naming the chain yourself
-
-Most of the time you paste an address and Dawn works out the rest. Two cases need help:
-
-- **The same address exists on several chains.** EVM addresses can be identical across BNB Chain, Robinhood Chain, Base, Arc and Ink. Dawn asks which one you meant.
-- **Dawn cannot find the coin.** Put the chain in front of the address to skip the search:
-
-```text
-bnb 0x0000000000000000000000000000000000000000
-rh 0x0000000000000000000000000000000000000000
-base 0x0000000000000000000000000000000000000000
-arc 0x0000000000000000000000000000000000000000
-ink 0x0000000000000000000000000000000000000000
-```
-
-Solana addresses are unambiguous, so they never need a prefix.
-
 ## Moving money in and out
 
 You can deposit from more chains than Dawn trades on. The live lists are on the panels themselves — see [Deposit](/funds/deposit) and [Withdraw and send](/funds/withdraw).
