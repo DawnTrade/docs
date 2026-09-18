@@ -27,7 +27,7 @@
         "pages": [
           "index"
         ],
-        "icon": "house"
+        "hidden": true
       },
       {
         "tab": "Start Here",
@@ -148,7 +148,16 @@
           }
         ]
       }
-    ]
+    ],
+    "global": {
+      "anchors": [
+        {
+          "anchor": "Home",
+          "icon": "house",
+          "href": "/"
+        }
+      ]
+    }
   },
   "navbar": {
     "links": [
