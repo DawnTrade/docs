@@ -148,18 +148,14 @@
           }
         ]
       }
-    ],
-    "global": {
-      "anchors": [
-        {
-          "anchor": "Welcome",
-          "href": "/"
-        }
-      ]
-    }
+    ]
   },
   "navbar": {
     "links": [
+      {
+        "href": "/",
+        "label": "Welcome"
+      },
       {
         "href": "https://dawn.trade",
         "label": "Website"
