@@ -1,6 +1,6 @@
 {
   "$schema": "https://mintlify.com/docs.json",
-  "theme": "maple",
+  "theme": "sequoia",
   "name": "Dawn",
   "colors": {
     "primary": "#F84616",
@@ -21,98 +21,123 @@
         ]
       }
     ],
-    "groups": [
+    "tabs": [
       {
-        "group": "Get Started",
-        "icon": "rocket",
-        "pages": [
-          "index",
-          "quickstart",
-          "chains",
-          "fees"
+        "tab": "Start Here",
+        "groups": [
+          {
+            "group": "Get Started",
+            "icon": "rocket",
+            "pages": [
+              "index",
+              "quickstart",
+              "chains",
+              "fees"
+            ]
+          }
         ]
       },
       {
-        "group": "Wallets & Profiles",
-        "icon": "wallet",
-        "pages": [
-          "wallets/wallets",
-          "wallets/profiles",
-          "wallets/import-export",
-          "wallets/security"
+        "tab": "Trading",
+        "groups": [
+          {
+            "group": "Trading",
+            "icon": "chart-candlestick",
+            "pages": [
+              "trading/token-panel",
+              "trading/buy-and-sell",
+              "trading/multi-wallet",
+              "trading/execution",
+              "trading/portfolio",
+              "trading/activity",
+              "trading/pnl-cards"
+            ]
+          },
+          {
+            "group": "Automated Orders",
+            "icon": "crosshairs",
+            "pages": [
+              "orders/overview",
+              "orders/limit",
+              "orders/ladder",
+              "orders/dca",
+              "orders/tp-sl",
+              "orders/manage"
+            ]
+          }
         ]
       },
       {
-        "group": "Funding",
-        "icon": "arrow-right-arrow-left",
-        "pages": [
-          "funds/deposit",
-          "funds/withdraw",
-          "funds/move-to-balance"
+        "tab": "Account",
+        "groups": [
+          {
+            "group": "Wallets & Profiles",
+            "icon": "wallet",
+            "pages": [
+              "wallets/wallets",
+              "wallets/profiles",
+              "wallets/import-export",
+              "wallets/security"
+            ]
+          },
+          {
+            "group": "Funding",
+            "icon": "arrow-right-arrow-left",
+            "pages": [
+              "funds/deposit",
+              "funds/withdraw",
+              "funds/move-to-balance"
+            ]
+          },
+          {
+            "group": "Settings",
+            "icon": "sliders",
+            "pages": [
+              "settings/overview",
+              "settings/guardrails",
+              "settings/presets"
+            ]
+          }
         ]
       },
       {
-        "group": "Trading",
-        "icon": "chart-candlestick",
-        "pages": [
-          "trading/token-panel",
-          "trading/buy-and-sell",
-          "trading/multi-wallet",
-          "trading/execution",
-          "trading/portfolio",
-          "trading/activity",
-          "trading/pnl-cards"
+        "tab": "Rewards",
+        "groups": [
+          {
+            "group": "Rewards",
+            "icon": "gift",
+            "pages": [
+              "rewards/overview",
+              "rewards/cashback",
+              "rewards/referrals",
+              "rewards/codes",
+              "rewards/pump-fun"
+            ]
+          },
+          {
+            "group": "Sharing & Groups",
+            "icon": "users",
+            "pages": [
+              "social/share-links",
+              "social/group-links",
+              "social/groups"
+            ]
+          }
         ]
       },
       {
-        "group": "Automated Orders",
-        "icon": "crosshairs",
-        "pages": [
-          "orders/overview",
-          "orders/limit",
-          "orders/ladder",
-          "orders/dca",
-          "orders/tp-sl",
-          "orders/manage"
-        ]
-      },
-      {
-        "group": "Rewards",
-        "icon": "gift",
-        "pages": [
-          "rewards/overview",
-          "rewards/cashback",
-          "rewards/referrals",
-          "rewards/codes",
-          "rewards/pump-fun"
-        ]
-      },
-      {
-        "group": "Sharing & Groups",
-        "icon": "users",
-        "pages": [
-          "social/share-links",
-          "social/group-links",
-          "social/groups"
-        ]
-      },
-      {
-        "group": "Settings",
-        "icon": "sliders",
-        "pages": [
-          "settings/overview",
-          "settings/guardrails",
-          "settings/presets"
-        ]
-      },
-      {
-        "group": "Help",
-        "icon": "life-ring",
-        "pages": [
-          "help/commands",
-          "help/troubleshooting",
-          "help/glossary",
-          "help/support"
+        "tab": "Help",
+        "groups": [
+          {
+            "group": "Help",
+            "icon": "life-ring",
+            "pages": [
+              "help/commands",
+              "help/troubleshooting",
+              "help/glossary",
+              "help/support"
+            ]
+          }
         ]
       }
     ]
@@ -157,5 +182,17 @@
   "logo": {
     "light": "/images/Orange-LogoOnly.png",
     "dark": "/images/Orange-LogoOnly.png"
+  },
+  "appearance": {
+    "default": "dark"
+  },
+  "background": {
+    "color": {
+      "light": "#FFFFFF",
+      "dark": "#111111"
+    }
+  },
+  "fonts": {
+    "family": "Inter"
   }
 }
