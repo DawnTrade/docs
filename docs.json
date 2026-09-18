@@ -4,8 +4,8 @@
   "name": "Dawn",
   "colors": {
     "primary": "#F84616",
-    "light": "#FF8A5B",
-    "dark": "#D93A0F"
+    "light": "#F84616",
+    "dark": "#F84616"
   },
   "favicon": {
     "light": "/images/favicon.svg",
@@ -191,7 +191,7 @@
   "background": {
     "color": {
       "light": "#FFFFFF",
-      "dark": "#111111"
+      "dark": "#0A0A0A"
     }
   },
   "fonts": {
