@@ -148,15 +148,7 @@
           }
         ]
       }
-    ],
-    "global": {
-      "anchors": [
-        {
-          "anchor": "Welcome",
-          "href": "/"
-        }
-      ]
-    }
+    ]
   },
   "navbar": {
     "links": [
