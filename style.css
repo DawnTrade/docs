@@ -6,7 +6,7 @@ html[data-current-path="/"] nav-tabs a,
 html[data-current-path="/"] nav-tabs a *,
 html[data-current-path="/"] [class*="nav-tabs"] a,
 html[data-current-path="/"] [class*="nav-tabs"] a * {
-  color: rgb(113 113 122) !important;
+  color: rgb(244 244 245) !important;
   border-color: transparent !important;
   border-bottom-color: transparent !important;
   box-shadow: none !important;
@@ -24,8 +24,8 @@ html[data-current-path="/"] [class*="nav-tabs"] a::before {
   border-color: transparent !important;
 }
 
-/* Match the light-mode default too */
-html[data-current-path="/"].dark nav-tabs a,
-html[data-current-path="/"] .dark nav-tabs a {
-  color: rgb(161 161 170) !important;
+/* Light mode: use near-black so tabs stay legible on white background */
+html[data-current-path="/"]:not(.dark) nav-tabs a,
+html[data-current-path="/"]:not(.dark) [class*="nav-tabs"] a {
+  color: rgb(24 24 27) !important;
 }
