@@ -1,6 +1,6 @@
 {
   "$schema": "https://mintlify.com/docs.json",
-  "theme": "sequoia",
+  "theme": "palm",
   "name": "Dawn",
   "colors": {
     "primary": "#F84616",
@@ -196,5 +196,8 @@
   },
   "fonts": {
     "family": "Inter"
+  },
+  "styling": {
+    "codeblocks": "system"
   }
 }
