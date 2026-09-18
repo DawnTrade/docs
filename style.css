@@ -6,7 +6,7 @@ html[data-current-path="/"] nav-tabs a,
 html[data-current-path="/"] nav-tabs a *,
 html[data-current-path="/"] [class*="nav-tabs"] a,
 html[data-current-path="/"] [class*="nav-tabs"] a * {
-  color: rgb(244 244 245) !important;
+  color: rgb(113 113 122) !important;
   border-color: transparent !important;
   border-bottom-color: transparent !important;
   box-shadow: none !important;
