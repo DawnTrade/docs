@@ -152,8 +152,7 @@
     "global": {
       "anchors": [
         {
-          "anchor": "Home",
-          "icon": "house",
+          "anchor": "Welcome",
           "href": "/"
         }
       ]
