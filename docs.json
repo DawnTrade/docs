@@ -23,13 +23,18 @@
     ],
     "tabs": [
       {
+        "tab": "Home",
+        "pages": [
+          "index"
+        ]
+      },
+      {
         "tab": "Start Here",
         "groups": [
           {
             "group": "Get Started",
             "icon": "rocket",
             "pages": [
-              "index",
               "quickstart",
               "chains",
               "fees"
