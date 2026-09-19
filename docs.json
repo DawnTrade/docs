@@ -25,11 +25,11 @@
       {
         "tab": "Start Here",
         "pages": [
-          "chains",
           {
             "group": "Get Started",
             "icon": "rocket",
             "pages": [
+              "chains",
               "quickstart",
               "trading/buy-and-sell",
               "trading/token-panel",
