@@ -24,52 +24,18 @@
     "tabs": [
       {
         "tab": "Start Here",
-        "groups": [
+        "pages": [
+          "chains",
           {
             "group": "Get Started",
             "icon": "rocket",
             "pages": [
               "quickstart",
-              "chains",
-              "fees"
-            ]
-          }
-        ]
-      },
-      {
-        "tab": "Trading",
-        "groups": [
-          {
-            "group": "Trading",
-            "icon": "chart-candlestick",
-            "pages": [
-              "trading/trending",
-              "trading/token-panel",
               "trading/buy-and-sell",
-              "trading/multi-wallet",
-              "trading/execution",
-              "trading/portfolio",
-              "trading/activity",
-              "trading/pnl-cards"
+              "trading/token-panel",
+              "trading/portfolio"
             ]
           },
-          {
-            "group": "Automated Orders",
-            "icon": "crosshairs",
-            "pages": [
-              "orders/overview",
-              "orders/limit",
-              "orders/ladder",
-              "orders/dca",
-              "orders/tp-sl",
-              "orders/manage"
-            ]
-          }
-        ]
-      },
-      {
-        "tab": "Account",
-        "groups": [
           {
             "group": "Wallets & Profiles",
             "icon": "wallet",
@@ -101,8 +67,36 @@
         ]
       },
       {
-        "tab": "Rewards",
+        "tab": "Features",
         "groups": [
+          {
+            "group": "Trading",
+            "icon": "chart-candlestick",
+            "pages": [
+              "trading/trending",
+              "trading/multi-wallet",
+              "trading/execution",
+              "trading/activity",
+              "trading/pnl-cards"
+            ]
+          },
+          {
+            "group": "Automated Orders",
+            "icon": "crosshairs",
+            "pages": [
+              "orders/overview",
+              "orders/limit",
+              "orders/ladder",
+              "orders/dca",
+              "orders/tp-sl",
+              "orders/manage"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Rewards",
+        "pages": [
           {
             "group": "Rewards",
             "icon": "gift",
@@ -123,7 +117,8 @@
               "social/group-links",
               "social/groups"
             ]
-          }
+          },
+          "fees"
         ]
       },
       {
