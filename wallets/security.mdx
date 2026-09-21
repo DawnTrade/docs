@@ -18,6 +18,12 @@ Your login is your Telegram account. Protecting that account is the single most 
   Turn on **Two-Step Verification** in Telegram: Settings → Privacy and Security → Two-Step Verification. Without it, anyone who takes over your phone number takes over your Telegram, and with it your Dawn account.
 </Tip>
 
+## Two-factor authentication on sends and exports
+
+Telegram's two-step verification protects the login. Dawn's [two-factor authentication](/wallets/two-factor) protects what matters if the login is lost anyway: with it on, nothing leaves a wallet and no key is shown until a second factor — an authenticator code, a passkey or an SMS code — is given. Trading never asks for it, so it costs nothing day to day. Turn it on from `/wallets` → **🔐 2FA**.
+
+Every send and withdrawal is also signed by **you**, in the wallet app, rather than by the bot — see [Approve it in the wallet app](/funds/withdraw#approve-it-in-the-wallet-app).
+
 ## What Dawn will never ask for
 
 | Never | Why |
@@ -25,6 +31,7 @@ Your login is your Telegram account. Protecting that account is the single most 
 | Your private key | Dawn never needs it. Importing happens encrypted, inside the app. |
 | A seed phrase | Dawn wallets do not have one. |
 | A Telegram login code | Anyone asking for one is taking over your account. |
+| A 2FA code | Privy asks for it inside its own window, never in a chat. |
 | Payment to unlock funds | Withdrawals never require a deposit first. |
 
 Support is reached through [@DawnContactBot](https://t.me/DawnContactBot) and asks for none of these. Treat anyone who does — including an account using the Dawn name and logo — as an impostor.

@@ -97,7 +97,8 @@
             "group": "Copytrade",
             "icon": "robot",
             "pages": [
-              "copytrade/overview"
+              "copytrade/overview",
+              "copytrade/manage"
             ]
           }
         ]

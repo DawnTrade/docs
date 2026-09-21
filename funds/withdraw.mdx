@@ -32,12 +32,33 @@ You can send **USDC**, a chain's own coin, or **any token you hold**, to an exte
     Anything arriving on a chain other than Solana needs at least **\$1 per recipient**.
   </Step>
 
-  <Step title="Check the confirmation and send">
+  <Step title="Check the confirmation">
     Dawn shows what leaves, what arrives, the destination address and chain, and roughly how many seconds it takes. The amount is fixed when it goes; the price can move a little on the way.
+  </Step>
 
-    The card updates itself from **Sent** to confirmed.
+  <Step title="Approve it in the wallet app">
+    The card turns into **✍️ Approve to send** with one button: **✅ Approve in Wallet**. It opens the wallet manager on this send, you check it once more and tap **Approve**, and the transaction is signed with your own wallet's key. Nothing leaves until you do.
+
+    Back in the chat, the card updates itself from **⏳ Sent** to **✅ Sent**.
   </Step>
 </Steps>
+
+## Approve it in the wallet app
+
+Every send and withdrawal is signed by **you**, in the wallet manager mini app, rather than by the bot. That is what the **Approve in Wallet** button is for.
+
+| What you see | What it means |
+| --- | --- |
+| **✍️ Approve to send** / **Approve to withdraw** | Recorded and waiting for your signature. Tap the button to sign it. |
+| **⚠️** a reason on the same card | The send could not be built — usually not enough balance or gas. Sort it out, then tap **Approve in Wallet** again; the send is still open. |
+| **⏳ Sent** / **⏳ Withdrawing** | Signed and on chain. The card follows it. |
+| **✅ Sent** / **🟢 Withdrawn** | Done. |
+
+A send nobody signs **expires after five minutes**, and the card says so — start it again from the chat. With [two-factor authentication](/wallets/two-factor) on, Privy asks for it before the signature.
+
+<Note>
+  Approving works from Telegram on a **phone or desktop**. Telegram Web runs mini apps in a frame that cannot sign, and the app says so if you open it there.
+</Note>
 
 <Warning>
   Check the address and the chain yourself. A sent transaction cannot be recalled, and an address that is right on one network can be wrong on another. Never paste a token's contract address as the recipient.
@@ -76,6 +97,9 @@ To move a coin you hold without selling it, choose it in the send flow rather th
 
 | What you see | What to do |
 | --- | --- |
+| **Approve to send** with a ⚠️ line | It could not be built — the reason is on the card, usually balance or gas. Fix it and tap **Approve in Wallet** again. |
+| _Not approved in time_ | Nobody signed it within five minutes. Start the send again. |
+| The app asks for the Telegram app | Telegram Web cannot sign a send. Approve it from your phone or desktop. |
 | **Transfer failed** | Read the reason on the card. Recipients marked ❌ received nothing. |
 | **Withdrawal refunded** | The route could not deliver. The USDC is back on your balance. |
 | Not enough available | The fee is charged on top of the amount unless you sent `max`. Leave room for it, or use `max`. |
