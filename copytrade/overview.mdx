@@ -1,0 +1,108 @@
+---
+title: "Copytrade"
+sidebarTitle: "Overview"
+description: "Follow a wallet or a fomo trader and have their buys, and their sells if you want them, placed from your own wallet."
+icon: "robot"
+---
+
+Copytrade follows a wallet you choose. When it buys, you buy. If you want, when it sells, you sell. Each copy is sized the way you set and comes out of your own balance.
+
+Send `/copytrade`, or tap **🤖 Copytrade** on the home screen. Each trader you follow is a **task**, with its own name, size and settings.
+
+## Who you can copy
+
+| Paste | What Dawn follows |
+| --- | --- |
+| A **Solana address** | That wallet, on Solana. |
+| An **EVM address** (`0x…`) | That address on the EVM chains you tick — BNB Chain, Robinhood Chain, Base, Arc and Ink. |
+| A **fomo handle** — `@name`, or a fomo.family profile link | That trader's wallets, on every chain they trade. |
+
+Paste a wallet address into the chat on its own and Dawn offers **🤖 Copytrade This Wallet**.
+
+### fomo traders
+
+Paste a [fomo](https://fomo.family) handle and Dawn finds the wallets behind it. This takes a few seconds.
+
+| Card | What it means |
+| --- | --- |
+| ✅ **Found @name** | Their wallets are listed. Carry on with setup. |
+| 🤷 _Their wallet can't be worked out yet_ | Try again after they have traded, or paste their address if you have it. |
+| ❌ *Couldn't find them* | No such handle. Check the spelling. |
+
+## Follow a trader
+
+<Steps>
+  <Step title="Who to copy">
+    Tap **➕ Follow a Trader** and paste the address or handle. For an EVM address, tick the chains to copy it on — or **All Chains** — and **Continue**.
+  </Step>
+
+  <Step title="Name the task">
+    Keep the suggested name, or type your own — up to **24 characters**.
+
+    <Note>
+      Already have a task? **✅ Same as Last Time** gives the new task the same settings as your most recent one and only asks for a name. **🛠 Set Up Fresh** goes through every step.
+    </Note>
+  </Step>
+
+  <Step title="Buy amount">
+    What each copied buy spends: a **fixed dollar amount**, or **📊 % of the Leader's Buy**.
+
+    In percent mode, pick the share — **5% · 10% · 25% · 50% · 100%**, or any whole percent from 1 to 500 — then a **max per buy**: **\$10 · \$25 · \$50 · \$100**, your own figure, or **No cap**.
+  </Step>
+
+  <Step title="What to copy">
+    **Buys Only** — you decide when to sell. **Buys + Sells** — when they sell, you sell the same share of yours.
+  </Step>
+
+  <Step title="Slippage">
+    **10% · 15% · 20% · 30%**, or type your own between 0.1% and 50%. The default is **15%**.
+  </Step>
+
+  <Step title="Stop loss and take profit">
+    A quick pick, a typed level like `-30%` or `2x`, or **⏭ Skip · Off**. Applied to every buy the task makes.
+  </Step>
+
+  <Step title="Minimum market cap">
+    Skip buys into coins smaller than this. **50K · 100K · 250K · 1M**, a figure like `100k`, or **⏭ Skip · No Minimum**. More [filters](/copytrade/manage#filters) are on the task page.
+  </Step>
+
+  <Step title="Review and create">
+    Check the summary and tap **✅ Create task**. The task is live from that moment.
+  </Step>
+</Steps>
+
+<Warning>
+  A copy is a trade you did not look at. Size tasks accordingly, and set a stop loss on any task you will not be watching.
+</Warning>
+
+## What lands in your chat
+
+| Card | What it means |
+| --- | --- |
+| 🟢 **Copytrade buy filled** / **sell filled** | Your copy went through. The card names the task, what you spent or received, and what the leader did. A filled buy has a **📉 Sell** button for a quick exit. |
+| 🔴 **Buy failed** / **Sell failed** | The copy did not go through. The card names the reason, and your USDC is back on your balance. |
+| ⏩ **Copytrade Skipped** | The copy was not placed, and the card says why: a filter, a size under \$1, or not enough balance. |
+
+Every copy, placed or skipped, is also listed in the task's [activity](/copytrade/manage#activity).
+
+## The task list
+
+`/copytrade` lists every task across all your wallets and profiles, with 🟢 or 🔴 for live or paused, its size and chains, and two links: **Manage** opens the [task page](/copytrade/manage), **Share** passes the trader to someone else.
+
+| Button | What it does |
+| --- | --- |
+| **➕ Follow a Trader** | Start setup |
+| **▶️ Resume All** / **⏸ Pause All** | Every task at once |
+| **🕘 Activity** | Every copy across every task |
+| **🗑 Delete** | Pick a task to remove |
+
+## Limits
+
+| | |
+| --- | --- |
+| Tasks | **50** per wallet |
+| Size | At least **\$1** per copy. Percent mode 1%–500%, cap optional. |
+| Name | Up to 24 characters, unique among your tasks |
+| One task per trader | The same wallet cannot be followed twice from one of yours |
+
+A task buys from the wallet it was created on, and its positions land there. See [Managing a task](/copytrade/manage) for everything you can change afterwards.

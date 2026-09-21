@@ -5,12 +5,15 @@ description: "Bring an existing wallet into Dawn, or take a private key out."
 icon: "key"
 ---
 
-Both live in the **wallet manager**, a mini app that opens from inside Telegram. Send `/wallets` and use the two buttons at the bottom of the screen:
+Both live in the **wallet manager**, a mini app that opens from inside Telegram. Send `/wallets` and use the buttons under the list:
 
 | Button | What it does |
 | --- | --- |
 | 🔑 **Export** | Reveal a wallet's private key, through Privy's own secure window |
 | 🗝 **Import** | Bring a wallet you already own into Dawn |
+| 🔐 **2FA** | Put a second check on exports and sends — see [Two-factor authentication](/wallets/two-factor) |
+
+The same app is where every [send and withdrawal is approved](/funds/withdraw#approve-it-in-the-wallet-app), and where a [card deposit](/funds/deposit#buying-with-a-card) starts.
 
 <Warning>
   A private key is complete control of a wallet. Type one only into the import form inside the official Dawn app. Never send a key to support, to a group, to another person, or into any chat — including this one.
@@ -62,7 +65,7 @@ That is also why it is not done in the chat. A key typed as a Telegram message w
   </Step>
 
   <Step title="Reveal and store it">
-    The key is shown by Privy in its own secure window. Save it somewhere only you can reach — a password manager, not a screenshot and not a chat.
+    With [2FA](/wallets/two-factor) on, Privy asks for it first. The key is then shown by Privy in its own secure window. Save it somewhere only you can reach — a password manager, not a screenshot and not a chat.
   </Step>
 </Steps>
 

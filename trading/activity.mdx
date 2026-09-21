@@ -4,44 +4,72 @@ description: "Every position you have closed, with the profit you actually took.
 icon: "clock-rotate-left"
 ---
 
-Send `/activity`, or `/history`. Where the [portfolio](/trading/portfolio) is what you still hold, Activity is what you have finished with.
+Send `/activity`, or `/history`, or tap **🕘 Activity** at the bottom of the [portfolio](/trading/portfolio). Where the portfolio is what you hold, Activity is the log: every filled buy and every filled sell, newest first.
 
-A position lands here once you have sold out of it. The profit shown is **realised** — already banked, and it will not move again.
-
-## Reading a closed position
+## Reading a trade
 
 ```text
-🟡 WIF
-├ Invested: $180.00 → $402.50 back
-├ PnL: +$222.50 (+123.6%)
-└ Sells: 3 · 6d ago
+🟣 🟢 Buy $WIF
+├ $50.00 → 1,240 WIF
+└ 3h ago · Tx
+
+🟣 🔴 Sell $WIF · 💳 Wallet 2
+├ 620 WIF → $41.30 · 🟢 +$16.30 (+65.2%)
+└ 12m ago · PnL Card · Tx
 ```
 
 | Line | What it means |
 | --- | --- |
-| **Invested** | What you spent getting in. |
-| **back** | What you got out, after fees. |
-| **PnL** | The difference. This is money you have. |
-| **Sells** | How many sells it took, and how long ago the last one was. |
+| **Buy** | What you spent, and how many coins came back. |
+| **Sell** | How many coins went out and what came back, then what that sell **realised** against the cost of those coins. |
+| **PnL Card** | On a sell: renders the result as an image — see [PnL banners](/trading/pnl-cards). |
+| **Tx** | The transaction on the chain's explorer. |
 
-The header line totals it: your realised PnL, and the capital it was made on.
+The wallet is named on a line only when the list spans more than one. Tap the ticker to open the coin's [panel](/trading/token-panel).
 
-## Filters
+The log covers your most recent 200 trades.
+
+## Sorting
+
+**↕️ Sort** cycles three orders, and the button says which one is on:
+
+| Sort | Puts first |
+| --- | --- |
+| **Newest** | The most recent trade — the default |
+| **PnL** | The sell that made the most, in dollars |
+| **PnL %** | The sell that made the most as a percentage |
+
+Buys have no result, so under the PnL sorts they come after every sell.
+
+## Narrowing the list
+
+Two rows sit on the page itself and fold open with a tap:
+
+| Fold | What it does |
+| --- | --- |
+| 💳 **Wallets** | Show only the wallets you tick. Only there when the profile has more than one. |
+| ⛓ **Chains** | Show only the chains you tick. |
+
+**🔍 Filters** holds the rest:
 
 | Filter | What it does |
 | --- | --- |
-| **Chains** | Show only the chains you pick. |
-| **Wins / Losses** | Look at one side on its own. |
+| **Result** | All, **Wins** or **Losses**. Both look only at sells, since a buy has no result yet. |
 | **Token** | Paste a contract address to narrow the list to that coin. Send `all` to clear it. |
+| **↺ Reset filters** | Everything back to the default. |
 
-Filtering to losses is the more useful half of that pair, and the one most people skip.
+The page says how many trades the filters left out, so nothing goes quietly missing. Filtering to losses is the more useful half of that pair, and the one most people skip.
+
+## Closed positions
+
+Activity is trade by trade. For the same history summed up **per coin** — what went in, what came back and the profit across every sell it took — switch the [portfolio](/trading/portfolio#realised-versus-unrealised) to **🚫 Closed**.
 
 ## What is not here
 
-- **Open positions.** They are in the [portfolio](/trading/portfolio) until you sell out.
-- **Partial sells.** Selling half a position realises half the profit, but the position stays open and stays in the portfolio. It arrives here when the last of it is sold.
-- **Coins you moved out.** Sending a coin to another address is not a sale, so there is no realised profit to record.
+- **Open positions and their unrealised profit.** They are in the [portfolio](/trading/portfolio).
+- **Copies that were skipped.** Copies a task placed are trades like any other and appear here; skipped ones are on the task's own [activity](/copytrade/manage#activity).
+- **Coins you moved out.** Sending a coin to another address is not a sale, so nothing is realised.
 
 <Note>
-  A coin that came in from outside Dawn — transferred to your address rather than bought — has no purchase for Dawn to price against, so its cost basis may be incomplete. The profit figure is only as good as the history behind it.
+  A coin that came in from outside Dawn — transferred to your address rather than bought — has no purchase for Dawn to price against, so the profit on its sells may be incomplete. The figure is only as good as the history behind it.
 </Note>

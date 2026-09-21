@@ -43,6 +43,7 @@
               "wallets/wallets",
               "wallets/profiles",
               "wallets/import-export",
+              "wallets/two-factor",
               "wallets/security"
             ]
           },
@@ -90,6 +91,14 @@
               "orders/dca",
               "orders/tp-sl",
               "orders/manage"
+            ]
+          },
+          {
+            "group": "Copytrade",
+            "icon": "robot",
+            "pages": [
+              "copytrade/overview",
+              "copytrade/manage"
             ]
           }
         ]

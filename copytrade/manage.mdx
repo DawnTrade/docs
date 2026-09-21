@@ -1,0 +1,118 @@
+---
+title: "Managing A Task"
+sidebarTitle: "Managing Tasks"
+description: "Pause, resize, retune and filter a copytrade task, and read what it has done."
+icon: "sliders"
+---
+
+Open a task from **Manage** on the [task list](/copytrade/overview#the-task-list).
+
+## The task page
+
+```text
+🤖 @trader
+
+Status
+└ 🟢 Live
+
+Trader
+├ @trader on fomo
+├ 7xKX…Qm3p
+├ Chain: 🟣 Solana
+├ 0x4a1b…9c2d
+└ Chains: 🟡 BNB Chain · 🔵 Base
+
+Size
+├ 10% of the leader's buy, max $50.00
+└ Mirror Sells: On
+
+Your Performance
+├ Invested: $312.00
+├ Current Value: $401.20
+├ Unrealised PnL: 🟢 +$89.20 (+28.6%)
+├ Realised PnL: 🟢 +$44.10
+└ Trades: 6 buys · 2 sells
+```
+
+| Line | What it means |
+| --- | --- |
+| **Invested** | What the task's buys have cost |
+| **Current Value** | What the coins it bought, and you still hold, are worth now |
+| **Unrealised PnL** | Profit or loss on those coins at today's price |
+| **Realised PnL** | Profit or loss banked by selling coins the task bought |
+| **Trades** | Buys and sells filled |
+
+Coins a task buys are ordinary positions. They show in your [portfolio](/trading/portfolio), and you can sell them or set a [TP/SL](/orders/tp-sl) on them yourself.
+
+| Button | What it does |
+| --- | --- |
+| **⏸ Pause** / **▶️ Resume** | Stop copying, or start again. Positions stay yours either way. |
+| **💵 Edit Size** | A new fixed amount, or a new percent and cap |
+| **💳 Change Wallet** | Move the task to another of your wallets — see [Wallet](#wallet) |
+| **⚙️ Settings** | Mirror sells, slippage, MEV, gas, auto sell, chains, name — see [Settings](#settings) |
+| **🔍 Filters** | Which coins the task will buy — see [Filters](#filters) |
+| **🔗 Share Task** | Pass this trader to someone else — see [Sharing a task](#sharing-a-task) |
+| **🕘 Activity** | What the task has done — see [Activity](#activity) |
+| **🗑 Delete Copytrade** | Remove the task, after a confirm. Anything it bought stays yours. |
+
+## Settings
+
+Each task has its own trading settings. **Default** means it uses the [profile's](/settings/overview) setting; change it here and only this task changes.
+
+| Setting | What it does |
+| --- | --- |
+| 🔁 **Mirror Sells** | On: when the leader sells, you sell the same share. Off: their sells are ignored. |
+| 📈 **Auto Sell** | A stop loss and take profit applied to every buy the task makes, as a percent or a multiple — `-30%`, `2x`. |
+| 🎯 **Slippage** | The task's own limit. **15%** unless you changed it. |
+| 🛡 **MEV Protection** | See [Execution](/trading/execution#mev-protection). |
+| ⛽️ **Gas** | Low, Medium or High, with **📡 Live Fees** beside it — see [Execution](/trading/execution#gas-preset). |
+| 📡 **Live Fees** | See [Execution](/trading/execution#live-fees). |
+| 🌐 **Chains** | fomo tasks only — see [Chains](#chains). |
+| ✏️ **Rename Task** | Up to 24 characters. |
+
+## Filters
+
+Filters decide which coins the task will buy. A buy into a coin that fails a filter, or has no data for it yet, is skipped. Sells are never filtered.
+
+| Filter | Skips a buy when | Type it as |
+| --- | --- | --- |
+| 💎 **Market Cap Min** | The coin is smaller than this | `50k`, `$1.5m` |
+| 💎 **Market Cap Max** | The coin is bigger than this | `5m` |
+| 💧 **Liquidity Min** | The pool holds less than this | `20k` |
+| 📊 **Volume 24h Min** | Less than this traded in the last day | `100k` |
+| 👥 **Holders Min** | Fewer holders than this | `200` |
+| 🐋 **Top 10 Holders Max** | The top ten wallets hold more than this share | `30` for 30% |
+| ⏱ **Token Age Min** | The coin is younger than this, in minutes | `10` for 10 minutes |
+
+Tap a filter and type a value, or `off` to clear it. **♻️ Reset Filters** clears them all.
+
+<Tip>
+  **Token Age Min** and **Liquidity Min** keep a task out of brand-new and thin coins without stopping it copying real moves.
+</Tip>
+
+## Chains
+
+A task on a fomo trader copies them on every chain they trade. **🌐 Chains** in the task's settings shows each one as a tick: untick a chain to stop copying there, tick it to start again. A task keeps at least one chain.
+
+A task made from an address is fixed to the chains you picked when you created it.
+
+## Wallet
+
+A task buys from the wallet it was made on. **💳 Change Wallet** moves it to another of your wallets, in any profile. Coins already bought stay in the wallet that bought them.
+
+## Activity
+
+**🕘 Activity** lists everything the task has done, newest first. The same button on the task list shows every task together.
+
+| Entry | What it means |
+| --- | --- |
+| 🟢 **Bought** / **Sold** | A copy that went through, with the amount |
+| 🔴 **Buy Failed** / **Sell Failed** | A copy that did not go through, with the reason |
+| ⏭ **Buy Skipped** / **Sell Skipped** | Not placed: a filter, a size under \$1, or nothing held to sell |
+| 🚫 **Buy Refused** / **Sell Refused** | Not placed: not enough balance, or no route |
+
+Tap a coin's name to open its panel.
+
+## Sharing a task
+
+**🔗 Share Task** opens Telegram's share sheet with a link to this trader. Whoever taps it lands in their own Dawn at setup with the trader already filled in.

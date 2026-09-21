@@ -53,13 +53,28 @@ Every route has a minimum, shown on its panel. Check it before you send.
 Two things arrive **in your wallet** rather than on your balance:
 
 - **SOL** sent to your Solana address.
+- **A stablecoin other than USDC** sent to your Solana address — USDT and the like. It shows under Positions, where you can sell it or move it to your balance.
 - **Any coin** someone transfers to you, or that you send in yourself outside a deposit route.
 
 These are yours, but they are not spendable USDC until you move them across. That is one tap — see [Move coins to your balance](/funds/move-to-balance).
 
 ## Buying with a card
 
-Dawn does not sell USDC directly. Buy it on an exchange or an on-ramp you already use, then withdraw it to your Dawn deposit address, choosing **USDC** and **Solana** as the network.
+The deposit screen opens with a **💳 Buy with card** button above the chain list. It opens the wallet app on a page for the wallet you are depositing into, with one button: **Open MoonPay**.
+
+<Steps>
+  <Step title="Open MoonPay">
+    MoonPay's buy page opens with the currency set to **USDC on Solana** and your wallet address already filled in.
+  </Step>
+  <Step title="Pay">
+    MoonPay asks for the amount and takes the card payment. Its fees are shown before you pay.
+  </Step>
+  <Step title="Wait a few minutes">
+    The USDC lands on your balance a few minutes after you pay.
+  </Step>
+</Steps>
+
+If you would rather buy elsewhere, any exchange works: withdraw from it to your Dawn deposit address, choosing **USDC** and **Solana** as the network.
 
 ## If the balance has not changed
 

@@ -36,6 +36,14 @@ Start with three questions, because they explain most of it:
 
     If the amount was rejected for being too small, remember the fee is added on top of what you typed unless you sent `max`.
   </Accordion>
+
+  <Accordion title="A send is waiting on Approve in Wallet" icon="signature">
+    Every send and withdrawal is approved by you in the wallet app. Tap **✅ Approve in Wallet**, check the summary and tap **Approve**; with [2FA](/wallets/two-factor) on, Privy asks for it first.
+
+    A ⚠️ line on the card means the send could not go out — usually balance or gas. Sort it out and tap Approve again; the send stays open.
+
+    A send you do not approve within **five minutes** expires. Start it again from the chat. Telegram Web cannot approve a send — use the phone or desktop app.
+  </Accordion>
 </AccordionGroup>
 
 ## Trades
@@ -74,6 +82,26 @@ Start with three questions, because they explain most of it:
 
   <Accordion title="I cannot find an order I placed" icon="magnifying-glass">
     `/limitorders` is scoped to the wallet and profile you are in. Orders keep running in every profile — switch with `/profiles` and look again.
+  </Accordion>
+</AccordionGroup>
+
+## Copytrade
+
+<AccordionGroup>
+  <Accordion title="My task is not copying anything" icon="robot">
+    Check the task's **🕘 Activity** — every skipped copy is listed with a reason. The usual ones: the task is **paused**, a **filter** is skipping the buys, a percent-sized copy comes to **under \$1**, or the wallet the task buys from has **no balance**.
+  </Accordion>
+
+  <Accordion title="A mirrored sell did nothing" icon="rotate">
+    A mirrored sell sells the coin the task bought, from the wallet the task is on. If you already sold it, a TP/SL sold it, or the task did not buy it, there is nothing to sell.
+  </Accordion>
+
+  <Accordion title="My copy filled far from the leader's price" icon="chart-line">
+    Your copy is placed after the leader's buy, so the price has already moved. Smaller sizes, a liquidity floor in the task's [filters](/copytrade/manage#filters) and a stop loss on the task all help.
+  </Accordion>
+
+  <Accordion title="A fomo handle cannot be found" icon="magnifying-glass">
+    **Couldn't find them** — check the spelling, or paste the profile link. **Their wallet can't be worked out yet** — try again after they have traded, or paste their address if you have it.
   </Accordion>
 </AccordionGroup>
 
