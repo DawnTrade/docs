@@ -5,60 +5,60 @@ description: "A second check before a send is signed or a private key is shown."
 icon: "lock"
 ---
 
-Two-factor authentication (2FA) adds a second check to the two things that move money out of Dawn or expose a key: **signing a send** and **exporting a private key**. With it on, the wallet manager asks for your second factor before either goes ahead.
+Two-factor authentication (2FA) puts a second check on the two actions that matter most: **sending money out** and **exporting a private key**. Once it is on, neither happens without your code or your passkey.
 
-It is **off** until you set it up. Trading from the chat is never asked for it — buys, sells, orders and copytrades run exactly as before.
+It takes a minute to set up. Trading is never asked for it, so it changes nothing about the way you buy and sell.
 
 ## What it protects
 
 | Asked for 2FA | Never asked |
 | --- | --- |
-| Approving a [send or withdrawal](/funds/withdraw#approve-it-in-the-wallet-app) in the wallet app | Buying and selling from the chat |
+| Approving a [send or withdrawal](/funds/withdraw#approve-it-in-the-wallet-app) | Buying and selling |
 | [Exporting a private key](/wallets/import-export#export-a-private-key) | Limit orders, ladders, DCA plans and TP/SL |
 | | [Copytrade](/copytrade/overview) |
 
-The point is that someone who gets into your Telegram can still not empty your wallets. They could trade with your balance, but they could not send it anywhere or take the keys.
+Together with [approving every send yourself](/funds/withdraw#approve-it-in-the-wallet-app), this means money leaves your wallet only when you say so.
 
 ## Set it up
 
 <Steps>
   <Step title="Open the security screen">
-    Send `/wallets` and tap **🔐 2FA**. The wallet manager opens on its **Security** page.
+    Send `/wallets` and tap **🔐 2FA**.
   </Step>
 
   <Step title="Tap Set up">
-    [Privy](https://privy.io), which holds your keys, walks you through enrolling a method in its own window. Dawn never sees the secret.
+    [Privy](https://privy.io), which secures your wallets, walks you through it in its own window.
   </Step>
 
   <Step title="Pick a method">
     | Method | Notes |
     | --- | --- |
     | **Authenticator** | A code from an authenticator app. Works inside Telegram — the easiest choice. |
-    | **Passkey** | Face, fingerprint or device PIN. Needs a browser tab, so it cannot be enrolled from inside the Telegram app. |
+    | **Passkey** | Face, fingerprint or device PIN. Needs a browser tab, so it cannot be set up from inside the Telegram app. |
     | **SMS** | A code sent to your phone. |
   </Step>
 
   <Step title="Check the wallets screen">
-    `/wallets` now shows **🔐 2FA: On** with the method beside it. While it is off, the same line says so and points you back to the app.
+    `/wallets` now shows **🔐 2FA: On** with the method beside it.
   </Step>
 </Steps>
 
 <Tip>
-  Use an **authenticator app**. It is the one method that enrols and answers entirely inside Telegram, so a send never has to leave the chat to be approved.
+  Use an **authenticator app**. It works entirely inside Telegram, so approving a send never has to leave the chat.
 </Tip>
 
 ## Using it
 
-Nothing changes on the way in. When you approve a send, or export a key, Privy asks for the code or the passkey first, then carries on. A send that is not approved in time [expires after five minutes](/funds/withdraw#approve-it-in-the-wallet-app) — start it again from the chat.
+When you approve a send or export a key, Privy asks for the code or the passkey first, then carries on. Nothing else changes.
 
 To add another method or remove one, open **🔐 2FA** again and tap **Manage**.
 
 <Warning>
-  Keep access to your second factor. Whatever the authenticator app or phone number you enrolled offers as a backup, set it up now rather than after the phone is lost.
+  Keep access to your second factor. Set up the backup your authenticator app or phone number offers now, not after a phone is lost.
 </Warning>
 
 ## On Telegram Web
 
-Telegram's web client runs mini apps in a frame that Privy cannot work inside. There, the 2FA screen opens the wallet manager in a tab of its own. Approving a send needs the Telegram app on a phone or desktop, whatever your 2FA setting.
+On Telegram Web the 2FA screen opens in a browser tab of its own. Approving a send needs the Telegram app on a phone or desktop.
 
-See also [Security](/wallets/security) for what else keeps your account safe.
+See also [Security](/wallets/security).
