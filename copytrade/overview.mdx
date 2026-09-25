@@ -5,35 +5,40 @@ description: "Follow a wallet or a fomo trader and have their buys, and their se
 icon: "robot"
 ---
 
-Copytrade follows a wallet you choose. When it buys, you buy. If you want, when it sells, you sell. Each copy is sized the way you set and comes out of your own balance.
+Copytrade follows a trader you choose. When they buy, you buy. If you want, when they sell, you sell. Each copy is sized the way you set and comes out of your own balance.
 
 Send `/copytrade`, or tap **🤖 Copytrade** on the home screen. Each trader you follow is a **task**, with its own name, size and settings.
 
+<Tip>
+  Not sure who to copy yet? [Find a trader](/copytrade/find-trader) shows you how someone trades first. To hear about a trader's moves with nothing bought for you, use [Trader Alerts](/alerts/traders).
+</Tip>
+
 ## Who you can copy
 
-| Paste | What Dawn follows |
+| Send | What Dawn follows |
 | --- | --- |
 | A **Solana address** | That wallet, on Solana. |
-| An **EVM address** (`0x…`) | That address on the EVM chains you tick — BNB Chain, Robinhood Chain, Base, Arc and Ink. |
+| An **EVM address** (`0x…`) | That address on the EVM chains you pick — BNB Chain, Robinhood Chain, Base, Arc, Ink and HyperEVM. |
 | A **fomo handle** — `@name`, or a fomo.family profile link | That trader's wallets, on every chain they trade. |
+| A **pump.fun profile** — a link or a username | The wallet behind that pump.fun account. |
+| A **screenshot** of a fomo profile | Dawn reads the handle off the picture. |
 
-Paste a wallet address into the chat on its own and Dawn offers **🤖 Copytrade This Wallet**.
+Paste a wallet address into the chat on its own and Dawn shows what it has been trading, with a **🤖 Copytrade** button to start from — see [Check a wallet](/copytrade/find-trader#check-a-wallet).
 
 ### fomo traders
 
-Paste a [fomo](https://fomo.family) handle and Dawn finds the wallets behind it. This takes a few seconds.
+Send a [fomo](https://fomo.family) handle, link or screenshot and Dawn finds the wallets behind it. This takes a few seconds, then setup carries on.
 
-| Card | What it means |
+| Message | What it means |
 | --- | --- |
-| ✅ **Found @name** | Their wallets are listed. Carry on with setup. |
-| 🤷 _Their wallet can't be worked out yet_ | Try again after they have traded, or paste their address if you have it. |
 | ❌ *Couldn't find them* | No such handle. Check the spelling. |
+| 🤷 _Their wallet can't be worked out yet_ | Try again after they have traded, or paste their address if you have it. |
 
 ## Follow a trader
 
 <Steps>
   <Step title="Who to copy">
-    Tap **➕ Follow a Trader** and paste the address or handle. For an EVM address, tick the chains to copy it on — or **All Chains** — and **Continue**.
+    Tap **➕ Follow a Trader** and send the address, handle, link or screenshot. For an EVM address, tap the chains to copy it on — or **All Chains** — and **Continue →**.
   </Step>
 
   <Step title="Name the task">
@@ -45,25 +50,41 @@ Paste a [fomo](https://fomo.family) handle and Dawn finds the wallets behind it.
   </Step>
 
   <Step title="Buy amount">
-    What each copied buy spends: a **fixed dollar amount**, or **📊 % of the Leader's Buy**.
+    How much each copied buy spends:
 
-    In percent mode, pick the share — **5% · 10% · 25% · 50% · 100%**, or any whole percent from 1 to 500 — then a **max per buy**: **\$10 · \$25 · \$50 · \$100**, your own figure, or **No cap**.
+    | Sizing | Each copy spends |
+    | --- | --- |
+    | **A fixed amount** | The same dollar figure every time. Tap one of your [buy presets](/settings/presets) or type your own. |
+    | **📊 % of the Leader's Buy** | A share of what the leader spent — **5% · 10% · 25% · 50% · 100%**, or any whole percent from 1 to 500. |
+    | **⚖️ Portfolio Weighted** | The same share of _your_ portfolio as the leader put in of _theirs_, times a ratio — **0.50x · 1.00x · 2.00x**, or anything from 0.01 to 10. |
+
+    For example, with **⚖️ Portfolio Weighted**: the leader puts 5% of their \$40,000 into a coin, so you put 5% of your \$800 in — **\$40**. At **2.00x**, it's \$80.
+
+    Percent and portfolio-weighted copies then ask for a **🧢 Max per Buy**: **\$10 · \$25 · \$50 · \$100**, your own figure, or **⏭ No cap**.
   </Step>
 
   <Step title="What to copy">
-    **Buys Only** — you decide when to sell. **Buys + Sells** — when they sell, you sell the same share of yours.
+    | Choice | When the leader sells |
+    | --- | --- |
+    | **Buys Only** | Nothing happens. You decide when to sell. |
+    | **Buys + Sells** | You sell the same share of yours, in profit or at a loss. |
+    | **🤝 Buys + Sells, Hold When I'm Down** | You sell with them while you are in profit. If you are down at that moment, you keep the position and sell it yourself from your [portfolio](/trading/portfolio). |
+
+    **Hold When I'm Down** never sells a losing position for you, so pair it with a stop loss in the next steps.
   </Step>
 
   <Step title="Slippage">
+    How far **above the price the leader paid** your copy may buy in. A copy that would land higher than that is skipped — see [Missed copies](#missed-copies).
+
     **10% · 15% · 20% · 30%**, or type your own between 0.1% and 50%. The default is **15%**.
   </Step>
 
   <Step title="Stop loss and take profit">
-    A quick pick, a typed level like `-30%` or `2x`, or **⏭ Skip · Off**. Applied to every buy the task makes.
+    One step each. A quick pick, a typed level like `-30%` or `2x`, or **⏭ Skip · Off**. Applied to every buy the task makes.
   </Step>
 
   <Step title="Minimum market cap">
-    Skip buys into coins smaller than this. **50K · 100K · 250K · 1M**, a figure like `100k`, or **⏭ Skip · No Minimum**. More [filters](/copytrade/manage#filters) are on the task page.
+    Skip buys into coins smaller than this. **\$50.0K · \$100.0K · \$250.0K · \$1.00M**, a figure like `100k`, or **⏭ Skip · No Minimum**. More [filters](/copytrade/manage#filters) are on the task page.
   </Step>
 
   <Step title="Review and create">
@@ -81,9 +102,18 @@ Paste a [fomo](https://fomo.family) handle and Dawn finds the wallets behind it.
 | --- | --- |
 | 🟢 **Copytrade buy filled** / **sell filled** | Your copy went through. The card names the task, what you spent or received, and what the leader did. A filled buy has a **📉 Sell** button for a quick exit. |
 | 🔴 **Buy failed** / **Sell failed** | The copy did not go through. The card names the reason, and your USDC is back on your balance. |
-| ⏩ **Copytrade Skipped** | The copy was not placed, and the card says why: a filter, a size under \$1, or not enough balance. |
+| ⏩ **Copytrade Skipped** | The copy was not placed, and the card says why — a filter, a size under \$1, not enough balance, or a sell held back by Hold When I'm Down. |
+| ⏩ **Copytrade Missed** | The price had already run further above the leader's entry than your slippage allows — see [Missed copies](#missed-copies). |
 
 Every copy, placed or skipped, is also listed in the task's [activity](/copytrade/manage#activity).
+
+## Missed copies
+
+When a coin runs before your copy can land, Dawn skips the buy rather than chase it. The **⏩ Copytrade Missed** card shows the task, the reason and what the leader bought.
+
+Still want in if the price comes back? Tap **⏳ Limit at Leader's Entry**. A limit buy waits at the price the leader paid for **24 hours**, sized like the task's other buys, and is cancelled if the leader sells out first. It shows in your [orders](/orders/manage) like any other limit buy, and gets the task's stop loss and take profit when it fills.
+
+Turn on **Limit Order On Miss** in the task's [settings](/copytrade/manage#settings) and Dawn sets that limit buy on every miss, without asking.
 
 ## The task list
 
@@ -92,7 +122,9 @@ Every copy, placed or skipped, is also listed in the task's [activity](/copytrad
 | Button | What it does |
 | --- | --- |
 | **➕ Follow a Trader** | Start setup |
-| **▶️ Resume All** / **⏸ Pause All** | Every task at once |
+| **🏆 Top Traders** | fomo's leaderboard, with a backtest — see [Top traders](/copytrade/find-trader#top-traders) |
+| **🔎 Find a Trader** | Look up a fomo trader — see [Find a trader](/copytrade/find-trader) |
+| **Resume All** / **Pause All** | Every task at once |
 | **🕘 Activity** | Every copy across every task |
 | **🗑 Delete** | Pick a task to remove |
 
@@ -100,8 +132,8 @@ Every copy, placed or skipped, is also listed in the task's [activity](/copytrad
 
 | | |
 | --- | --- |
-| Tasks | **50** per wallet |
-| Size | At least **\$1** per copy. Percent mode 1%–500%, cap optional. |
+| Tasks | **50** per wallet. A trader copied on several chains counts once for each chain. |
+| Size | At least **\$1** per copy. Percent mode 1%–500%, portfolio weighting 0.01x–10x, cap optional. |
 | Name | Up to 24 characters, unique among your tasks |
 | One task per trader | The same wallet cannot be followed twice from one of yours |
 

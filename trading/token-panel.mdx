@@ -19,7 +19,7 @@ The token panel is where trading happens. Paste a contract address into the chat
   </Card>
 
   <Card title="Chain prefix" icon="link">
-    `bnb 0x…`, `base 0x…`, `arc 0x…` and so on, when an address is ambiguous. [Full list](/chains#naming-the-chain-yourself).
+    `bnb 0x…`, `base 0x…`, `hype 0x…` and so on, when an address is ambiguous. [Full list](/chains#naming-the-chain-yourself).
   </Card>
 </Columns>
 
@@ -85,30 +85,48 @@ These figures cover the wallet in use. With several wallets holding the same coi
 | 👥 **Multi-Wallet** | Trade the same coin from several wallets. Appears once the profile holds more than one. |
 | **Degen** | Toggles [Degen Mode](/settings/guardrails#degen-mode) for the profile. |
 | **Chart** | Opens the coin's chart. |
+| 📝 **Thesis** | What traders on fomo and pump.fun have written about the coin. See [Top theses](#top-theses). |
 
 Change which amounts appear in [Presets](/settings/presets).
 
 ### Behind Automations
 
-Tapping **⚙️ Automations** unfolds one more row:
+Tapping **⚙️ Automations** unfolds the order buttons:
 
 | Control | What it does |
 | --- | --- |
-| 📋 **Limit Order** | A buy or a sell that waits for a market cap you set. |
+| 📋 **Limit Order** | A buy or a sell that waits for a market cap you set. See [Limit orders](/orders/limit). |
 | 🪜 **Ladder** | Spread one amount over several orders across a market-cap range. |
 | 🔁 **DCA** | Buy a fixed amount on a repeating schedule. Buy side only. |
+| ⏱ **TWAP** | Split a buy or a sell into small trades over time. See [TWAP](/orders/twap). |
+| 🔔 **Alert** | Get a message when the coin reaches a level. Buy side only. See [Price alerts](/alerts/price). |
 
-Dawn remembers whether you left the row open, so if you use orders it stays unfolded on every panel.
+Dawn remembers whether you left them open, so if you use orders they stay unfolded on every panel.
 
-Take-profit and stop-loss levels are set from the position rather than from this row — open the coin from your [portfolio](/trading/portfolio) and choose **TP/SL**, or **Edit TP/SL** in `/limitorders`. See [Take profit and stop loss](/orders/tp-sl).
+Take-profit and stop-loss levels are set from the position rather than from this row — open the coin from your [portfolio](/trading/portfolio) and choose **TP/SL**, or **Edit TP/SL** in `/orders`. See [Take profit and stop loss](/orders/tp-sl).
 
-When something is already waiting on the coin, the panel says so in a line of its own above the buttons — and it shows the orders themselves, not just a count:
+When something is already waiting on the coin, the panel says so above the buttons — and it shows the orders themselves, not just a count:
 
 ```text
-📋 Buy $5 @ $170K, $10 @ $90K · 🎯 TP $1.2M · SL $340K
+📋 Buy $5 @ $170K, $10 @ $90K · Edit
+🎯 TP $1.2M · SL $340K · Edit
 ```
 
-Limit buys come first, each as its size and the market cap it is waiting for, oldest first. Take-profit and stop-loss levels follow. Past two of either, the rest are summed as `+3` rather than listed — the line has one row to live in.
+Limit buys come first, each as its size and the market cap it is waiting for, oldest first. Take-profit and stop-loss levels follow, and price alerts get a 🔔 **Alert** line of their own. Past two of a kind, the rest are summed as `+3` rather than listed. **Edit** opens the coin's limit buys, or its TP/SL levels, to change them.
+
+## Top theses
+
+**📝 Thesis** opens **📝 Top Theses** for the coin: what traders on fomo and pump.fun have written about it, five to a page.
+
+Each entry shows the author, how their own position in the coin is doing and how long ago they posted, then what they wrote. **⚠️ deployer** marks the coin's own creator.
+
+| Button | What it does |
+| --- | --- |
+| **👑 Biggest** | The biggest positions first |
+| **🕒 Newest** | The latest posts first |
+| **📝 Both** / **🎪 fomo** / **💊 pump.fun** | Whose theses you see, when both sites have some |
+
+To hear about new theses from traders you follow as they post them, see [Trader Alerts](/alerts/traders#theses).
 
 ## What the panel cannot tell you
 
@@ -120,4 +138,6 @@ Limit buys come first, each as its size and the market cap it is waiting for, ol
   Treat every panel as the beginning of your own check, not the end of it.
 </Danger>
 
-If Dawn cannot find a coin at all, it says so and suggests naming the chain yourself. That usually means the address is wrong, or the coin is not on one of the six chains Dawn trades.
+If Dawn cannot find a coin at all, it says so and suggests naming the chain yourself. That usually means the address is wrong, or the coin is not on one of the seven chains Dawn trades.
+
+Pasted a pool's address instead of the coin's? Dawn usually opens the coin anyway. When it cannot, it replies **🔎 That's a pool, not a coin** — paste the coin's own contract address to trade it.

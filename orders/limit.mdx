@@ -6,20 +6,22 @@ icon: "bullseye"
 
 A limit order waits for a market cap and then fires as a market trade.
 
-Open a coin and tap 📋 **Limit Order**. The panel's buttons become the order you are building.
+Open a coin, tap **⚙️ Automations**, then 📋 **Limit Order**. The panel's buttons become the order you are building. You can also place one in a single message — see [Place one with a command](#place-one-with-a-command).
 
 ## Place a limit buy
 
 <Steps>
   <Step title="Set the market cap">
-    Tap **Mcap** and send a level. The prompt shows the coin's cap right now so you have something to aim from.
+    Tap a trigger button to aim at a move from the market cap right now: **↑ 15% · ↑ 40% · ↑ 75% · ↑ 100%** above it, or **↓ 20% · ↓ 50% · ↓ 75%** below. The **Mcap** button then shows the level it lands on.
 
-    Shorthand works: `110k`, `2.5m`, `\$2m`.
+    Or tap **Mcap** and send a level. The prompt shows the coin's cap right now so you have something to aim from. A market cap like `110k`, `2.5m` or `\$2m` works, and so does a move like `+50%`, `2x` or `-30%`.
 
     | Where you put it | What you get |
     | --- | --- |
     | **Below** the current cap | A dip buy — it fires if the coin falls to your level |
     | **Above** the current cap | A breakout buy — it fires if the coin rises to it |
+
+    The trigger buttons are yours to change in [Presets](/settings/presets#limit-order-triggers).
   </Step>
 
   <Step title="Set the spend">
@@ -39,9 +41,33 @@ Open a coin and tap 📋 **Limit Order**. The panel's buttons become the order y
 
 ## Place a limit sell
 
-The same flow from the **Selling** side of the panel. The one difference is the size: you choose a **percentage of what you hold**, not a dollar amount.
+The same flow from the **Selling** side of the panel. The one difference is the size: you choose a **percentage of what you hold**, not a dollar amount. The sell side's trigger buttons start at **↑ 1.5x · ↑ 2x · ↑ 5x · ↑ 10x**, and **↓ 20% · ↓ 50% · ↓ 75%**.
 
 A limit sell is the manual version of a take-profit. If you want several exits, or you want them attached to the position rather than to a target you chose today, use [TP/SL](/orders/tp-sl) instead.
+
+## Place one with a command
+
+`/limit` opens the limit panel, or places a whole order in one message.
+
+| Send | What happens |
+| --- | --- |
+| `/limit` and a coin's address | Opens the limit panel for that coin |
+| `/limit` as a reply to a coin's panel | Opens the limit panel on the side that panel is on |
+| `/limit`, an address, a trigger and an amount | Places the order straight away |
+
+| Message | What it places |
+| --- | --- |
+| `/limit CA 2x 50` | A \$50 buy when the market cap doubles |
+| `/limit CA -30% 50` | A \$50 buy on a 30% dip |
+| `/limit CA 2x 25%` | A sell of a quarter of your position at 2x |
+| `/limit CA -40% 100%` | A sell of everything, 40% down |
+| `/limit CA 200k 100 7d` | A \$100 buy at a \$200K market cap, open for 7 days |
+
+- **Trigger** — a move from the market cap now (`2x`, `+50%`, `-30%`), a market cap (`200k`, `2.5m`), or a price (`$0.002`). A number with no `k`, `m` or `b` is read as a price, so write `5k` for a \$5,000 market cap.
+- **Amount** — a dollar figure buys; a percent sells that share of what you hold.
+- **Expiry** — buys only: `45m`, `36h`, `7d` or `never`. Leave it out for 24 hours. A sell stays until it fills or you cancel it.
+
+Replying to a coin's panel, leave out the address. Dawn confirms with **✅ Limit buy placed** or **✅ Limit sell placed** and the level it fires at, with **🗑 Cancel Order** on the card.
 
 ## When the price gaps past your level
 
@@ -69,4 +95,4 @@ If it fails, the card says why and your USDC stays on your balance. A failed ord
 
 ## Editing and cancelling
 
-Send `/limitorders`, or tap the badge on the coin's panel. See [Managing orders](/orders/manage).
+Tap **✏️ Edit Orders** on the coin's limit panel to change or cancel its limit buys, or send `/orders` to see everything at once. See [Managing orders](/orders/manage).

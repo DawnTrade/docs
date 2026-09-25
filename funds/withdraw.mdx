@@ -13,7 +13,7 @@ You can send **USDC**, a chain's own coin, or **any token you hold**, to an exte
 
 <Steps>
   <Step title="Choose the chain it should arrive on">
-    Solana, BNB Chain, Robinhood Chain, Base, Arc or Ink. This is the recipient's network, not yours.
+    Solana, BNB Chain, Robinhood Chain, Base, Arc, Ink or HyperEVM. This is the recipient's network, not yours.
   </Step>
 
   <Step title="Choose what should arrive">
@@ -68,10 +68,11 @@ A send you do not approve within **five minutes** expires — start it again fro
 
 | Route | Cost |
 | --- | --- |
-| **USDC on Solana** | A flat **\$0.10 per recipient**, straight from your balance. It pays the transaction, and the cost of opening a USDC account for an address that has never held any. |
-| Any other chain or token | Delivered by the bridge. Its cost comes out of what is delivered, and the confirmation shows the amount that will arrive. |
+| **Every send and withdrawal** | A flat **\$0.10 per recipient**, in USDC straight from your balance — whatever you send, on whichever chain. |
+| **Solana, to an address that has never held the token** | The cost of opening its token account is added to that recipient's fee. The approve screen shows the total. |
+| **To another chain** | Delivered by the bridge. Its cost comes out of what is delivered, and the confirmation shows the amount that will arrive. |
 
-With several recipients, the per-address fee applies to each one.
+With several recipients, the per-address fee applies to each one. The fee is always paid in USDC, even when you send another coin.
 
 ## Send to your own wallets
 
@@ -89,6 +90,8 @@ Select several of your own wallets as recipients to split an amount across them 
 
 To move a coin you hold without selling it, choose it in the send flow rather than USDC. It stays on its own chain and arrives as the same coin.
 
+The exception is HyperEVM: coins you bought there through Dawn cannot be sent out as they are. Sell them instead, and the USDC lands on your balance.
+
 <Note>
   Some contracts restrict transfers. A balance you can see is not always a balance you can move, and that is a property of the token rather than of Dawn.
 </Note>
@@ -103,6 +106,7 @@ To move a coin you hold without selling it, choose it in the send flow rather th
 | **Transfer failed** | Read the reason on the card. Recipients marked ❌ received nothing. |
 | **Withdrawal refunded** | The route could not deliver. The USDC is back on your balance. |
 | Not enough available | The fee is charged on top of the amount unless you sent `max`. Leave room for it, or use `max`. |
+| Not enough USDC for the fee | Every send pays its fee in USDC, even when you send another coin. Top up USDC, or send a little less. |
 | Address rejected | Wrong chain for that address shape, or a contract address rather than a wallet. |
 
 A card that says **Sent** and is still confirming is not finished. Wait for it rather than starting a second withdrawal.

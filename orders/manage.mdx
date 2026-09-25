@@ -5,9 +5,26 @@ description: "Find what is armed, cancel it, and work out why something has not 
 icon: "list-check"
 ---
 
-Send `/limitorders`, or tap **Limit Orders** from the home screen. Everything armed lives here: limit buys and sells, ladder rungs, DCA plans, and the take-profit and stop-loss levels on your positions.
+Send `/orders`, or tap **📋 Limit Orders** on the home screen. Everything armed lives here, grouped by coin: limit buys and sells, ladders, DCA plans, and the take-profit and stop-loss levels on your positions.
 
 A coin's own panel lists what is waiting on it, and the **⚙️ Automations** button carries the count.
+
+<Note>
+  Two things live elsewhere. [Price alerts](/alerts/price) are behind **🔔 Price Alerts** on this page, or `/alerts`. A running [TWAP](/orders/twap) is followed and stopped from its own card.
+</Note>
+
+## Changing a limit buy
+
+Open the coin's limit panel and tap **✏️ Edit Orders**, or tap **Edit** beside the orders line on the coin's panel. Each open limit buy on the coin is listed with its size, its level and the time it has left.
+
+| Button | What it does |
+| --- | --- |
+| **✏️** on an order | Loads it into the limit panel. Change the level, the amount or the expiry, then tap **✅ Update Limit Order**. |
+| **🗑** on an order | Cancels it |
+| **🗑 Cancel All** | Cancels every limit buy on the coin |
+| **➕ New Order** | Starts another one |
+
+Limit sells are take-profit and stop-loss levels — change those with **Edit TP/SL**.
 
 ## Cancelling
 
@@ -15,8 +32,8 @@ A coin's own panel lists what is waiting on it, and the **⚙️ Automations** b
 | --- | --- |
 | **Cancel** on an order | Removes that one order |
 | **Cancel ladder** | Removes every rung of that ladder that has not fired |
-| **Cancel all** | Clears the list |
-| Stopping a DCA plan | Ends the buys that are left |
+| **⏹ Stop DCA** | Ends the buys left in that plan |
+| **🗑 Cancel All** | Clears everything on the page except DCA plans |
 
 Cancelling never undoes something that already happened. A ladder that has filled two rungs keeps those two positions; cancelling removes the rest.
 
@@ -77,5 +94,5 @@ An order that finishes sends a card to your chat:
 Closing a message cancels nothing. Neither does switching profile, archiving a wallet, or closing Telegram.
 
 <Warning>
-  Before you step away from a coin, check `/limitorders` in **every profile**. A forgotten DCA plan keeps buying, and a forgotten limit buy keeps waiting.
+  Before you step away from a coin, check `/orders` in **every profile**. A forgotten DCA plan keeps buying, and a forgotten limit buy keeps waiting.
 </Warning>
