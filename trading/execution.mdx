@@ -5,7 +5,7 @@ description: "Slippage, price impact, MEV protection and how hard your trades bi
 icon: "bolt"
 ---
 
-Five settings decide how a trade behaves between your tap and the fill. All five belong to the **profile**, so each profile can execute differently.
+Four settings decide how a trade behaves between your tap and the fill. All four belong to the **profile**, so each profile can execute differently.
 
 ## Slippage
 
@@ -68,26 +68,6 @@ How hard your trades **bid to land fast and protected**.
 A higher bid does not improve your price. It improves your odds of landing in a block while there is competition for space — which, in a fast market, amounts to the same thing.
 
 Dawn pays this gas for you, up to [$5 per trade](/fees#gas). The preset changes what Dawn bids, not what you pay, unless the cost goes over the cap — see [Gas Surplus](/settings/guardrails#gas-surplus).
-
-## Live fees
-
-**On by default. Solana only.** `/settings` → Trading → **Gas** → **📡 Live Fees**.
-
-A bid worked out from recent blocks is a bid priced off blocks that have already closed. On a coin that got busy in the last few seconds, that figure is history.
-
-With Live Fees on, Dawn prices the bid from **what is landing on that coin's pool right now** — the priority fees and tips paid by the transactions going through it this moment.
-
-It does not simply bid more:
-
-- It takes over **only when the pool is contested** — when even the cheapest transactions getting in are paying above the network's going rate. While cheap bids are still landing, the expensive ones are bots outbidding each other, and matching them buys nothing.
-- Your **preset still sets the stance**. Low takes the pool's middle, Medium its upper end, High its top.
-- It needs a live read to work from. A pool with almost nothing going through it, or a quote a moment out of date, is ignored and the ordinary estimate is used.
-
-Like the preset, this changes what Dawn bids, not what you pay — the [\$5 cap](/fees#gas) is unchanged.
-
-<Tip>
-  Leave it on. It costs you nothing on a quiet coin, because on a quiet coin it does not engage; it earns its keep in exactly the moment a launch turns into a race.
-</Tip>
 
 ## Putting it together
 
