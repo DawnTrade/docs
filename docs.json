@@ -89,6 +89,7 @@
               "orders/limit",
               "orders/ladder",
               "orders/dca",
+              "orders/twap",
               "orders/tp-sl",
               "orders/manage"
             ]
@@ -98,13 +99,17 @@
             "icon": "robot",
             "pages": [
               "copytrade/overview",
+              "copytrade/find-trader",
               "copytrade/manage"
             ]
           },
           {
             "group": "Alerts",
             "icon": "bell",
-            "pages": []
+            "pages": [
+              "alerts/traders",
+              "alerts/price"
+            ]
           }
         ]
       },

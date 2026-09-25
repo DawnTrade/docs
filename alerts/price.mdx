@@ -1,0 +1,66 @@
+---
+title: "Price Alerts"
+description: "Get a message when a coin reaches the market cap or price you name. Nothing is traded."
+icon: "chart-line"
+---
+
+A price alert messages you once, the moment a coin reaches the level you set — whether it gets there from above or below. Nothing is bought or sold.
+
+<Note>
+  The **🔔 Alerts** button on the home screen is for [trader alerts](/alerts/traders). Price alerts live on each coin's panel and under `/alerts`.
+</Note>
+
+## Set an alert
+
+<Steps>
+  <Step title="Open Automations">
+    On the coin's panel, on the buying side, tap **⚙️ Automations**, then **🔔 Alert**.
+  </Step>
+  <Step title="Send the level">
+    The prompt shows the coin's chain and its market cap now. Send a market cap like `5m` or `250k`, or a price like `$0.002`.
+  </Step>
+</Steps>
+
+Dawn confirms with **🔔 Alert set at …**. Alerts work on any coin, whether you hold it or not.
+
+## When it fires
+
+```text
+🔔 Price Alert · Wallet 1
+
+🟣 $PEPE
+├ Hit: $5m
+└ Now: $5.02M
+```
+
+| Button | What it does |
+| --- | --- |
+| **⚡ Buy \$TICKER** | Opens the coin's buy panel |
+| **📉 Sell \$TICKER** | Opens the coin's sell panel. Shown when you hold the coin. |
+
+The alert ends once it has fired.
+
+## Manage your alerts
+
+Send `/alerts` for every alert you have, each with the time it has left:
+
+```text
+🔔 $5m · 6d left · Edit · Delete
+```
+
+| Action | What it does |
+| --- | --- |
+| **Edit** | Moves the alert to a new level, and gives it a fresh 7 days |
+| **Delete** | Removes it |
+| **🗑 Cancel All Alerts** | Removes every alert |
+
+A coin that has alerts shows **🔔 Alert (2)** under Automations. Tap it for that coin's alerts, and **➕ New Alert** to add another. The [orders page](/orders/manage) also links here with **🔔 Price Alerts**.
+
+## Limits
+
+|  |  |
+| --- | --- |
+| Per coin | **5** |
+| In total | **25** per wallet |
+| Lasts | **7 days**, then ends without a message |
+| Fires | Once |

@@ -1,0 +1,85 @@
+---
+title: "Find A Trader"
+sidebarTitle: "Find A Trader"
+description: "Look a trader up, check what a wallet has been doing, and browse fomo's top traders before you copy anyone."
+icon: "magnifying-glass"
+---
+
+Before you copy or follow someone, see how they trade. There are three ways in:
+
+| Way in | What you get |
+| --- | --- |
+| **🔎 Find a Trader** on the Copytrade page | A fomo trader's wallets and PnL |
+| A **wallet address** pasted into the chat | What that wallet has been doing |
+| **🏆 Top Traders** on the Copytrade page | fomo's leaderboard, with a backtest for each trader |
+
+Every trader card ends with two buttons: **🤖 Copytrade** starts a [copytrade task](/copytrade/overview#follow-a-trader), and **🔔 Alerts** gets you [pinged on their trades](/alerts/traders) without buying anything.
+
+## Look up a fomo trader
+
+Tap **🔎 Find a Trader** on the Copytrade page, then send one of:
+
+- their fomo handle, like `@name`
+- their fomo.family profile link
+- a screenshot of their fomo profile
+
+You get their card:
+
+| Section | What it shows |
+| --- | --- |
+| Header | Their handle, followers, and their Solana and EVM wallets |
+| **PnL** | Their profit on fomo over 24 hours, 7 days, 30 days and all time, with their leaderboard rank where they have one |
+| **Trading** | How many trades and how much volume, their recent buys and sells, how many coins, and when they last traded |
+
+Pasting a fomo.family profile link straight into the chat opens the same card.
+
+## Check a wallet
+
+Paste any wallet address into the chat. If it belongs to a fomo trader, you get their card. Otherwise, a wallet that has traded in the last 30 days shows its record:
+
+| Line | What it shows |
+| --- | --- |
+| **Realized PnL** | Profit it banked by selling |
+| **Volume** | How much it traded |
+| **Trades** · **Win rate** | How often it traded, and how often it won |
+| **Coins** · **Avg hold** | How many coins it traded, and how long it usually held them |
+| **Last trade** | How long ago it last traded |
+
+**1D · 7D · 30D · 1Y** switch the window. It opens on the last 30 days.
+
+A wallet with no recent trades gets **💳 That's a wallet, not a token**, and you can still copy it or follow it from there.
+
+## Top traders
+
+**🏆 Top Traders** opens fomo's leaderboard right inside Telegram.
+
+- **7D**, **30D** and **All time** rank traders by their profit on fomo over that window. It opens on **30D**.
+- Each row shows their **fomo PnL**, how much of it comes from one coin they still hold, their **win** rate, and what they have **realized**. _What do these numbers mean?_ at the top explains each one.
+- Tap a trader for their page: their stats, their biggest open coins, their wallets, and a backtest.
+- **Copy trader** takes you back to Dawn with setup ready, and **Open on fomo** opens their profile.
+
+<Tip>
+  A big share of PnL from **1 coin** usually means one lucky bag rather than steady trading.
+</Tip>
+
+### Backtest a trader
+
+The backtest replays a trader's recent buys as if you had been copying them.
+
+<Steps>
+  <Step title="Set the sizes">
+    **Start with \$** is your starting balance and **Each copy \$** what every copied buy spends. They start at \$1,000 and \$50.
+  </Step>
+  <Step title="Pick the window">
+    **7D** or **30D**, and **Copy sells** on or off.
+  </Step>
+  <Step title="Run it">
+    Tap **Run backtest**.
+  </Step>
+</Steps>
+
+The result shows what you would have now, how much came from coins sold and how much is still in coins held, how many of their buys were copied, and the fees paid. Notes underneath point out what shaped the result, like copies skipped for running out of cash.
+
+<Note>
+  Past results don't promise future ones. A real copy buys at the price when it lands, not the price the trader got.
+</Note>
