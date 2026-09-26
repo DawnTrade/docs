@@ -89,6 +89,7 @@
               "orders/limit",
               "orders/ladder",
               "orders/dca",
+              "orders/twap",
               "orders/tp-sl",
               "orders/manage"
             ]
@@ -98,7 +99,16 @@
             "icon": "robot",
             "pages": [
               "copytrade/overview",
+              "copytrade/find-trader",
               "copytrade/manage"
+            ]
+          },
+          {
+            "group": "Alerts",
+            "icon": "bell",
+            "pages": [
+              "alerts/traders",
+              "alerts/price"
             ]
           }
         ]
@@ -183,7 +193,7 @@
       "website": "https://dawn.trade"
     }
   },
-  "description": "Dawn is a Telegram trading bot for memecoins. One USDC balance, six chains, no gas and no bridging to manage.",
+  "description": "Dawn is a Telegram trading bot for memecoins. One USDC balance, seven chains, no gas and no bridging to manage.",
   "logo": {
     "light": "/images/Orange-LogoOnly.png",
     "dark": "/images/Orange-LogoOnly.png"

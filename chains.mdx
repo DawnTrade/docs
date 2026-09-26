@@ -1,10 +1,10 @@
 ---
 title: "Supported Chains"
-description: "The six networks Dawn trades on, and how one balance reaches all of them."
+description: "The seven networks Dawn trades on, and how one balance reaches all of them."
 icon: "globe"
 ---
 
-Dawn trades on six networks. You do not choose one — the coin's contract address decides, and Dawn reaches it from the same balance.
+Dawn trades on seven networks. You do not choose one — the coin's contract address decides, and Dawn reaches it from the same balance.
 
 | Chain | Coin | Explorer |
 | --- | --- | --- |
@@ -14,12 +14,35 @@ Dawn trades on six networks. You do not choose one — the coin's contract addre
 | 🔵 **Base** | ETH | [BaseScan](https://basescan.org) |
 | ⚪ **Arc** | USDC | [Arc Explorer](https://explorer.arc.io) |
 | 🟦 **Ink** | ETH | [Ink Explorer](https://explorer.inkonchain.com) |
+| 🟩 **HyperEVM** | HYPE | [HyperEVMScan](https://hyperevmscan.io) |
 
-## How one balance reaches six chains
+## How one balance reaches seven chains
 
-Your balance is USDC on Solana. A Solana coin is bought from it directly. A coin on any of the other five means moving value across, and Dawn does that as part of the trade — there is no bridging step for you to run and no second balance to keep.
+Your balance is USDC on Solana. A Solana coin is bought from it directly. A coin on any of the other six means moving value across, and Dawn does that as part of the trade — there is no bridging step for you to run and no second balance to keep.
 
 Dawn is not tied to a single bridge. If the route it normally uses has no path for a hop, or is having a bad day, it falls back to another one automatically rather than failing the trade. You never pick a bridge, and the cost of whichever route is used is [inside the quote](/fees#trading-on-another-chain) before you confirm.
+
+## Naming the chain yourself
+
+The same `0x…` address can exist on more than one EVM chain. Dawn works out which one you mean, and asks when it cannot tell. To skip the question, put the chain in front of the address:
+
+| Type | For |
+| --- | --- |
+| `sol <address>` | Solana |
+| `bnb 0x…` | BNB Chain |
+| `rh 0x…` | Robinhood Chain |
+| `base 0x…` | Base |
+| `arc 0x…` | Arc |
+| `ink 0x…` | Ink |
+| `hype 0x…` | HyperEVM |
+
+## HyperEVM
+
+HyperEVM trades like the other chains: you buy from your USDC balance, sells land back on it as USDC, and you never need HYPE for gas.
+
+<Note>
+  Coins you buy on HyperEVM through Dawn cannot be sent out as they are. Sell them instead, and the USDC lands on your balance.
+</Note>
 
 ## Moving money in and out
 

@@ -1,17 +1,26 @@
 ---
-title: "Buy And Sell Presets"
+title: "Presets"
 sidebarTitle: "Presets"
-description: "Set the amount buttons that appear on every token panel."
+description: "Set the quick-pick buttons on every token panel and on the limit order panel."
 icon: "grip"
 ---
 
-The buttons on a token panel are yours. Five for buying, five for selling, in the order you put them.
+The quick-pick buttons in Dawn are yours: what the buy and sell buttons trade, and where the limit order panel's trigger buttons aim.
 
-`/settings` → **Buy Amounts** or **Sell Amounts**. Tap a button to change it.
+`/settings` → **🎛 Presets**, then pick a set:
+
+| Set | What it changes |
+| --- | --- |
+| 💵 **Buy Presets** | The dollar buttons for buying |
+| 📉 **Sell Presets** | The share buttons for selling |
+| 🎯 **Limit Buy Triggers** | The trigger buttons on a limit buy |
+| 🎯 **Limit Sell Triggers** | The trigger buttons on a limit sell |
+
+Tap a button in the set to change it.
 
 ## Buy amounts
 
-Dollar amounts, spent from your balance.
+Dollar amounts, spent from your balance. Five buttons, in the order you put them.
 
 | | |
 | --- | --- |
@@ -29,6 +38,25 @@ Shares of what you hold, not dollar figures.
 | Range | Whole percents, 1 to 100 |
 
 Sells are percentages because your position size changes. A percentage stays meaningful after you have bought more or sold some; a dollar figure does not.
+
+## Limit order triggers
+
+The trigger buttons on the [limit order panel](/orders/limit) are moves from the coin's market cap at the moment you tap them. Tap **↑ 40%** on a coin at \$1M and the order waits for \$1.4M.
+
+| Set | Rises | Falls |
+| --- | --- | --- |
+| 🎯 **Limit Buy Triggers** | ↑ 15% · ↑ 40% · ↑ 75% · ↑ 100% | ↓ 20% · ↓ 50% · ↓ 75% |
+| 🎯 **Limit Sell Triggers** | ↑ 1.5x · ↑ 2x · ↑ 5x · ↑ 10x | ↓ 20% · ↓ 50% · ↓ 75% |
+
+Those are the defaults. Tap one and send its new trigger:
+
+| Type | Means |
+| --- | --- |
+| `+25%` | A quarter above the market cap then |
+| `3x` | Three times it |
+| `-40%` | 40% below it |
+
+A plain `25%` counts as a rise.
 
 ## Making them fit how you trade
 
@@ -50,10 +78,10 @@ On the sell side, `25 · 33 · 50 · 75 · 100` suits taking profit in stages be
 
 ## Resetting
 
-**Reset defaults** on either screen puts the original five back.
+**↺ Reset to defaults** on any set puts the original buttons back.
 
 Presets belong to the [profile](/wallets/profiles), so each profile can have its own — and a new profile can copy them from an existing one.
 
 ## Beyond the presets
 
-**\$x** on the buy side and **X%** on the sell side always let you type an exact amount, whatever your buttons are set to.
+**\$x** on the buy side and **X%** on the sell side always let you type an exact amount, whatever your buttons are set to. On the limit order panel, **Mcap** takes any level or move you type.

@@ -13,11 +13,11 @@ You can send **USDC**, a chain's own coin, or **any token you hold**, to an exte
 
 <Steps>
   <Step title="Choose the chain it should arrive on">
-    Solana, BNB Chain, Robinhood Chain, Base, Arc or Ink. This is the recipient's network, not yours.
+    Any chain Dawn trades on — Solana, BNB Chain, Robinhood Chain, Base, Arc, Ink or HyperEVM — or Ethereum, Arbitrum, Optimism or Polygon. This is the recipient's network, not yours.
   </Step>
 
   <Step title="Choose what should arrive">
-    The panel lists the tokens available on that chain.
+    The panel lists the tokens available on that chain. On Solana, **⭐ USDC** goes straight from your balance; pick any other token and it is swapped on the way out.
   </Step>
 
   <Step title="Add the recipient">
@@ -29,7 +29,7 @@ You can send **USDC**, a chain's own coin, or **any token you hold**, to an exte
   <Step title="Enter an amount">
     Type a figure like `12.50`, a percentage of what is available, or `max` for all of it.
 
-    Anything arriving on a chain other than Solana needs at least **\$1 per recipient**.
+    Anything other than USDC on Solana needs at least **\$1 per recipient**.
   </Step>
 
   <Step title="Check the confirmation">
@@ -56,22 +56,21 @@ Every send and withdrawal is approved by you in the wallet app.
 
 A send you do not approve within **five minutes** expires — start it again from the chat. With [two-factor authentication](/wallets/two-factor) on, Privy asks for it before the send goes.
 
-<Note>
-  Approving works from the Telegram app on a **phone or desktop**, not from Telegram Web.
-</Note>
-
 <Warning>
   Check the address and the chain yourself. A sent transaction cannot be recalled, and an address that is right on one network can be wrong on another. Never paste a token's contract address as the recipient.
 </Warning>
 
 ## What it costs
 
-| Route | Cost |
-| --- | --- |
-| **USDC on Solana** | A flat **\$0.10 per recipient**, straight from your balance. It pays the transaction, and the cost of opening a USDC account for an address that has never held any. |
-| Any other chain or token | Delivered by the bridge. Its cost comes out of what is delivered, and the confirmation shows the amount that will arrive. |
+**Dawn charges no fee to withdraw or send.** You only pay the gas for the send and, if the recipient has never held the token, the cost of creating their token account.
 
-With several recipients, the per-address fee applies to each one.
+| Route | What you pay |
+| --- | --- |
+| **From Solana** | The gas, plus creating the recipient's token account if they need one. Paid in USDC from your balance, even when you send SOL or another token. |
+| **From an EVM chain** | The gas, paid in that chain's own coin from your wallet on that chain. |
+| **To another chain** | The gas to send it, in USDC. The bridge delivers it, and the confirmation shows the amount that will arrive. |
+
+The wallet app shows the exact amount before you approve.
 
 ## Send to your own wallets
 
@@ -89,6 +88,8 @@ Select several of your own wallets as recipients to split an amount across them 
 
 To move a coin you hold without selling it, choose it in the send flow rather than USDC. It stays on its own chain and arrives as the same coin.
 
+The exception is HyperEVM: coins you bought there through Dawn cannot be sent out as they are. Sell them instead, and the USDC lands on your balance.
+
 <Note>
   Some contracts restrict transfers. A balance you can see is not always a balance you can move, and that is a property of the token rather than of Dawn.
 </Note>
@@ -99,10 +100,11 @@ To move a coin you hold without selling it, choose it in the send flow rather th
 | --- | --- |
 | **Approve to send** with a ⚠️ line | It could not go out — the reason is on the card, usually balance or gas. Fix it and tap **Approve in Wallet** again. |
 | _Not approved in time_ | It was not approved within five minutes. Start the send again. |
-| The app asks for the Telegram app | Telegram Web cannot approve a send. Use your phone or desktop. |
 | **Transfer failed** | Read the reason on the card. Recipients marked ❌ received nothing. |
 | **Withdrawal refunded** | The route could not deliver. The USDC is back on your balance. |
-| Not enough available | The fee is charged on top of the amount unless you sent `max`. Leave room for it, or use `max`. |
+| Not enough available | The gas comes on top of the amount unless you sent `max`. Leave room for it, or use `max`. |
+| Not enough USDC for the gas | A send from Solana pays its gas in USDC, even when you send another coin. Top up USDC, or send a little less. |
+| No gas on that chain | A send from an EVM chain needs a little of that chain's own coin for gas. Send some to your wallet's address, then try again. |
 | Address rejected | Wrong chain for that address shape, or a contract address rather than a wallet. |
 
 A card that says **Sent** and is still confirming is not finished. Wait for it rather than starting a second withdrawal.

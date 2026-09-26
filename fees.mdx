@@ -17,13 +17,15 @@ Dawn charges one trading fee. Everything else on this page is either a cost Dawn
   </Card>
 
   <Card title="Minimum trade" icon="arrow-down-1-9">
-    **$1**, and more on some bridged routes displayed clearly 
+    **$1**, and more on some bridged routes displayed clearly
   </Card>
 </Columns>
 
 ## <u>Dawn's Trading Fee</u>
 
 Dawn charges a **1% fee** on every buy & sell transaction. The minimum fee is \$0.35. 
+
+Each slice of a [TWAP](/orders/twap) pays the 1% without the minimum.
 
 <Check>
   You get part of it back immediately through cashback!
@@ -35,7 +37,7 @@ Dawn charges a **1% fee** on every buy & sell transaction. The minimum fee is \$
 
 Dawn pays your gas for you up to **$5 of gas per trade**, which covers essentially every trade on every chain Dawn supports.
 
-You never need to hold SOL, BNB or ETH to trade.
+You never need to hold SOL, BNB, ETH or HYPE to trade.
 
 #### When gas goes over \$5
 
@@ -56,7 +58,7 @@ On routes that have to move value between chains, the minimum is higher. A trade
 
 ## <u>Fees for trading on another chain</u>
 
-Your balance is **USDC on Solana.** Buying a coin on BNB Chain, Robinhood Chain, Base, Arc or Ink means moving value across, **_and that routing has a cost of its own._**
+Your balance is **USDC on Solana.** Buying a coin on BNB Chain, Robinhood Chain, Base, Arc, Ink or HyperEVM means moving value across, **_and that routing has a cost of its own._**
 
 It is **not** a **Dawn fee**, and Dawn does **not** absorb it. It is part of what the trade costs you, and it is inside the quoted price before you buy — the figures you approve already account for these external fees.
 
@@ -69,10 +71,13 @@ _A Solana coin bought from your Solana balance has no such cost._
 
 ## <u>Withdrawal Fees</u>
 
-| Route | Cost |
+**Dawn charges no fee on withdrawals or sends.** You only pay the gas for the send and, if the recipient has never held the token, the cost of creating their token account.
+
+| Route | What you pay |
 | --- | --- |
-| **USDC on Solana** | A flat **\$0.10 per recipient**. This pays the transaction and, for an address that has never held USDC, the rent to open its USDC account. |
-| Any other chain | Delivered by the bridge. Its cost is taken out of the amount delivered and shown before you confirm. |
+| **From Solana** | The gas, plus creating the recipient's token account if they need one. Paid in USDC from your balance, even when you send SOL or another token. |
+| **From an EVM chain** | The gas, paid in that chain's own coin from your wallet on that chain. |
+| **To another chain** | The gas to send it, in USDC. The bridge delivers it, and the confirmation shows the amount that will arrive. |
 
 See [Withdraw and send](/funds/withdraw).
 
@@ -102,4 +107,6 @@ These move the price you actually get, and **none of them are a Dawn fee**, thes
 
 A trade that cannot fill inside your slippage is **refunded** — your USDC goes back to your balance and **no trading fee is charged.** 
 
-Gas that was already spent on a submitted transaction is not recoverable, however **we cover this for you.**
+A buy on another chain can fail after it has already gone out. Your USDC comes back, and so does Dawn's trading fee, less any gas the attempt used. It lands on your balance on its own.
+
+Otherwise, gas that was already spent on a submitted transaction is not recoverable, however **we cover this for you.**

@@ -1,7 +1,7 @@
 ---
 title: "Choose An Order Type"
 sidebarTitle: "Overview"
-description: "Four kinds of automation, and which one matches what you are trying to do."
+description: "Every kind of automation, and which one matches what you are trying to do."
 icon: "crosshairs"
 ---
 
@@ -15,9 +15,11 @@ An automated order waits for a condition and then trades for you. It keeps runni
 | Buy if it breaks up through a level | [Limit order](/orders/limit) |
 | Spread a buy across a range instead of one price | [Ladder](/orders/ladder) |
 | Buy a fixed amount repeatedly over time | [DCA](/orders/dca) |
+| Split a big buy or sell into small trades over time | [TWAP](/orders/twap) |
 | Sell automatically once I am up | [Take profit](/orders/tp-sl) |
 | Cap how much I can lose | [Stop loss](/orders/tp-sl) |
 | Sell in stages on the way up | [TP levels](/orders/tp-sl#several-levels) or a [sell ladder](/orders/ladder) |
+| Just be told when a coin reaches a level | [Price alert](/alerts/price) |
 | Do what another wallet does, as it does it | [Copytrade](/copytrade/overview) |
 
 ## Targets are market caps
@@ -26,7 +28,7 @@ Every level you set in Dawn is a **market cap**, not a token price.
 
 This is the right way round for memecoins. A token price of `0.0000034` tells you nothing on its own; a market cap of `$2M` tells you what the coin is being valued at. It is also stable across supply changes.
 
-You can type shorthand — `250k`, `1.5m`, `\$2m` all work.
+You can type shorthand — `250k`, `1.5m`, `\$2m` all work. A limit order also takes a move from the market cap right now — `2x`, `+50%`, `-30%` — and works out the level for you.
 
 <Note>
   A **\$1M target** means "wait until this coin is valued at \$1 million". It is not an instruction to trade \$1 million.
@@ -73,6 +75,6 @@ An order can also fail to fill — too little liquidity, a token that blocks sel
 
 - **Nothing is reserved.** Two limit buys for \$100 each need \$200 on your balance when they fire, not when you place them.
 - **Orders belong to a wallet.** An order placed from one wallet acts on that wallet's holding only.
-- **They survive a profile switch.** Check `/limitorders` in each profile before assuming nothing is armed.
+- **They survive a profile switch.** Check `/orders` in each profile before assuming nothing is armed.
 
 Manage everything from one place: [Managing orders](/orders/manage).

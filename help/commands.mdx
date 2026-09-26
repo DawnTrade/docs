@@ -17,15 +17,21 @@ For everything else:
 | `/trending` | The top coins right now, by chain and filter |
 | `/search` | Coins matching a phrase — `/search pepe`. Bare, it opens the same screener |
 | `/activity` | Past trades and their profit or loss |
-| `/limitorders` | Open orders, ladders, DCA plans and TP/SL |
+| `/orders` | Open limit orders, ladders, DCA plans, TWAPs and TP/SL — see [Managing orders](/orders/manage) |
+| `/limit` | A limit order — `/limit <address>`, or [a whole order in one message](/orders/limit#place-one-with-a-command) |
+| `/alerts` | Your [price alerts](/alerts/price) — the same as **🔔 Alerts** → **📈 Price** on the home screen |
 | `/ladder` | A ladder across a market-cap range — `/ladder <address>` |
 | `/dca` | A scheduled buy plan — `/dca <address>` |
 | `/copytrade` | Your copytrade tasks — [follow a wallet or a fomo trader](/copytrade/overview) |
 | `/deposit` | Deposit addresses for every chain |
 | `/withdraw` | Send money out to an address |
 | `/wallets` | Your wallets, balances and addresses |
+| `/rewards` | Your cashback and referrals, and claiming what you earned — see [Rewards](/rewards/overview) |
 | `/settings` | Slippage, auto buy, guardrails, auto sell |
+| `/feedback` | Send the team an idea or a problem — see [Send feedback](/help/support#send-feedback) |
 | `/help` | What the bot does |
+
+[Trader alerts](/alerts/traders) open from **🔔 Alerts** → **👥 Traders** on the home screen, or `/tracker`.
 
 ### Aliases
 
@@ -36,6 +42,7 @@ The same screens answer to more than one name.
 | `/home` | `/start` |
 | `/positions` | `/portfolio` |
 | `/history` | `/activity` |
+| `/limitorders` | `/orders` |
 | `/wallet` | `/wallets` |
 | `/send` | `/withdraw` |
 
@@ -54,8 +61,9 @@ For admins of a group [Dawn has been added to](/social/groups).
 | Type this | And you get |
 | --- | --- |
 | A contract address | That coin's panel |
-| A wallet address | An offer to [copytrade](/copytrade/overview) it — Dawn can tell a wallet from a coin |
-| `bnb 0x…`, `base 0x…`, `arc 0x…` | The coin on the chain you named — [every prefix](/chains#naming-the-chain-yourself) |
+| A wallet address | What that wallet has been trading, with buttons to [copy it](/copytrade/overview) or [get alerts](/alerts/traders) on it — Dawn can tell a wallet from a coin |
+| A fomo.family profile link | That trader's [fomo card](/copytrade/find-trader#look-up-a-fomo-trader) |
+| `bnb 0x…`, `base 0x…`, `hype 0x…` | The coin on the chain you named — [every prefix](/chains#naming-the-chain-yourself) |
 | `$PEPE` | A [search](/trading/trending) for coins by that ticker |
 
 <Note>

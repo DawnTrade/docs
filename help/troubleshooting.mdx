@@ -14,13 +14,13 @@ Start with three questions, because they explain most of it:
 
 <AccordionGroup>
   <Accordion title="I deposited and my balance has not changed" icon="arrow-down-to-bracket">
-    Check which **wallet** you deposited into, and which **profile** that wallet is in.
+    Check which **wallet** you deposited into, and which **profile** that wallet is in. **Ready** on the home screen shows the wallet in use only.
 
     Then check what you sent. **SOL**, and any coin someone transferred to you, lands **in the wallet** rather than on your balance — [move it across](/funds/move-to-balance) from the wallet screen.
 
     Check the route's minimum on the deposit panel. If a deposit could not be completed, Dawn sends a card saying so.
 
-    Dawn watches a deposit address for **24 hours** after issuing it.
+    Open the deposit panel right before you send. A deposit sent long after you opened it still lands, but the card may not follow.
   </Accordion>
 
   <Accordion title="I sent to the wrong chain or the wrong address" icon="triangle-exclamation">
@@ -34,7 +34,7 @@ Start with three questions, because they explain most of it:
 
     **Failed** names a reason on the card. Recipients marked ❌ received nothing.
 
-    If the amount was rejected for being too small, remember the fee is added on top of what you typed unless you sent `max`.
+    If the amount was rejected for being too small: withdrawals to another chain start at \$1, and the gas comes on top of what you typed unless you sent `max`.
   </Accordion>
 
   <Accordion title="A send is waiting on Approve in Wallet" icon="signature">
@@ -42,7 +42,7 @@ Start with three questions, because they explain most of it:
 
     A ⚠️ line on the card means the send could not go out — usually balance or gas. Sort it out and tap Approve again; the send stays open.
 
-    A send you do not approve within **five minutes** expires. Start it again from the chat. Telegram Web cannot approve a send — use the phone or desktop app.
+    A send you do not approve within **five minutes** expires. Start it again from the chat.
   </Accordion>
 </AccordionGroup>
 
@@ -73,7 +73,7 @@ Start with three questions, because they explain most of it:
 
     It can also be **paused** — no live price feed for the coin yet — in which case it is still armed and still being watched.
 
-    Check it in `/limitorders`.
+    Check it in `/orders`.
   </Accordion>
 
   <Accordion title="My DCA plan stopped on its own" icon="repeat">
@@ -81,7 +81,9 @@ Start with three questions, because they explain most of it:
   </Accordion>
 
   <Accordion title="I cannot find an order I placed" icon="magnifying-glass">
-    `/limitorders` is scoped to the wallet and profile you are in. Orders keep running in every profile — switch with `/profiles` and look again.
+    `/orders` is scoped to the wallet and profile you are in. Orders keep running in every profile — switch with `/profiles` and look again.
+
+    Running TWAPs are listed there too. Price alerts have their own list: **🔔 Alerts** → **📈 Price** on the home screen, or `/alerts`.
   </Accordion>
 </AccordionGroup>
 
@@ -90,18 +92,38 @@ Start with three questions, because they explain most of it:
 <AccordionGroup>
   <Accordion title="My task is not copying anything" icon="robot">
     Check the task's **🕘 Activity** — every skipped copy is listed with a reason. The usual ones: the task is **paused**, a **filter** is skipping the buys, a percent-sized copy comes to **under \$1**, or the wallet the task buys from has **no balance**.
+
+    A **⏩ Copytrade Missed** card means the price was already further above the leader's entry than your slippage allows — see [Missed copies](/copytrade/overview#missed-copies).
   </Accordion>
 
   <Accordion title="A mirrored sell did nothing" icon="rotate">
     A mirrored sell sells the coin the task bought, from the wallet the task is on. If you already sold it, a TP/SL sold it, or the task did not buy it, there is nothing to sell.
+
+    With **🤝 Hold if Down** on, a sell is also held back while your position is at a loss.
   </Accordion>
 
   <Accordion title="My copy filled far from the leader's price" icon="chart-line">
-    Your copy is placed after the leader's buy, so the price has already moved. Smaller sizes, a liquidity floor in the task's [filters](/copytrade/manage#filters) and a stop loss on the task all help.
+    Your copy is placed after the leader's buy, so the price may already have moved — by up to your slippage, measured from the price the leader paid. Lower the task's slippage to stay closer to their entry; copies past it are skipped. Smaller sizes, a liquidity floor in the task's [filters](/copytrade/manage#filters) and a stop loss on the task all help too.
   </Accordion>
 
   <Accordion title="A fomo handle cannot be found" icon="magnifying-glass">
     **Couldn't find them** — check the spelling, or paste the profile link. **Their wallet can't be worked out yet** — try again after they have traded, or paste their address if you have it.
+  </Accordion>
+</AccordionGroup>
+
+## Alerts
+
+<AccordionGroup>
+  <Accordion title="A trader's alerts have gone quiet" icon="bell">
+    Open the trader from **🔔 Alerts** → **👥 Traders** and check they are not **paused**.
+
+    Picked **📝 Theses** when you added them? Their trades are off — unfold **📈 Trades** and switch on **Buys** or **Sells**. Missing their theses instead? Check **📝 Theses: On** — tapping it while it is off tells you why.
+
+    Their **🔍 Trade Filters** only narrow buys. Sells and theses always come through.
+  </Accordion>
+
+  <Accordion title="A price alert never came" icon="chart-line">
+    A price alert lasts **7 days** and ends quietly after that. If it is still listed in `/alerts`, the coin has not reached the level yet.
   </Accordion>
 </AccordionGroup>
 
@@ -130,6 +152,7 @@ Start with three questions, because they explain most of it:
 | A panel does nothing | It has gone stale. Open a fresh one. |
 | A button is missing | Check which side the panel is on, and whether the feature needs more than one wallet. |
 | Dawn did not recognise the address | Try [naming the chain](/chains#naming-the-chain-yourself) yourself: `bnb 0x…`, `base 0x…`, `arc 0x…`. |
+| **That's a pool, not a coin** | You pasted a pool's address. Paste the coin's own contract address instead. |
 | The mini app shows the wrong account | Close it and reopen from the Telegram account you use with Dawn. |
 
 ## Still stuck
