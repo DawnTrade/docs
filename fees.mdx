@@ -71,13 +71,13 @@ _A Solana coin bought from your Solana balance has no such cost._
 
 ## <u>Withdrawal Fees</u>
 
-You pay only what a send costs: the network fee and, if an address has no token account yet, opening one.
+**Dawn charges no fee on withdrawals or sends.** You only pay the gas for the send and, if the recipient has never held the token, the cost of creating their token account.
 
-| Route | Cost |
+| Route | What you pay |
 | --- | --- |
-| **From Solana** | The network fee, plus opening the recipient's token account if they have never held the token. Paid in USDC from your balance, even when you send SOL or another token. |
-| **To another chain** | The bridge's cost comes out of the amount delivered, and the network fee to send it is paid in USDC. The confirmation shows what will arrive. |
-| **From an EVM chain** | The network fee is paid in that chain's own coin, from your wallet on that chain. |
+| **From Solana** | The gas, plus creating the recipient's token account if they need one. Paid in USDC from your balance, even when you send SOL or another token. |
+| **From an EVM chain** | The gas, paid in that chain's own coin from your wallet on that chain. |
+| **To another chain** | The gas to send it, in USDC. The bridge delivers it, and the confirmation shows the amount that will arrive. |
 
 See [Withdraw and send](/funds/withdraw).
 

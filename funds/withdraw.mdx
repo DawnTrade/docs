@@ -66,15 +66,15 @@ A send you do not approve within **five minutes** expires — start it again fro
 
 ## What it costs
 
-You pay only what the send costs: the network fee and, if an address has no token account yet, opening one.
+**Dawn charges no fee to withdraw or send.** You only pay the gas for the send and, if the recipient has never held the token, the cost of creating their token account.
 
-| Route | Cost |
+| Route | What you pay |
 | --- | --- |
-| **From Solana** | The network fee, plus opening the recipient's token account if they have never held the token. Paid in USDC from your balance, even when you send SOL or another token. |
-| **To another chain** | Delivered by the bridge. Its cost comes out of what is delivered, and the network fee to send it is paid in USDC. The confirmation shows the amount that will arrive. |
-| **From an EVM chain** | The network fee is paid in that chain's own coin, from your wallet on that chain. |
+| **From Solana** | The gas, plus creating the recipient's token account if they need one. Paid in USDC from your balance, even when you send SOL or another token. |
+| **From an EVM chain** | The gas, paid in that chain's own coin from your wallet on that chain. |
+| **To another chain** | The gas to send it, in USDC. The bridge delivers it, and the confirmation shows the amount that will arrive. |
 
-The wallet app shows the exact cost before you approve.
+The wallet app shows the exact amount before you approve.
 
 ## Send to your own wallets
 
@@ -107,9 +107,9 @@ The exception is HyperEVM: coins you bought there through Dawn cannot be sent ou
 | The app asks for the Telegram app | Telegram Web cannot approve a send. Use your phone or desktop. |
 | **Transfer failed** | Read the reason on the card. Recipients marked ❌ received nothing. |
 | **Withdrawal refunded** | The route could not deliver. The USDC is back on your balance. |
-| Not enough available | The send's cost comes on top of the amount unless you sent `max`. Leave room for it, or use `max`. |
-| Not enough USDC for the fee | A send from Solana pays its cost in USDC, even when you send another coin. Top up USDC, or send a little less. |
-| No gas on that chain | A send from an EVM chain needs a little of that chain's own coin for the network fee. Send some to your wallet's address, then try again. |
+| Not enough available | The gas comes on top of the amount unless you sent `max`. Leave room for it, or use `max`. |
+| Not enough USDC for the gas | A send from Solana pays its gas in USDC, even when you send another coin. Top up USDC, or send a little less. |
+| No gas on that chain | A send from an EVM chain needs a little of that chain's own coin for gas. Send some to your wallet's address, then try again. |
 | Address rejected | Wrong chain for that address shape, or a contract address rather than a wallet. |
 
 A card that says **Sent** and is still confirming is not finished. Wait for it rather than starting a second withdrawal.
