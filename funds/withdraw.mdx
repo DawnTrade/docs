@@ -56,10 +56,6 @@ Every send and withdrawal is approved by you in the wallet app.
 
 A send you do not approve within **five minutes** expires — start it again from the chat. With [two-factor authentication](/wallets/two-factor) on, Privy asks for it before the send goes.
 
-<Note>
-  Approving works from the Telegram app on a **phone or desktop**, not from Telegram Web.
-</Note>
-
 <Warning>
   Check the address and the chain yourself. A sent transaction cannot be recalled, and an address that is right on one network can be wrong on another. Never paste a token's contract address as the recipient.
 </Warning>
@@ -104,7 +100,6 @@ The exception is HyperEVM: coins you bought there through Dawn cannot be sent ou
 | --- | --- |
 | **Approve to send** with a ⚠️ line | It could not go out — the reason is on the card, usually balance or gas. Fix it and tap **Approve in Wallet** again. |
 | _Not approved in time_ | It was not approved within five minutes. Start the send again. |
-| The app asks for the Telegram app | Telegram Web cannot approve a send. Use your phone or desktop. |
 | **Transfer failed** | Read the reason on the card. Recipients marked ❌ received nothing. |
 | **Withdrawal refunded** | The route could not deliver. The USDC is back on your balance. |
 | Not enough available | The gas comes on top of the amount unless you sent `max`. Leave room for it, or use `max`. |
