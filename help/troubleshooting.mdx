@@ -34,7 +34,7 @@ Start with three questions, because they explain most of it:
 
     **Failed** names a reason on the card. Recipients marked ❌ received nothing.
 
-    If the amount was rejected for being too small, remember the fee is added on top of what you typed unless you sent `max`.
+    If the amount was rejected for being too small: withdrawals to another chain start at \$1, and the send's cost comes on top of what you typed unless you sent `max`.
   </Accordion>
 
   <Accordion title="A send is waiting on Approve in Wallet" icon="signature">
@@ -83,7 +83,7 @@ Start with three questions, because they explain most of it:
   <Accordion title="I cannot find an order I placed" icon="magnifying-glass">
     `/orders` is scoped to the wallet and profile you are in. Orders keep running in every profile — switch with `/profiles` and look again.
 
-    Price alerts are in `/alerts`, and a running TWAP lives on its own card.
+    Running TWAPs are listed there too. Price alerts have their own list: **🔔 Price Alerts** on the home screen, or `/alerts`.
   </Accordion>
 </AccordionGroup>
 
@@ -115,7 +115,11 @@ Start with three questions, because they explain most of it:
 
 <AccordionGroup>
   <Accordion title="A trader's alerts have gone quiet" icon="bell">
-    Open the trader from **🔔 Alerts** and check they are not **paused**, that **Buys** and **Sells** are on, and what their **🔍 Trade Filters** leave out. Filters only narrow buys — sells and theses always come through.
+    Open the trader from **🔔 Tracker** and check they are not **paused**.
+
+    Picked **📝 Theses** when you added them? Their trades are off — unfold **📈 Trades** and switch on **Buys** or **Sells**. Missing their theses instead? Check **📝 Theses: On** — tapping it while it is off tells you why.
+
+    Their **🔍 Trade Filters** only narrow buys. Sells and theses always come through.
   </Accordion>
 
   <Accordion title="A price alert never came" icon="chart-line">

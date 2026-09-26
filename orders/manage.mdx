@@ -5,12 +5,12 @@ description: "Find what is armed, cancel it, and work out why something has not 
 icon: "list-check"
 ---
 
-Send `/orders`, or tap **📋 Limit Orders** on the home screen. Everything armed lives here, grouped by coin: limit buys and sells, ladders, DCA plans, and the take-profit and stop-loss levels on your positions.
+Send `/orders`, or tap **📋 Limit Orders** on the home screen. Everything armed lives here, grouped by coin: limit buys and sells, ladders, DCA plans, running TWAPs, and the take-profit and stop-loss levels on your positions.
 
 A coin's own panel lists what is waiting on it, and the **⚙️ Automations** button carries the count.
 
 <Note>
-  Two things live elsewhere. [Price alerts](/alerts/price) are behind **🔔 Price Alerts** on this page, or `/alerts`. A running [TWAP](/orders/twap) is followed and stopped from its own card.
+  [Price alerts](/alerts/price) have their own list: **🔔 Price Alerts** on the home screen, or `/alerts`. Once you have one, this page links to it too.
 </Note>
 
 ## Changing a limit buy
@@ -33,7 +33,8 @@ Limit sells are take-profit and stop-loss levels — change those with **Edit TP
 | **Cancel** on an order | Removes that one order |
 | **Cancel ladder** | Removes every rung of that ladder that has not fired |
 | **⏹ Stop DCA** | Ends the buys left in that plan |
-| **🗑 Cancel All** | Clears everything on the page except DCA plans |
+| **⏹ Stop TWAP** | Stops that TWAP. Slices already done stay done. |
+| **🗑 Cancel All** | Clears everything on the page except DCA plans and TWAPs |
 
 Cancelling never undoes something that already happened. A ladder that has filled two rungs keeps those two positions; cancelling removes the rest.
 

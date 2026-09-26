@@ -7,18 +7,24 @@ icon: "layer-group"
 
 A profile can hold up to **5 wallets**. The multi-wallet panel trades the same coin from several of them without switching wallet between each one.
 
-Open a coin and choose the multi-wallet view from the panel. Two buttons at the top switch between its two faces.
+Open a coin and tap **👥 Multi-Wallet** on its panel. **Buying ⇄** switches between buying and selling.
 
-## Two ways to buy
+## Buy from several wallets
 
-|  |  |
-| --- | --- |
-| **💳 Per Wallet** | Every wallet is listed with its own row of sizes. Tap a size under a wallet and that wallet alone buys. |
-| **🚀 Buy Together** | Every wallet is a tick. Tick the ones you want, then a size at the bottom, and they all buy at once. |
+<Steps>
+  <Step title="Pick the wallets">
+    Every wallet is a button showing its USDC. Tap one to pick it or drop it — picked wallets are highlighted. **✅ Select All** picks every wallet with USDC, and **✖ Clear** drops them all.
+  </Step>
+  <Step title="Tap how much each one spends">
+    Tap one of your dollar buttons, or **\$X** for your own. Every picked wallet buys that amount.
+  </Step>
+</Steps>
 
-The first is for topping up one wallet. The second is for entering from several at the same moment.
+The page opens with the wallets you picked last time, or with every wallet that holds USDC, and remembers **⚡ Bundle** too. Each profile keeps its own. An empty wallet shows **\$0** and cannot be picked until you deposit to it.
 
-The buy page opens the way you left it — the same face, the same wallets ticked, and **⚡ Bundle** as you set it. Each profile keeps its own.
+<Info>
+  Buying from five wallets spends five times the size you chose. The size applies to **each** picked wallet; it is not a total divided between them.
+</Info>
 
 ## Buying from several at once
 
@@ -26,13 +32,13 @@ What "at once" means depends on the chain.
 
 <Tabs>
   <Tab title="Solana">
-    In **🚀 Buy Together**, a **⚡ Bundle** toggle appears.
+    With two or more wallets picked, a **⚡ Bundle** toggle appears.
 
-    **Bundle on** lands the buys together: the **same block**, the **same price**, all or nothing. Nobody can slip a trade in between your own wallets, and no wallet gets a worse entry than another.
+    **⚡ Bundle: On** — every picked wallet buys in one transaction, at the same price, or none of them do. Nobody can slip a trade in between your own wallets, and no wallet gets a worse entry than another.
 
-    Each wallet still pays its own trading fee and its own tip.
+    **⚡ Bundle: Off** — each wallet buys on its own, so one can fail without the others.
 
-    **Bundle off** sends the buys at the same moment but each on its own, so one can fail without taking the others with it.
+    Each wallet pays its own trading fee; Dawn covers the network fee, as on any buy.
   </Tab>
   <Tab title="BNB, Robinhood, Base, Arc, Ink, HyperEVM">
     The buys go out at the same moment, each on its own. One can fail without affecting the others, and the fills can land at slightly different prices.
@@ -43,25 +49,23 @@ What "at once" means depends on the chain.
 
 - **One entry price.** Five separate buys walk the price up; five bundled buys do not.
 - **No sandwiching between your own wallets.** Nothing can get in between them.
-- **All or nothing.** Either every wallet gets in or none does, so you are never left half-positioned.
+- **All or nothing.** The wallets in the bundle either all get in or none do, so you are never left half-positioned.
 
 ### Why you might not
 
-A bundle is all or nothing, so one wallet that cannot take part stops the whole thing. Sending them separately gets the rest of your wallets in regardless.
+A bundle is all or nothing: if it fails, none of its wallets buy. With Bundle off, one wallet's failure never holds the others back.
 
 ## Selling from several wallets
 
-The sell panel works the same way, with **shares of each wallet's own holding** instead of dollar sizes. It also tells you how many of your profiles hold the coin, so you can see at a glance whether the rest of it is somewhere else.
+The sell side lists each wallet that holds the coin, with your sell shares under it. Tap a share under a wallet to sell from that wallet; when two or more hold it, **🚀 All Wallets** sells the same share from each of them. Every tap is its own trade.
+
+It also tells you how many of your profiles hold the coin, so you can see at a glance whether the rest of it is somewhere else.
 
 ## Reading the results
 
-A bundle draws **one card** for the whole thing, and redraws it as each wallet's fill lands. Wallets that were left out are named separately, with the reason.
+A bundle sends **one card** for the whole thing. Wallets that could not take part are named separately, with the reason.
 
-Individual taps each produce their own card, exactly like a normal trade.
-
-<Info>
-  Buying from five wallets spends five times the size you chose. The size applies to **each** ticked wallet; it is not a total divided between them.
-</Info>
+Without ⚡ Bundle, and on every EVM chain, each wallet's buy gets its own card, exactly like a normal trade.
 
 ## Where the positions end up
 

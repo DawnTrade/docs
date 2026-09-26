@@ -14,7 +14,7 @@ Slippage is **how far the price may move against you** between quoting and filli
 | | |
 | --- | --- |
 | Default | **15%** |
-| Range | 0.1% – 50% |
+| Range | 0.1% – 100% |
 | Presets | 5% · 10% · 15% · 20% · 30% |
 | Where | `/settings` → Trading → Slippage, or **change** on the token panel |
 
@@ -22,6 +22,8 @@ It cuts both ways:
 
 - **Higher** — more trades go through, and some of them at a price you would not have chosen.
 - **Lower** — a better price when you fill, and fast-moving coins bounce more often.
+
+At **100%**, a buy takes whatever price it gets. [Liquidity protection](#liquidity-protection) still applies — only Degen Mode switches it off.
 
 <Tip>
   Slippage is a limit, not a target. Setting 30% does not mean you pay 30% more; it means you have agreed to fill anywhere up to that. On a calm pool you will usually fill far inside it.
