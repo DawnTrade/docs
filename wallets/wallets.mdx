@@ -4,77 +4,56 @@ description: "Create, rename, switch and archive the wallets your trades come fr
 icon: "wallet"
 ---
 
-A Dawn wallet is a **pair of addresses** — one EVM, one Solana — that travel together as one entry. It has its own balance, its own positions and its own orders.
+A Dawn wallet is a **pair of addresses**, one EVM and one Solana, with its own balance, positions and orders. Your first one is made for you when you send `/start`.
 
-Open it with `/wallets`, or **Wallets** on the home screen.
+Open your wallets with `/wallets`, or **Wallets** on the home screen.
 
-<Note>
-  Your very first wallet is created for you when you send `/start`. You do not need to make another one to begin trading.
-</Note>
+## Your default wallet
 
-## Read the list
+The wallet marked ⭐ **Default** is the one in use: trades, orders and deposits go there unless you pick another. Tap **Set as default** on another wallet to switch.
 
-Each row shows the wallet's label, its spendable **USDC**, the worth of its **Portfolio**, and both addresses.
-
-| Mark | Meaning |
-| --- | --- |
-| ⭐ **Default** | The wallet currently in use. Trades, orders and deposits go here unless you pick another. |
-| **Set as default** | Tap to make that wallet the one in use. |
-| **Manage** | Opens the wallet's own page: rename, archive, send from it. |
-
-On the home screen, **Ready** and **Portfolio** both count every wallet in the profile.
+<Info>
+  **Ready** and **Portfolio** on the home screen count every wallet in the [profile](/wallets/profiles) you're in.
+</Info>
 
 ## Create a wallet
 
 <Steps>
   <Step title="Pick the profile">
-    Wallets belong to a profile, and a profile's settings apply to every wallet in it. Switch to the profile you want first — see [Profiles](/wallets/profiles).
+    A wallet trades with its profile's settings, so switch to the right [profile](/wallets/profiles) first.
   </Step>
 
   <Step title="Add it">
-    In `/wallets`, tap **New wallet**. Dawn creates the address pair through [Privy](https://privy.io) and names it **Wallet 2**, **Wallet 3**, and so on.
-
-    The wallet in use stays the same. Tap **Set as default** on the new one to trade from it.
+    In `/wallets`, tap **New wallet**. Tap **Set as default** on it to trade from it.
   </Step>
 
   <Step title="Fund it">
-    A new wallet starts empty. Deposit into it, or send USDC across from another wallet with [Send](/funds/withdraw#send-to-your-own-wallets).
+    A new wallet starts empty. [Deposit](/funds/deposit) into it, or [send](/funds/withdraw#send-to-your-own-wallets) USDC from another wallet.
   </Step>
 </Steps>
 
-Each profile holds up to **5 wallets**. With 5 profiles, that is **25** in total.
+Each profile holds up to **5 wallets**, so **25** across 5 profiles.
+
+<Tip>
+  With several wallets in a profile, you can buy a coin from all of them in one go — see [Multi-wallet trading](/trading/multi-wallet).
+</Tip>
 
 ## Rename a wallet
 
-Open the wallet's **Manage** page and choose **Rename**. Up to **20 characters** — letters, digits, spaces, dashes and underscores.
-
-A good label is worth setting early. Once you are trading from several wallets at once, "Wallet 3" tells you nothing.
+On the wallet's **Manage** page, tap **Rename**.
 
 ## Archive and restore
 
-Archiving takes a wallet out of the list without touching anything inside it.
+Archiving takes a wallet off your list without touching what's in it. Nothing is sold or sent, the keys stay with Privy, and its positions and history stay with it.
 
-- Nothing is sold and nothing is sent.
-- The keys stay with Privy.
-- The positions and the history stay with the wallet.
-- Restoring puts it back in its profile, **not in use**, so nothing starts trading from it by surprise.
-
-If the wallet still holds funds, Dawn says so before archiving and gives you the chance to move them first.
+Restore it from **Archived wallets**. It comes back into its profile, but not as the wallet in use.
 
 <Warning>
-  Archiving does not stop orders that are already placed. Cancel anything you do not want to fire before you archive — see [Managing orders](/orders/manage).
+  Archiving does not cancel orders already placed. Cancel anything you don't want to fire first — see [Managing orders](/orders/manage).
 </Warning>
 
-Restore from **Archived wallets**. If the destination profile is already full, Dawn tells you which wallet to archive to make room.
+## Keys and 2FA
 
-## Trading from several wallets
+Dawn doesn't hold your private keys: [Privy](https://privy.io) does, and you can [export them](/wallets/import-export#export-a-private-key) at any time.
 
-You can buy the same coin from every wallet in a profile in one go, and on Solana land all of those buys in the same block. See [Multi-wallet trading](/trading/multi-wallet).
-
-## Two-factor authentication
-
-The header of the list says whether **🔐 2FA** is on. With it on, approving a send and exporting a key ask for a second factor first; trading never does. Set it up from the **🔐 2FA** button under the list — see [Two-factor authentication](/wallets/two-factor).
-
-## Where the keys are
-
-Dawn does not hold your private keys. They are created and held by [Privy](https://privy.io), and you can export them at any time — see [Import and export](/wallets/import-export) and [Security](/wallets/security).
+Turn on [two-factor authentication](/wallets/two-factor) from **🔐 2FA** under the list, to put a second check on sends and key exports.

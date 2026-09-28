@@ -5,41 +5,35 @@ description: "Every setting in Dawn, what it changes, and what it is set to by d
 icon: "sliders"
 ---
 
-Send `/settings`. Everything here belongs to the **profile you are in** — [each profile has its own](/wallets/profiles), and the header lets you switch between them without leaving the screen.
-
-The screen is in four sections.
+Send `/settings`. Settings belong to the **profile you're in**: [each profile has its own](/wallets/profiles), and a new one can start as a copy of yours.
 
 ## Trading
 
 | Setting | Default | What it changes |
 | --- | --- | --- |
 | 🎯 **Slippage** | **15%** | How far the price may move against you before a trade is refused. See [Execution](/trading/execution#slippage). |
-| ⚡ **Auto Buy** | Off | Pasting an address buys a fixed amount immediately. |
-| 🛡 **MEV Protection** | **On** | Routes Solana swaps through a private lane so nobody can front-run you. See [Execution](/trading/execution#mev-protection). |
-| ⛽️ **Gas** | Medium | How hard your trades bid to land. Low, Medium or High. See [Execution](/trading/execution#gas-preset). |
-| 💵 **Fees in PnL** | Off | Shows what a position has paid in fees — Dawn's, the routing cost and the venue's — beside its profit. PnL is net of them either way. |
+| ⚡ **Auto Buy** | Off | Pasting an address buys a fixed amount right away. |
+| 🛡 **MEV Protection** | **On** | Sends Solana swaps through a private lane so nobody can front-run you. See [Execution](/trading/execution#mev-protection). |
+| ⛽️ **Gas** | Medium | How hard your trades bid to land. See [Execution](/trading/execution#gas-preset). |
+| 💵 **Fees in PnL** | Off | Shows what a position has paid in fees beside its profit. PnL is net of fees either way. |
 
 ### Auto Buy
 
-With Auto Buy on, **pasting a contract address buys**. The trade card lands in the chat and the coin's panel follows it. With it off, pasting an address only opens the panel.
-
-Pick an amount to switch it on — **\$5 · \$10 · \$25 · \$50 · \$100**, or type your own between **\$1** and **\$10,000**. Tapping the Auto Buy button switches it off again and keeps the amount for next time.
+With Auto Buy on, **pasting a coin's address buys it** for the amount you set. With it off, pasting only opens the coin.
 
 <Warning>
-  This turns pasting into spending. Forwarding a message, or pasting an address just to look at it, becomes a trade.
-
-  Keep it to something you would be relaxed about losing to a mis-tap.
+  This turns pasting into spending: forwarding a message, or pasting an address just to look at it, becomes a trade. Keep the amount to something you'd be relaxed about losing to a mis-tap.
 </Warning>
 
 ## Guardrails
 
 | Setting | Default | What it changes |
 | --- | --- | --- |
-| 🔥 **Degen Mode** | Off | 100% slippage and no liquidity protection on buys. |
-| 🪄 **Auto-Adjust** | Off | Shrinks a buy you cannot afford instead of refusing it. |
-| 💸 **Gas Surplus** | Off | How much extra gas a trade may charge you above Dawn's \$5 cap. |
+| 🔥 **Degen Mode** | Off | 100% slippage and no liquidity protection on buys |
+| 🪄 **Auto-Adjust** | Off | Shrinks a buy you can't afford instead of refusing it |
+| 💸 **Gas Surplus** | Off | How much extra gas a trade may charge you above Dawn's \$5 cap |
 
-These have their own page: [Guardrails](/settings/guardrails).
+See [Guardrails](/settings/guardrails).
 
 ## Auto Sell
 
@@ -48,27 +42,21 @@ These have their own page: [Guardrails](/settings/guardrails).
 | 📉 **Stop Loss** | Off |
 | 📈 **Take Profit** | Off |
 
-Levels set here are applied to **every new position** in the profile. You can still change any individual position from its own page afterwards.
-
-Defaults are relative to your entry — a percent like `-30%` or a multiple like `2x`. See [Take profit and stop loss](/orders/tp-sl#defaults-for-every-new-position).
+Levels set here go on **every new position** in the profile, as a percent like `-30%` or a multiple like `2x`. You can still change any position's own afterwards. See [Take profit and stop loss](/orders/tp-sl#defaults-for-every-new-position).
 
 <Tip>
-  A default stop loss is the highest-value setting on this page. It is the difference between a bad trade costing you part of a position and costing you all of it.
+  A default stop loss is the most valuable setting on this page. It's the difference between a bad trade costing you part of a position and all of it.
 </Tip>
 
 ## Groups
 
 | Setting | Default | What it changes |
 | --- | --- | --- |
-| 🔗 **Group Links** | Off | Whether tapping a one-tap trade in a chat trades immediately, or just opens the coin. |
-| 💵 **Buy Amount** | Card Amount | What a tapped buy link spends: the size on the card, one of your presets, or a custom figure. |
+| 🔗 **Group Links** | Off | Whether tapping a one-tap trade in a chat trades right away, or just opens the coin |
+| 💵 **Buy Amount** | Card Amount | What a tapped buy link spends |
 
 See [Group links](/social/group-links).
 
 ## Presets
 
-**🎛 Presets** holds your quick-pick buttons: the buy amounts and sell shares on every token panel, and the trigger buttons on the limit order panel. See [Presets](/settings/presets).
-
-## Copying settings to a new profile
-
-When you create a profile, Dawn offers to start it with the settings of the one you were just using. That copies this whole page; it does not copy wallets, funds or positions.
+**🎛 Presets** sets your quick-pick buttons: the buy amounts and sell shares on every token panel, and the limit order triggers. See [Presets](/settings/presets).

@@ -5,15 +5,7 @@ description: "Bring an existing wallet into Dawn, or take a private key out."
 icon: "key"
 ---
 
-Both live in the **wallet manager**, a mini app that opens from inside Telegram. Send `/wallets` and use the buttons under the list:
-
-| Button | What it does |
-| --- | --- |
-| 🔑 **Export** | Reveal a wallet's private key, through Privy's own secure window |
-| 🗝 **Import** | Bring a wallet you already own into Dawn |
-| 🔐 **2FA** | Put a second check on exports and sends — see [Two-factor authentication](/wallets/two-factor) |
-
-The same app is where every [send and withdrawal is approved](/funds/withdraw#approve-it-in-the-wallet-app), and where a [card deposit](/funds/deposit#buying-with-a-card) starts.
+Both happen in the **wallet manager**, a mini app inside Telegram. Send `/wallets` and tap **🗝 Import** or **🔑 Export** under the list.
 
 <Warning>
   A private key is complete control of a wallet. Type one only into the import form inside the official Dawn app. Never send a key to support, to a group, to another person, or into any chat — including this one.
@@ -26,32 +18,22 @@ The same app is where every [send and withdrawal is approved](/funds/withdraw#ap
     `/wallets` → **🗝 Import**.
   </Step>
 
-  <Step title="Choose where it lands">
-    Pick the profile that should hold it, and give it a label if you want one. Leave the label blank and Dawn names it **Wallet n** like any other.
-
-    The profile needs a free slot — each one holds **5 wallets**.
+  <Step title="Pick the profile">
+    It needs a free slot: each profile holds **5 wallets**. Add a label if you want one.
   </Step>
 
-  <Step title="Give the key, or both keys">
-    A Dawn wallet is an EVM address and a Solana address together. You can import:
-
-    - a **Solana** key on its own,
-    - an **EVM** key on its own,
-    - or **both**, paired into one wallet.
-
-    Import one side only and Dawn creates a fresh address for the other, so the pair is complete.
+  <Step title="Paste the key">
+    A **Solana** key, an **EVM** key, or **both** to pair them into one wallet. Import one side only and Dawn makes a fresh address for the other.
   </Step>
 
   <Step title="Confirm">
-    The imported wallet becomes the one in use in that profile, and a confirmation card lands in your chat with both addresses.
+    The imported wallet becomes the one in use in that profile.
   </Step>
 </Steps>
 
-### Why importing happens in the app
-
-Your key is encrypted **on your own device** before it is sent anywhere, and Dawn never sees it in readable form.
-
-That is also why it is not done in the chat. A key typed as a Telegram message would sit in a chat log as plain text, for as long as that chat exists.
+<Info>
+  Your key is encrypted on your own device before it's sent anywhere, and Dawn never sees it in readable form.
+</Info>
 
 ## Export a private key
 
@@ -61,22 +43,16 @@ That is also why it is not done in the chat. A key typed as a Telegram message w
   </Step>
 
   <Step title="Pick the wallet">
-    Check the label and the address before you go on. If the wallet is in another profile, switch profile in Telegram and reopen the app.
+    Check the label and address. For a wallet in another profile, switch profile in Telegram and reopen the app.
   </Step>
 
   <Step title="Reveal and store it">
-    With [2FA](/wallets/two-factor) on, Privy asks for it first. The key is then shown by Privy in its own secure window. Save it somewhere only you can reach — a password manager, not a screenshot and not a chat.
+    With [2FA](/wallets/two-factor) on, Privy asks for it first. Save the key somewhere only you can reach: a password manager, not a screenshot or a chat.
   </Step>
 </Steps>
 
-Exporting changes nothing about the wallet. It keeps trading in Dawn exactly as before; you simply also hold the key yourself.
-
-<Note>
-  Dawn wallets use individual private keys, not one shared seed phrase. Exporting one wallet reveals that wallet and no other.
-</Note>
+Exporting changes nothing about the wallet: it keeps trading in Dawn as before. Each wallet has its own key, not a shared seed phrase, so exporting one reveals no other.
 
 ## If the app opens on the wrong account
 
-The mini app takes its identity from Telegram. If it shows wallets you do not recognise, you have it open from a different Telegram account — close it and reopen from the account you use with Dawn.
-
-If a wallet is missing, check which profile you are in first.
+The app uses your Telegram account. If it shows wallets you don't recognise, reopen it from the Telegram account you use with Dawn. If a wallet is missing, check which profile you're in.

@@ -24,57 +24,33 @@ An automated order waits for a condition and then trades for you. It keeps runni
 
 ## Targets are market caps
 
-Every level you set in Dawn is a **market cap**, not a token price.
+Levels in Dawn are usually a **market cap**, not a token price. Shorthand works: `250k`, `1.5m`, `$2m`.
 
-This is the right way round for memecoins. A token price of `0.0000034` tells you nothing on its own; a market cap of `$2M` tells you what the coin is being valued at. It is also stable across supply changes.
+<Info>
+  A **\$1M target** means "when this coin is valued at \$1 million". It is not an instruction to trade \$1 million.
+</Info>
 
-You can type shorthand — `250k`, `1.5m`, `\$2m` all work. A limit order also takes a move from the market cap right now — `2x`, `+50%`, `-30%` — and works out the level for you.
+## Order sizes
 
-<Note>
-  A **\$1M target** means "wait until this coin is valued at \$1 million". It is not an instruction to trade \$1 million.
-</Note>
-
-## The two ingredients
-
-Every order has a **trigger** and a **size**.
-
-| Side | Trigger | Size |
-| --- | --- | --- |
-| Buying | A market cap | A dollar amount to spend |
-| Selling | A market cap | A percentage of what you hold |
-
-Sells are percentages because the quantity you hold changes — a percentage stays correct after you have bought more or sold some.
+A buy spends a **dollar amount**. A sell sells a **percentage of what you hold**.
 
 ## Expiry
 
-Every limit order and ladder has one. The default is **24 hours**.
+Limit orders and ladders expire after **24 hours** unless you pick another time, from 5 minutes to 30 days. `never` keeps an order until it fills or you cancel it.
 
-| | |
-| --- | --- |
-| Presets | 1h · 24h · 3d · 7d · never |
-| Type your own | `45m`, `36h`, `5d` — a bare number means hours |
-| Range | 5 minutes to 30 days, or `never` |
-
-`never` keeps the order alive until it fills or you cancel it.
-
-Take-profit and stop-loss levels do not expire on that schedule; they stay with the position.
+Take-profit and stop-loss levels don't follow that schedule; they stay with the position.
 
 ## What a trigger does and does not promise
 
-When the condition is met, the order becomes a **market trade**, with your slippage and your settings. It fills at whatever the market gives it at that moment.
+When its level is reached, an order becomes a **market trade** with your slippage and settings, and fills at whatever the market gives at that moment.
 
 <Warning>
-  A target is not a guaranteed price. Between the trigger and the fill, the price can move; on a thin coin it can move a lot. A brief spike can also trigger an order and be gone by the time it executes.
-
-  Orders reduce how much you have to watch. They do not remove market risk.
+  A target is not a guaranteed price. On a thin coin the price can move a lot between the trigger and the fill, and a brief spike can trigger an order and be gone by the time it executes.
 </Warning>
-
-An order can also fail to fill — too little liquidity, a token that blocks selling, or gas above what you allow. Dawn tells you which, and whether the order is still armed.
 
 ## Before you place several
 
-- **Nothing is reserved.** Two limit buys for \$100 each need \$200 on your balance when they fire, not when you place them.
-- **Orders belong to a wallet.** An order placed from one wallet acts on that wallet's holding only.
-- **They survive a profile switch.** Check `/orders` in each profile before assuming nothing is armed.
+- **Nothing is reserved.** Two \$100 limit buys need \$200 on your balance when they fire, not when you place them.
+- **Orders belong to a wallet.** An order acts only on the holding of the wallet it was placed from.
 
-Manage everything from one place: [Managing orders](/orders/manage).
+See and cancel everything you have armed in [Managing orders](/orders/manage).

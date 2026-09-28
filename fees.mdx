@@ -3,7 +3,7 @@ title: "Fees, Gas And Minimums"
 sidebarTitle: "Fees & Gas"
 ---
 
-Dawn charges one trading fee. Everything else on this page is either a cost Dawn absorbs for you or a cost the network and the market charge directly.
+Dawn charges one fee, on trades, and covers your gas up to a cap. Every other cost comes from the network or the market, not from Dawn.
 
 #### **<u>At a Glance</u>**
 
@@ -17,96 +17,73 @@ Dawn charges one trading fee. Everything else on this page is either a cost Dawn
   </Card>
 
   <Card title="Minimum trade" icon="arrow-down-1-9">
-    **$1**, and more on some bridged routes displayed clearly
+    **$1**, and more on some cross-chain routes
   </Card>
 </Columns>
 
-## <u>Dawn's Trading Fee</u>
+## <u>The trading fee</u>
 
-Dawn charges a **1% fee** on every buy & sell transaction. The minimum fee is \$0.35. 
+**1%** of every buy and sell, with a **\$0.35** minimum. Each [TWAP](/orders/twap) slice is its own trade and pays it separately.
 
-Each slice of a [TWAP](/orders/twap) is its own trade and pays the 1% with the \$0.35 minimum.
+[Cashback](/rewards/cashback) pays part of it back: **25%** at the entry tier, rising to **55%** with your 30-day volume. That makes the effective fee **0.75%**, down to **0.45%** at the top tier.
 
-<Check>
-  You get part of it back immediately through cashback!
-</Check>
+## <u>Gas</u>
 
-[Cashback](/rewards/cashback) returns a share of this fee to you, starting at **25%** and rising to **55%** dependent on your 30-day volume. <br /><br />At the entry tier a 1% fee is effectively **0.75%**; at the top tier your effective fee becomes **0.45%**.
+Dawn pays up to **\$5 of gas per trade**, which covers nearly every trade on every chain. You never need to hold SOL, BNB, ETH or HYPE to trade.
 
-## <u>Gas Fees</u>
+When a trade needs more than that, your [Gas Surplus](/settings/guardrails#gas-surplus) setting decides:
 
-Dawn pays your gas for you up to **$5 of gas per trade**, which covers essentially every trade on every chain Dawn supports.
-
-You never need to hold SOL, BNB, ETH or HYPE to trade.
-
-#### When gas goes over \$5
-
-On a congested chain a single transaction can cost more than the cap. What happens then depends on your [Gas Surplus](/settings/guardrails#gas-surplus) setting:
-
-| [Gas Surplus](/settings/guardrails#gas-surplus) | What happens |
+| Gas Surplus | What happens |
 | --- | --- |
-| **Off** (default) | The trade is declined before it is sent. Nothing is spent, and you decide what to do. |
-| **Set to a limit** | The extra comes out of your USDC, up to the limit you chose. Past the limit the trade is declined. |
+| **Off** (default) | The trade is declined before it is sent. Nothing is spent. |
+| **Set to a limit** | The extra comes out of your USDC, up to your limit. Past it, the trade is declined. The limit can be up to **\$50** per trade. |
 
-The limit can be up to **$50** per trade. Take-profit and stop-loss sells follow the same limit, which is worth knowing: a stop that needs more gas than you allow will not fire. See [Gas Surplus](/settings/guardrails#gas-surplus).
+<Warning>
+  Take-profit and stop-loss sells follow the same limit. A stop that needs more gas than you allow will not fire.
+</Warning>
 
-## <u>Minimum trade size</u>
+## <u>Minimum trade</u>
 
-The minimum is **$1**.
+**\$1**. Routes that move value between chains have a higher minimum, and the bot tells you when a trade is below it.
 
-On routes that have to move value between chains, the minimum is higher. A trade below it is refused rather than sent and you will be notified of this inside of the bot. 
+## <u>Trading on another chain</u>
 
-## <u>Fees for trading on another chain</u>
+Your balance is USDC on Solana, so buying a coin on any other chain means moving value across. That routing has its own cost. It is not a Dawn fee and Dawn does not absorb it, but it is already inside the quoted price.
 
-Your balance is **USDC on Solana.** Buying a coin on BNB Chain, Robinhood Chain, Base, Arc, Ink or HyperEVM means moving value across, **_and that routing has a cost of its own._**
+It weighs far more on a \$5 trade than on a \$200 one. A Solana coin bought from your balance has no such cost.
 
-It is **not** a **Dawn fee**, and Dawn does **not** absorb it. It is part of what the trade costs you, and it is inside the quoted price before you buy — the figures you approve already account for these external fees.
+## <u>Withdrawals</u>
 
-Two things follow from that:
+Dawn charges no fee on withdrawals or sends. You pay only the network's costs:
 
-- **Small cross-chain trades are proportionally worse.** The cost weighs far more on a \$5 trade than on a \$200 one.
-- **The minimum trade is higher on those routes.** A trade below it is refused rather than sent.
-
-_A Solana coin bought from your Solana balance has no such cost._
-
-## <u>Withdrawal Fees</u>
-
-**Dawn charges no fee on withdrawals or sends.** You only pay the gas for the send and, if the recipient has never held the token, the cost of creating their token account.
-
-| Route | What you pay |
+| Sending | What you pay |
 | --- | --- |
-| **From Solana** | The gas, plus creating the recipient's token account if they need one. Paid in USDC from your balance, even when you send SOL or another token. |
-| **From an EVM chain** | The gas, paid in that chain's own coin from your wallet on that chain. |
-| **To another chain** | The gas to send it, in USDC. The bridge delivers it, and the confirmation shows the amount that will arrive. |
+| **From Solana** | The gas, plus creating the recipient's token account if they have never held the token. Paid in USDC from your balance, even when you send SOL or another token. |
+| **From an EVM chain** | The gas, in that chain's own coin, from your wallet on that chain. |
+| **To another chain** | The gas, in USDC. The confirmation shows the amount that will arrive. |
 
 See [Withdraw and send](/funds/withdraw).
 
-## <u>Extra Fees That May Incur</u>
+## <u>Other costs</u>
 
-These move the price you actually get, and **none of them are a Dawn fee**, these are dependent upon the network and providers.
+None of these is a Dawn fee. They move the price you actually get.
 
 <AccordionGroup>
-  <Accordion title="Cross-chain bridging fees" icon="bridge">
-    Reaching a coin on another chain carries a bridging cost, charged by the route rather than by Dawn — see [Trading on another chain](#trading-on-another-chain).
-  </Accordion>
-
   <Accordion title="Pool fees and price impact" icon="chart-line">
-    Every swap pays the liquidity pool it goes through — typically 0.01%–1% — and every trade of size moves the price against itself. Both are inside the amount you receive, and both go to the market, not to Dawn.
+    Every swap pays its liquidity pool, typically 0.01%–1%, and every trade of size moves the price against itself. Both come out of the amount you receive.
 
-    Thin liquidity makes this much larger than the trading fee. The panel shows a coin's liquidity for exactly this reason.
+    On thin liquidity this can cost far more than the trading fee. Check **Liq** on the [token panel](/trading/token-panel#the-market-block) before a big trade.
   </Accordion>
 
   <Accordion title="Token taxes" icon="circle-exclamation">
-    Some contracts charge their own tax on every buy or sell, sometimes 10% or more, sometimes only on selling. That is written into the token, not into Dawn, and it is deducted before you see the coins.
-
-    It shows up in how much of the coin you receive, not as a separate charge.
+    Some tokens charge their own tax on every buy or sell, sometimes 10% or more, sometimes only on selling. It is taken before you receive the coins, not shown as a separate charge.
   </Accordion>
 </AccordionGroup>
 
-## <u>Fees on Failed Trades</u>
+## <u>Failed trades</u>
 
-A trade that cannot fill inside your slippage is **refunded** — your USDC goes back to your balance and **no trading fee is charged.** 
+A trade that cannot fill inside your slippage is refunded: your USDC comes back and no trading fee is charged.
 
-A buy on another chain can fail after it has already gone out. Your USDC comes back, and so does Dawn's trading fee, less any gas the attempt used. It lands on your balance on its own.
+A buy on another chain can fail after it has gone out. Your USDC and the trading fee come back to your balance on their own, less any gas the attempt used.
 
-Otherwise, gas that was already spent on a submitted transaction is not recoverable, however **we cover this for you.**
+Any other gas spent on a failed trade is covered by Dawn.

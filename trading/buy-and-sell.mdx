@@ -3,27 +3,18 @@ title: "Buy And Sell"
 icon: "arrow-right-arrow-left"
 ---
 
-A market trade goes as soon as it can fill at the price available. It is the default way to trade in Dawn, and the fastest.
+A market trade fills right away at the price available. It is the default way to trade in Dawn, and the fastest.
 
-<Tip>
-  **Tapping an amount sends the trade.** There is no separate confirm step on a normal buy or sell. Check the coin, the chain and the wallet before tapping!
-</Tip>
-
-## Before you tap
-
-Four things decide what actually happens:
-
-| Check | Where |
-| --- | --- |
-| The right **coin** | The address on the panel |
-| The right **wallet** | The account line at the bottom of the panel |
-| Enough **balance** | The home screen, or the panel's account line |
-| Your **slippage** | [Trading settings](/settings/overview#trading), default **15%** |
+<Warning>
+  **Tapping an amount sends the trade.** There is no confirm step. Check the coin's address, the wallet and balance at the bottom of the panel, and your [slippage](/settings/overview#trading) (**15%** by default) before you tap.
+</Warning>
 
 ## Buy a coin
 
 <Steps>
   <Step title="Open the coin">
+    Paste its contract address. Make sure the panel is on **Buying ⇄**.
+
     <Frame>
       <img
         src="/images/Paste-Contract-Address-in.png"
@@ -32,32 +23,19 @@ Four things decide what actually happens:
         style={{ width:"58%" }}
       />
     </Frame>
-
-    Paste its contract address. Make sure the panel is on **Buy**.
   </Step>
-  <Step title="Choose a size">
-    Tap a dollar button — **\$1 · \$5 · \$10 · \$25 · \$50** by default — or **\$x** to type any amount.
-
-    The minimum is **\$1**. Some bridged routes ask for more.
-  </Step>
-  <Step title="Watch the card">
-    Dawn quotes, signs and submits. One card updates itself in place: **Buying** → **submitted** → **filled**.
+  <Step title="Tap an amount">
+    The minimum is **\$1**. Some cross-chain routes have a [higher one](/fees#minimum-trade).
 
     <Frame>
-      <img
-        src="/images/Buy-Submitted.png"
-        alt="Buy Submitted"
-        title="Buy Submitted"
-      />
+      ![Buy Submitted](/images/Buy-Submitted.png "Buy Submitted")
     </Frame>
-
-    The finished card shows what you spent and what you received. The panel behind it updates with your new holding.
   </Step>
 </Steps>
 
-### Want to Buy without opening this panel?
-
-With [Auto Buy](/settings/overview#auto-buy) on, pasting a contract address buys a fixed amount immediately, and the panel follows the trade card. It is off by default, but with one click, enable it to buy on the instant you paste an address in. 
+<Tip>
+  With [Auto Buy](/settings/overview#auto-buy) on, pasting a contract address buys a fixed amount straight away, without the panel step. It is off by default.
+</Tip>
 
 ## Sell a coin
 
@@ -74,8 +52,8 @@ With [Auto Buy](/settings/overview#auto-buy) on, pasting a contract address buys
       />
     </Frame>
   </Step>
-  <Step title="Switch to Sell Panel ">
-    The sell buttons are **shares of what you hold**, not dollar amounts — **10% · 25% · 50% · 75% · 100%** by default.
+  <Step title="Switch to selling">
+    If the panel is on **Buying ⇄**, tap it to switch to **Selling ⇄**. The sell buttons are **shares of what you hold**, not dollar amounts.
 
     <Frame>
       <img
@@ -86,10 +64,9 @@ With [Auto Buy](/settings/overview#auto-buy) on, pasting a contract address buys
       />
     </Frame>
   </Step>
-  <Step title="Choose a share">
-    Tap one, or **x%** to type your own. **100%** sells the position out completely.
-  </Step>
-  <Step title="Read the result">
+  <Step title="Tap a share">
+    **100%** sells the whole position. The USDC goes back onto your balance, ready to spend again.
+
     <Frame>
       <img
         src="/images/sell-card-1.png"
@@ -98,38 +75,20 @@ With [Auto Buy](/settings/overview#auto-buy) on, pasting a contract address buys
         style={{ width:"66%" }}
       />
     </Frame>
-
-    The message shows the USDC you received. It goes back onto your balance, ready to spend again.
   </Step>
 </Steps>
 
-## Reading the selling message
-
-| Card | What it means |
-| --- | --- |
-| **Buying / Selling** | Quoting and signing. Nothing has been sent yet. |
-| **Submitted** | It is on chain and filling. The card updates itself. |
-| **Filled** | Done. The amounts shown are what actually happened. |
-| **Failed** | It did not go through. Your USDC is back on your balance, and the card names the reason. |
-| **Unconfirmed** | Dawn could not confirm how it ended. Check your wallet balance before trying again. |
-
-<Note>
-  A failed trade is not a lost trade. When a fill would land outside your slippage, Dawn refuses it and returns the USDC rather than filling you at a worse price.
-</Note>
+<Info>
+  There is no bulk exit across coins: sell each position from its own panel. For an exit that does not need you watching, set a [stop-loss or take-profit](/orders/tp-sl).
+</Info>
 
 ## Why a trade gets refused
+
+A failed trade is not a lost trade: your USDC is back on your balance, and the message says why. Most messages also say what to do. Two that need a change on your side:
 
 | Reason | What to do |
 | --- | --- |
 | Price moved past your slippage | Raise [slippage](/trading/execution#slippage), or trade a smaller size. |
 | Not enough balance | Deposit, or turn on [Auto-Adjust](/settings/guardrails#auto-adjust) to shrink the buy to what you can afford. |
-| Buy would move the price over 30% | [Liquidity protection](/settings/guardrails#degen-mode) stopped it. The pool is too thin for that size. |
-| Below the minimum | The route needs more than \$1. The panel names the figure. |
-| Gas above the sponsored cap | Set a [Gas Surplus](/settings/guardrails#gas-surplus) limit, or wait for the chain to quieten. |
-| No route found | Nothing could fill it right now. Liquidity may have moved or been pulled. |
 
-## Selling everything at once
-
-There is currently no bulk exit across coins. Sell each position from its own panel with the **100%** button.
-
-If you want an exit that does not need you watching, set a [stop-loss or take-profit](/orders/tp-sl) instead.
+More in [Troubleshooting](/help/troubleshooting).

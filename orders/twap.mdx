@@ -4,59 +4,34 @@ description: "Split a big buy or sell into small trades spread over time, so it 
 icon: "hourglass-half"
 ---
 
-TWAP splits one big order into small trades spread over a duration you choose. Going in, or out, a slice at a time moves the price less than one big trade.
-
 Open a coin, tap **⚙️ Automations**, then **⏲ TWAP**. It works on both sides of the panel: a buy spends dollars, a sell sells a share of what you hold.
 
 ## Start one
 
 <Steps>
   <Step title="Pick the amount">
-    Buying: one of your dollar buttons, or **\$X** to type your own. Selling: a share of your position, or **X%**.
+    The total for the whole TWAP. A sell works from what you hold when you start it; at 100%, the last slice sells whatever is left.
   </Step>
   <Step title="Pick how long">
-    Tap **Duration** and pick **5m · 15m · 30m · 1h · 4h · 12h · 24h**, or type your own, like `45m`, `2h` or `1h30m`. Anything from 5 minutes to 24 hours works. It starts on **30m**.
+    Tap **Duration**: anything from 5 minutes to 24 hours. It starts on **30m**.
   </Step>
   <Step title="Choose what to randomize">
-    **Random** steps through **Off · Time · Size · Time + Size**.
-
-    | Setting | What changes |
-    | --- | --- |
-    | **Time** | When each slice goes, a little earlier or later |
-    | **Size** | How big each slice is — the total stays the same |
-    | **Time + Size** | Both |
+    Optional. **Random** can vary when each slice goes (**Time**), how big each slice is (**Size**, same total), or both.
   </Step>
   <Step title="Start it">
-    The line under the buttons shows the plan: how many slices, about how big, and how far apart. Tap **✅ Start TWAP**.
+    Tap **✅ Start TWAP**.
   </Step>
 </Steps>
 
-## Following it
+## Notifications
 
-Dawn posts a card for the TWAP:
+Dawn posts a card for the TWAP, a short message for each slice that fills, and a summary when it finishes or stops on its own.
 
-| Title | What it means |
-| --- | --- |
-| ⏲ **TWAP buy running** | Slices are going out. The card says when the next one goes. |
-| ✅ **TWAP buy finished** | Every slice is done |
-| ⏹ **TWAP buy stopped** | You stopped it |
-| 🔴 **TWAP buy stopped** | Three slices in a row did not go through, so it stopped |
-
-A sell reads **TWAP sell**. The card counts the **Slices** done, what you have **Spent** and **Bought** — or **Sold** and **Received** on a sell — and names the wallet.
-
-Every slice that fills also sends a short message, like _Slice 3/30 filled_ with what it bought or sold and a link to its transaction. A last message sums the TWAP up when it finishes, or when it stops on its own.
-
-If one slice does not go through, its amount rides on the next.
+If a slice doesn't go through, its amount rides on the next one. Three failed slices in a row stop the TWAP.
 
 ## Stopping it
 
-Stop a TWAP at any time from any of these. Slices already done stay done.
-
-- **⏹ Stop TWAP** on its card
-- **Stop** beside it in `/orders`
-- **Stop** beside it under **Running**, on the coin's ⏲ TWAP panel
-
-While TWAPs are running on a coin, its buy-side button shows how many, like **⏲ TWAP (1)**.
+Tap **⏹ Stop TWAP** on its card, or **Stop** beside it in `/orders` or on the coin's ⏲ TWAP panel. Slices already done stay done.
 
 ## Fees
 
@@ -64,11 +39,5 @@ Each slice pays the [trading fee](/fees) like any other trade: 1%, with a **\$0.
 
 ## Limits
 
-|  |  |
-| --- | --- |
-| Duration | 5 minutes to 24 hours |
-| Smallest slice | **\$1** |
-| Smallest TWAP | **\$2**, or **\$2.50** with Size randomized |
-| Running at once | **5** per wallet |
-
-A sell works from what you hold when you start it. At 100%, the last slice sells whatever is left.
+- Each slice is at least **\$1**, so the smallest TWAP is **\$2**, or **\$2.50** with Size randomized.
+- Up to **5** running at once per wallet.

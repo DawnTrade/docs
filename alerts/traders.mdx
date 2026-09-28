@@ -4,121 +4,59 @@ description: "Get a message the moment a trader you follow buys, sells or posts 
 icon: "bell"
 ---
 
-Trader Alerts keep you in the loop on the traders you rate. Each buy, sell or thesis they post lands in your chat as it happens, with a button to trade it yourself. Nothing is bought for you.
+Open it with **🔔 Alerts** → **👥 Traders** on the home screen, or send `/tracker`.
 
-Tap **🔔 Alerts** on the home screen, then **👥 Traders** — or send `/tracker`.
-
-<Note>
-  Two features sound similar. To have a trader's buys placed for you, use [Copytrade](/copytrade/overview). To hear when a coin reaches a market cap, set a [price alert](/alerts/price) — **📈 Price** in the same Alerts menu.
-</Note>
+<Info>
+  To have a trader's buys placed for you, use [Copytrade](/copytrade/overview). To hear when a coin reaches a market cap, set a [price alert](/alerts/price).
+</Info>
 
 ## Add a trader
 
 <Steps>
-  <Step title="Who to track">
-    Tap **➕ Add a Trader** and send one of these:
-
-    | Send | What you hear about |
-    | --- | --- |
-    | A **Solana address** | That wallet |
-    | An **EVM address** (`0x…`) | That wallet, on the chains you pick — or **All Chains** |
-    | A **fomo handle** — `@name`, or a fomo.family profile link | Their wallets, on every chain Dawn trades |
-    | A **pump.fun profile** — a link or a username | Their pump.fun wallet |
-    | A **screenshot** of their fomo profile | Dawn reads the handle off the picture |
-
-    For an EVM address, tap the chains to hear about, then **Continue →**. When a name is on both fomo and pump.fun, Dawn asks which one you mean — tap **fomo** or **pump.fun**.
+  <Step title="Pick the trader">
+    Tap **➕ Add a Trader**, send who you want to follow, and name them. You can follow the same kinds of trader as in [Copytrade](/copytrade/overview#who-you-can-copy). For an EVM wallet, you also pick its chains.
   </Step>
-  <Step title="Name them">
-    Keep the suggested name, or type your own — up to **24 characters**.
-  </Step>
-  <Step title="Pick what to hear">
-    | Button | You hear about |
-    | --- | --- |
-    | **📈 Trades** | Their buys and sells |
-    | **📝 Theses** | What they post on fomo and pump.fun |
-    | **📈 + 📝 Both** | All of it |
+  <Step title="What to hear">
+    **📈 Trades**, **📝 Theses**, or both. Alerts start right away.
+
+    <Info>
+      Theses only come from traders on fomo or pump.fun. Pick **📝 Theses** for anyone else and you get their trades instead.
+    </Info>
   </Step>
 </Steps>
-
-Their page opens and alerts start straight away. Theses only come from traders who are on fomo or pump.fun — pick **📝 Theses** for someone on neither, and you get their trades instead.
-
-Already looking at a trader? The cards from [Find a trader](/copytrade/find-trader), and the card you get for any wallet you paste into the chat, have a **🔔 Alerts** button that fills them in for you.
 
 ## What you'll get
 
 ### Trades
 
-| Alert | What it shows |
-| --- | --- |
-| 🔔 **New Buy by …** | What they spent and got, whether it is their **first buy** of the coin or they are **buying more**, and the coin's market cap, liquidity and price |
-| 🔔 **New Sell by …** | The share they sold, what they got for it, and what they have left |
-
-| Button | What it does |
-| --- | --- |
-| **⚡ Buy \$TICKER** | Opens the coin's buy panel |
-| **🤖 Copy This Trader** | Starts a [copytrade task](/copytrade/overview#follow-a-trader) with the trader filled in |
+- 🔔 **New Buy**: when they buy. Narrow which buys with [trade filters](#trade-filters).
+- 🔔 **New Sell**: when they sell.
 
 ### Theses
 
-A thesis is a trader's write-up of why they are in a coin.
+A thesis is a trader's write-up of why they're in a coin.
 
-| Alert | Posted on |
-| --- | --- |
-| 📝 **New Thesis by …** | fomo |
-| 📝 **New Callout by …** | pump.fun |
+- 📝 **New Thesis**: when they post one on fomo.
+- 📝 **New Callout**: when they post one on pump.fun.
 
-Each one shows what they wrote, how their own position in the coin is doing, and the market cap now next to where it was when they posted. **✅ verified** marks a verified account, and **⚠️ deployed this coin** means they created the coin they are writing about.
-
-**⚡ Trade** opens the coin's panel right in the alert.
-
-To read what everyone has written about a coin, tap **📝 Thesis** on its panel — see [Top theses](/trading/token-panel#top-theses).
+<Tip>
+  To read what everyone has written about a coin, see [Top theses](/trading/token-panel#top-theses).
+</Tip>
 
 ## Your traders
 
-The **🔔 Tracker** page lists everyone you follow, with 🟢 for live or 🔴 for paused and what you hear about. **Manage** opens a trader's page, and **Pause** or **Resume** switches them off or on.
+`/tracker` lists everyone you follow. **Manage** on one lets you pause them, choose which alerts you get, set [trade filters](#trade-filters), share them or delete them.
 
-| Button | What it does |
-| --- | --- |
-| **➕ Add a Trader** | Follow someone new |
-| **Resume All** / **Pause All** | Every trader at once |
-
-### A trader's page
-
-| Button | What it does |
-| --- | --- |
-| **Pause** / **Resume** | Stop every alert for this trader, or start them again |
-| **🔗 Share Task** | Pass this trader to someone else |
-| **📝 Theses: On** / **Off** | Thesis and callout alerts |
-| **📈 Trades ▾** | Unfolds **Buys: On / Off** and **Sells: On / Off** |
-| **🔍 Trade Filters** | Which of their buys you hear about — see [Trade filters](#trade-filters) |
-| **🗑 Delete** | Stop following them, after a confirm |
-
-One alert always stays on. To go quiet on a trader completely, **Pause** them.
+<Info>
+  One alert always stays on. To go quiet on a trader completely, **Pause** them.
+</Info>
 
 ## Trade filters
 
-Filters narrow which **buys** you hear about. Sells and theses always come through.
-
-| Filter | No alert when | Type it as |
-| --- | --- | --- |
-| 🌱 **First Buys Only** | It is not their first buy of the coin — adds and re-entries are left out | Tap to switch on |
-| 🎯 **Buy Min** | They spent less than this | `250` for \$250 |
-| 💎 **MC Min** | The coin is smaller than this | `50k`, `$1.5m` |
-| 💎 **MC Max** | The coin is bigger than this | `5m` |
-| 💧 **Liq Min** | The pool holds less than this | `20k` |
-| 📊 **Vol 24h** | Less than this traded in the last day | `100k` |
-| 👥 **Holders** | Fewer holders than this | `200` |
-| 🐋 **Top 10** | The top ten wallets hold more than this share | `30` for 30% |
-| ⏱ **Age Min** | The coin is younger than this | `30m`, `12h`, `30d`, `2w` |
-
-Type a value, or `off` to clear it. **♻️ Reset Filters** clears them all. A coin with no data for a filter yet sends no alert.
+Filters narrow which **buys** you hear about; sells and theses always come through. They are the same as [copytrade filters](/copytrade/manage#filters), without 🥇 **First Buy Wins**. A buy that fails one, or a coin with no data for it yet, sends no alert.
 
 ## Limits
 
-|  |  |
-| --- | --- |
-| Traders | **50** per wallet, separate from your copytrade tasks. A trader followed on several chains counts once for each chain. |
-| One per trader | The same wallet cannot be tracked twice |
-| fomo theses | On for up to **10** traders at a time |
-| pump.fun callouts | On for up to **50** traders at a time |
-| Name | Up to 24 characters |
+- Up to **50 traders** per wallet, separate from your copytrade tasks. A trader followed on several chains counts once per chain.
+- The same wallet can't be tracked twice.
+- fomo theses can be on for up to **10** traders at a time, pump.fun callouts for up to **50**.

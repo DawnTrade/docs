@@ -5,100 +5,43 @@ description: "Find what is armed, cancel it, and work out why something has not 
 icon: "list-check"
 ---
 
-Send `/orders`, or tap **📋 Limit Orders** on the home screen. Everything armed lives here, grouped by coin: limit buys and sells, ladders, DCA plans, running TWAPs, and the take-profit and stop-loss levels on your positions.
+Send `/orders`, or tap **📋 Limit Orders** on the home screen. Everything armed is listed here by coin: limit buys and sells, ladders, DCA plans, running TWAPs, and the take-profit and stop-loss levels on your positions.
 
-A coin's own panel lists what is waiting on it, and the **⚙️ Automations** button carries the count.
-
-<Note>
-  [Price alerts](/alerts/price) have their own list: **🔔 Alerts** → **📈 Price** on the home screen, or `/alerts`. Once you have one, this page links to it too.
-</Note>
+<Info>
+  [Price alerts](/alerts/price) have their own list: **🔔 Alerts** → **📈 Price** on the home screen, or `/alerts`.
+</Info>
 
 ## Changing a limit buy
 
-Open the coin's limit panel and tap **✏️ Edit Orders**, or tap **Edit** beside the orders line on the coin's panel. Each open limit buy on the coin is numbered, with its size, the market cap it is waiting for and the time it has left:
+Tap **✏️ Edit Orders** on the coin's limit panel, or **Edit** beside the orders line on the coin's panel. **Edit** on an order loads it back into the limit panel, where you can change its level, amount or expiry.
 
-```text
-1. Buy $10 when mcap hits $170K
-└ 23h left · Edit · Cancel
-```
-
-| Control | What it does |
-| --- | --- |
-| **Edit** on an order | Loads it into the limit panel. Change the level, the amount or the expiry, then tap **✅ Update Limit Order**. |
-| **Cancel** on an order | Cancels it |
-| **🗑 Cancel All** | Cancels every limit buy on the coin. Shown when there are two or more. |
-| **➕ New Order** | Starts another one |
-
-Limit sells are take-profit and stop-loss levels — change those with **Edit TP/SL**.
+Limit sells are take-profit and stop-loss levels: change those with **Edit TP/SL**.
 
 ## Cancelling
 
-| Action | Effect |
-| --- | --- |
-| **Cancel** on an order | Removes that one order |
-| **Cancel ladder** | Removes every rung of that ladder that has not fired |
-| **⏹ Stop DCA** | Ends the buys left in that plan |
-| **Stop** on a TWAP | Stops that TWAP. Slices already done stay done. |
-| **🗑 Cancel All** | Clears everything on the page except DCA plans and TWAPs |
+Each order has its own **Cancel**, and DCA plans and TWAPs their own **Stop**. **🗑 Cancel All** clears everything on the page except DCA plans and TWAPs.
 
-Cancelling never undoes something that already happened. A ladder that has filled two rungs keeps those two positions; cancelling removes the rest.
+Cancelling never undoes something that already happened. A ladder that has filled two rungs keeps those two positions.
 
-## What the list tells you
+## Notifications
 
-Each order shows what it is waiting for, how long until it expires, and a link to cancel or edit it. Two of them carry an extra word:
+Dawn messages you when an order:
 
-| Marked | What it means | What to do |
-| --- | --- | --- |
-| **paused** | There is no live price feed for the coin yet. It is still being watched | Nothing — it is still armed |
-| **filling** | Its condition was met and the trade is being attempted | Wait for the card |
-
-Anything without a marker is simply waiting for its level.
-
-## The cards you get
-
-An order that finishes sends a card to your chat:
-
-| Card | What it means | What to do |
-| --- | --- | --- |
-| **filled** | It traded. The card shows what happened | Check the result |
-| **failed** | It could not complete | Read the reason; place a new one if you still want it |
-| **expired** | Its time ran out before the level was reached | Place a new one |
-| **paused** | The price feed dropped out | Nothing — it is still armed |
+- **Fills**
+- **Fails**
+- **Expires** before its level is reached
+- **Is paused**: the coin has no live price feed yet. It is still armed, and fires as normal once the feed is back.
 
 <Note>
-  **Failed** and **expired** orders do not retry themselves. If the protection mattered, put it back.
+  Failed and expired orders do not retry themselves. If the protection mattered, put it back.
 </Note>
 
 ## Why an order has not fired
 
-<AccordionGroup>
-  <Accordion title="The level has not been reached" icon="clock">
-    The common case. Compare the target against the coin's current market cap on its panel.
-  </Accordion>
-
-  <Accordion title="The price gapped through it" icon="arrow-down-up-across-line">
-    If the market jumped past your level by more than your slippage allows, Dawn will not fill into that gap. The order stays armed and waits for the price to come back into range.
-
-    This is why an order can look overdue and still be correct.
-  </Accordion>
-
-  <Accordion title="Gas is above what you allow" icon="gas-pump">
-    A trade needing more gas than Dawn's \$5 cap covers is declined unless you have set a [Gas Surplus](/settings/guardrails#gas-surplus) limit. This matters most for stop-losses.
-  </Accordion>
-
-  <Accordion title="You are looking in the wrong profile" icon="users-gear">
-    The list is scoped to the wallet and profile you are in. Orders keep running everywhere — check each profile with `/profiles`.
-  </Accordion>
-
-  <Accordion title="Not enough balance behind it" icon="wallet">
-    Orders reserve nothing. A limit buy with no USDC behind it fails when it fires.
-  </Accordion>
-</AccordionGroup>
-
-## Orders outlive the screen
-
-Closing a message cancels nothing. Neither does switching profile, archiving a wallet, or closing Telegram.
+- **The level has not been reached.** The common case. Compare the target with the coin's current market cap on its panel.
+- **The price gapped through it.** If the market jumped past your level by more than your [slippage](/trading/execution#slippage) allows, Dawn does not fill into that gap. The order stays armed and waits for the price to come back into range.
+- **You are in another profile.** The list only shows the wallet and profile you are in. Switch profile from the home screen to check the others.
 
 <Warning>
-  Before you step away from a coin, check `/orders` in **every profile**. A forgotten DCA plan keeps buying, and a forgotten limit buy keeps waiting.
+  Closing a message, switching profile, archiving a wallet or closing Telegram cancels nothing. Before you step away from a coin, check `/orders` in **every profile**: a forgotten DCA plan keeps buying, and a forgotten limit buy keeps waiting.
 </Warning>

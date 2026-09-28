@@ -4,66 +4,25 @@ description: "Decide what happens when you tap a one-tap trade someone posted in
 icon: "hand-pointer"
 ---
 
-This setting is about **links you tap**, not links you post. It decides whether a one-tap trade in a group trades for you immediately, or just opens the coin.
+Find it in `/settings` → **Group Links**. It's set per profile, and **off** by default.
 
-`/settings` → **Group Links**. It belongs to the profile, and it is **off** by default.
-
-## It has two parts
-
-|  |  |
-| --- | --- |
-| **The toggle** | Turns group links on for this profile. Off, every link only opens the coin. |
-| **The buy amount** | What a tapped buy link spends. |
-
-The buy amount is a row of buttons on the same screen:
-
-| Choice | What a tapped buy link spends |
-| --- | --- |
-| **Card Amount** | Whatever the button on the card says, between \$1 and \$10,000 — the default. Sell links open the sell panel rather than selling. |
-| Your **buy presets** | The same five amounts as your token panel — see [Presets](/settings/presets). |
-| **Custom** | Any figure from **\$1** to **\$10,000**. |
-
-<Note>
-  Set an amount of your own and it wins over the card: a \$500 buy link spends your \$10. Leave it on **Card Amount** and you are trusting the size the poster chose, so only do that in a room you trust.
-</Note>
+<Info>
+  This is about links you tap. To post your own, see [Share links](/social/share-links). Pasting an address yourself is [Auto Buy](/settings/overview#auto-buy), a separate setting.
+</Info>
 
 ## What a tap does
 
-|  | With group links armed | With them off |
-| --- | --- | --- |
-| **A buy link** | Buys **your** amount, from this profile's wallet | Opens the coin's panel |
-| **A sell link** | Sells the share the link names of what you hold — once you have an amount of your own set. On Card Amount it opens the sell panel. | Opens the coin's panel |
+With group links on, you also choose a **buy amount**: an amount of your own, or **Card Amount** (the default), the size on the card.
 
-<Tip>
-  With an amount of your own set, the size on the link is only what the card advertises — **your amount is what buys**, and you cannot be talked into a larger trade than you set for yourself. On **Card Amount** the link's size is the trade, capped at \$10,000.
-</Tip>
-
-## What it does not do
-
-<Note>
-  Only you are ever affected by a link **you** tap.
-
-  Nobody can trade for you without your tap, and nothing happens to anyone who does not tap. There is no setting anywhere in Dawn that lets one person trade from another person's wallet.
-</Note>
+|  | Your own amount | **Card Amount** | Group links off |
+| --- | --- | --- | --- |
+| **A buy link** | Buys your amount, from this profile's wallet | Buys the card's amount, up to \$10,000 | Opens the coin |
+| **A sell link** | Sells the share the link names of what you hold | Opens the sell panel | Opens the coin |
 
 ## Should you turn it on?
 
-<Columns cols={2}>
-  <Card title="Leave it off" icon="shield-halved" horizontal>
-    The sensible default. You still get one-tap access to the coin; you just approve the amount. Costs you one extra tap.
-  </Card>
-
-  <Card title="Turn it on" icon="bolt" horizontal>
-    For calls where seconds matter and you already trust the source. Set the buy amount to something small first.
-  </Card>
-</Columns>
+Leave it off and a link opens the coin for you to pick the amount, one extra tap. Turn it on for calls where seconds matter and you already trust the source.
 
 <Warning>
-  With this armed, a tap is a trade. In a fast-moving group that is exactly the point, and it is also how people buy things they did not mean to buy. Set the buy amount to something you would be relaxed about losing to a mis-tap.
+  With group links on, a tap is a trade. Set an amount of your own, one you'd be relaxed about losing to a mis-tap. It wins over the card: a \$500 buy link spends your \$10. **Card Amount** trusts the size the poster chose, so only use it in a room you trust.
 </Warning>
-
-## Related
-
-- [Share links](/social/share-links) is the other side: making the links.
-- [Dawn in your group](/social/groups) puts cards in a chat automatically.
-- [Auto Buy](/settings/overview#auto-buy) is a separate setting, for pasting an address yourself.
