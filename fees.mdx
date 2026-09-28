@@ -25,7 +25,7 @@ Dawn charges one trading fee. Everything else on this page is either a cost Dawn
 
 Dawn charges a **1% fee** on every buy & sell transaction. The minimum fee is \$0.35. 
 
-Each slice of a [TWAP](/orders/twap) pays the 1% without the minimum.
+Each slice of a [TWAP](/orders/twap) is its own trade and pays the 1% with the \$0.35 minimum.
 
 <Check>
   You get part of it back immediately through cashback!
@@ -78,6 +78,7 @@ _A Solana coin bought from your Solana balance has no such cost._
 | **From Solana** | The gas, plus creating the recipient's token account if they need one. Paid in USDC from your balance, even when you send SOL or another token. |
 | **From an EVM chain** | The gas, paid in that chain's own coin from your wallet on that chain. |
 | **To another chain** | The gas to send it, in USDC. The bridge delivers it, and the confirmation shows the amount that will arrive. |
+| **Private withdrawal** | The exchanges' fees and the network cost, taken out of what you send. The quote shows the fees and what arrives before you confirm. |
 
 See [Withdraw and send](/funds/withdraw).
 
