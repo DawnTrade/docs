@@ -15,13 +15,18 @@ A coin's own panel lists what is waiting on it, and the **⚙️ Automations** b
 
 ## Changing a limit buy
 
-Open the coin's limit panel and tap **✏️ Edit Orders**, or tap **Edit** beside the orders line on the coin's panel. Each open limit buy on the coin is listed with its size, its level and the time it has left.
+Open the coin's limit panel and tap **✏️ Edit Orders**, or tap **Edit** beside the orders line on the coin's panel. Each open limit buy on the coin is numbered, with its size, the market cap it is waiting for and the time it has left:
 
-| Button | What it does |
+```text
+1. Buy $10 when mcap hits $170K
+└ 23h left · Edit · Cancel
+```
+
+| Control | What it does |
 | --- | --- |
-| **✏️** on an order | Loads it into the limit panel. Change the level, the amount or the expiry, then tap **✅ Update Limit Order**. |
-| **🗑** on an order | Cancels it |
-| **🗑 Cancel All** | Cancels every limit buy on the coin |
+| **Edit** on an order | Loads it into the limit panel. Change the level, the amount or the expiry, then tap **✅ Update Limit Order**. |
+| **Cancel** on an order | Cancels it |
+| **🗑 Cancel All** | Cancels every limit buy on the coin. Shown when there are two or more. |
 | **➕ New Order** | Starts another one |
 
 Limit sells are take-profit and stop-loss levels — change those with **Edit TP/SL**.
@@ -33,7 +38,7 @@ Limit sells are take-profit and stop-loss levels — change those with **Edit TP
 | **Cancel** on an order | Removes that one order |
 | **Cancel ladder** | Removes every rung of that ladder that has not fired |
 | **⏹ Stop DCA** | Ends the buys left in that plan |
-| **⏹ Stop TWAP** | Stops that TWAP. Slices already done stay done. |
+| **Stop** on a TWAP | Stops that TWAP. Slices already done stay done. |
 | **🗑 Cancel All** | Clears everything on the page except DCA plans and TWAPs |
 
 Cancelling never undoes something that already happened. A ladder that has filled two rungs keeps those two positions; cancelling removes the rest.

@@ -44,7 +44,7 @@ Dawn posts a card for the TWAP:
 
 A sell reads **TWAP sell**. The card counts the **Slices** done, what you have **Spent** and **Bought** — or **Sold** and **Received** on a sell — and names the wallet.
 
-Every slice that fills also sends a short message, like _Slice 3/30 filled_ with what it bought or sold. A last message sums the TWAP up when it finishes, or when it stops on its own.
+Every slice that fills also sends a short message, like _Slice 3/30 filled_ with what it bought or sold and a link to its transaction. A last message sums the TWAP up when it finishes, or when it stops on its own.
 
 If one slice does not go through, its amount rides on the next.
 
@@ -53,14 +53,14 @@ If one slice does not go through, its amount rides on the next.
 Stop a TWAP at any time from any of these. Slices already done stay done.
 
 - **⏹ Stop TWAP** on its card
-- **⏹ Stop TWAP · \$TICKER** in `/orders`
+- **Stop** beside it in `/orders`
 - **Stop** beside it under **Running**, on the coin's ⏲ TWAP panel
 
 While TWAPs are running on a coin, its buy-side button shows how many, like **⏲ TWAP (1)**.
 
 ## Fees
 
-Each slice pays the 1% [trading fee](/fees) with no \$0.35 minimum.
+Each slice pays the [trading fee](/fees) like any other trade: 1%, with a **\$0.35** minimum per slice. A slice under \$35 pays more than 1%.
 
 ## Limits
 

@@ -55,17 +55,28 @@ What "at once" means depends on the chain.
 
 A bundle is all or nothing: if it fails, none of its wallets buy. With Bundle off, one wallet's failure never holds the others back.
 
-## Selling from several wallets
+## Sell from several wallets
 
-The sell side lists each wallet that holds the coin, with your sell shares under it. Tap a share under a wallet to sell from that wallet; when two or more hold it, **🚀 All Wallets** sells the same share from each of them. Every tap is its own trade.
+The sell side works like the buy side, over the wallets in the profile that hold the coin. Each one's button shows how much of the coin it holds, and the page opens with all of them picked.
 
-It also tells you how many of your profiles hold the coin, so you can see at a glance whether the rest of it is somewhere else.
+<Steps>
+  <Step title="Pick the wallets to sell from">
+    Tap a wallet to pick it or drop it. **✅ Select All** picks every wallet that holds the coin, and **✖ Clear** drops them all. The page shows how many are picked.
+  </Step>
+  <Step title="Tap how much of each one's holding to sell">
+    Tap one of your sell shares, or **X%**. Every picked wallet sells that share of **its own** holding.
+  </Step>
+</Steps>
+
+Each wallet sells on its own, so one can fail without the others.
 
 ## Reading the results
 
-A bundle sends **one card** for the whole thing. Wallets that could not take part are named separately, with the reason.
+A bundle sends **one card** for the whole thing, with each wallet's transaction linked on its line. Wallets that could not take part are named separately, with the reason.
 
 Without ⚡ Bundle, and on every EVM chain, each wallet's buy gets its own card, exactly like a normal trade.
+
+Once the buys land, the Multi-Wallet page opens again on the sell side, ready to sell from the wallets that bought. If the buys failed, it opens on the buy side.
 
 ## Where the positions end up
 
