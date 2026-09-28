@@ -6,83 +6,57 @@ icon: "arrow-down-to-bracket"
 
 Send `/deposit`, or tap **Deposit** on the home screen.
 
-Dawn asks three things in order — which wallet should receive it, which chain you are sending **from**, and which token you are sending — then gives you an address.
-
 <Steps>
   <Step title="Pick the receiving wallet">
-    Only shown when you have more than one. Your default wallet is marked ⭐. Whatever you pick is where the balance lands, so check it before copying anything.
+    Only asked when you have more than one. The deposit lands on this wallet's balance.
   </Step>
 
-  <Step title="Pick the chain and token">
-    The list shows what is currently accepted on each chain. Nothing else on that chain will be credited.
+  <Step title="Pick the chain you're sending from">
+    See [which chains you can send from](#which-chains-you-can-send-from).
+  </Step>
+
+  <Step title="Pick the token">
+    Only the tokens listed for that chain are credited.
   </Step>
 
   <Step title="Send to the address">
-    Copy the address and send from your own wallet or exchange, using **the same token on the same network**.
-
-    The panel names the **minimum** and roughly how long the route takes. Open it right before you send.
-  </Step>
-
-  <Step title="Wait for the card">
-    **Deposit received** lands in your chat when it is credited. Check that **Ready** on the home screen has gone up — it counts every wallet in the profile you are in, so switch profile if the wallet you deposited into is in another one.
+    Send from your own wallet or exchange, using **the same token on the same network**. The panel shows the route's **minimum**: check it before you send.
   </Step>
 </Steps>
 
+Dawn messages you **Deposit received** once it's on your balance.
+
 <Warning>
-  Send only the token and the chain the panel names. Anything else cannot be recovered. Each chain has its own address — always copy a fresh one from the panel rather than reusing an address from another chain.
+  Send only the token and the chain the panel names. Anything else cannot be recovered. Each chain has its own address, so always copy it fresh from the panel rather than reusing one from another chain.
 </Warning>
 
 ## Which chains you can send from
 
-You can deposit from more chains than Dawn trades on. Trading happens on Solana, BNB Chain, Robinhood Chain, Base, Arc, Ink and HyperEVM; money can arrive from those **and** from Ethereum, Arbitrum, Optimism and Polygon.
-
-The live list is whatever the deposit panel shows. A route can be unavailable temporarily, so check the panel rather than this page before sending.
+The [chains Dawn trades on](/chains) — Solana, BNB Chain, Robinhood Chain, Base, Arc, Ink and HyperEVM — plus Ethereum, Arbitrum, Optimism and Polygon. A route can be unavailable for a while, so the deposit panel has the live list.
 
 ## The free route
 
-**USDC on Solana** goes straight onto your balance. No swap, no bridge, no fee, and it is credited as soon as it confirms.
+**USDC on Solana** goes straight onto your balance: no swap, no bridge, no fee, credited as soon as it confirms. From an exchange, it's the cheapest way in.
 
-Everything else is swapped and bridged for you on the way in. That work has a cost, and it comes out of the amount that lands — the panel estimates it before you send. If you are sending from an exchange and have the choice, USDC on Solana is the cheapest way in.
-
-## Minimums
-
-Every route has a minimum, shown on its panel. Check it before you send.
+Everything else is swapped and bridged on the way in. That cost comes out of the amount that lands, and the panel estimates it before you send.
 
 ## Deposits that land in your wallet instead
 
-Two things arrive **in your wallet** rather than on your balance:
-
-- **SOL** sent to your Solana address.
-- **Any coin** someone transfers to you, or that you send in yourself outside a deposit route.
-
-These are yours, but they are not spendable USDC until you move them across. That is one tap — see [Move coins to your balance](/funds/move-to-balance).
+**SOL** sent to your Solana address, and **any coin** transferred to you outside a deposit route, land in your wallet rather than on your balance. They aren't spendable USDC until you [move them to your balance](/funds/move-to-balance).
 
 ## Buying with a card
 
-The deposit screen opens with a **💳 Buy with card** button above the chain list. It opens the wallet app on a page for the wallet you are depositing into, with one button: **Open MoonPay**.
+Tap **💳 Buy with card** on the deposit screen, then **Open MoonPay**. MoonPay is set to buy **USDC on Solana** into the wallet you're depositing into. It shows its fees before you pay, and the USDC lands on your balance a few minutes after.
 
-<Steps>
-  <Step title="Open MoonPay">
-    MoonPay's buy page opens with the currency set to **USDC on Solana** and your wallet address already filled in.
-  </Step>
-  <Step title="Pay">
-    MoonPay asks for the amount and takes the card payment. Its fees are shown before you pay.
-  </Step>
-  <Step title="Wait a few minutes">
-    The USDC lands on your balance a few minutes after you pay.
-  </Step>
-</Steps>
-
-If you would rather buy elsewhere, any exchange works: withdraw from it to your Dawn deposit address, choosing **USDC** and **Solana** as the network.
+<Tip>
+  Buying elsewhere? Any exchange works: withdraw to your Dawn deposit address, choosing **USDC** and the **Solana** network.
+</Tip>
 
 ## If the balance has not changed
 
-| What you see | What it means |
-| --- | --- |
-| Nothing at all | Check the address, the chain, and which wallet you deposited into. A deposit sent long after you opened the panel can land without a card, so check **Ready** in that wallet's profile too. |
-| **Deposit refunded** | The route did not complete and the deposit was refunded. The card says where it went. |
-| **Deposit not completed** | The route failed. The card names the reason, and says whether it was refunded. |
-| Coin in your portfolio, balance unchanged | You received a coin, not USDC. Move it across from the wallet screen. |
-| Balance up in a different profile | The deposit went to a wallet in another profile. Switch with `/profiles`. |
+- Check the address, the chain, and which wallet you deposited into.
+- **Ready** on the home screen only counts wallets in the profile you're in. If the wallet is in another profile, switch with **Switch profile** on the home screen.
+- A deposit sent long after you opened the panel can land without a message, so check **Ready** too.
+- A coin in your portfolio with your balance unchanged means you received a coin, not USDC — see [above](#deposits-that-land-in-your-wallet-instead).
 
-Still stuck? [Troubleshooting](/help/troubleshooting) or [@DawnContactBot](https://t.me/DawnContactBot).
+If a route fails or is refunded, Dawn messages you with the reason. Still stuck? See [Troubleshooting](/help/troubleshooting) or [@DawnContactBot](https://t.me/DawnContactBot).

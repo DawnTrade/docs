@@ -5,83 +5,36 @@ description: "Set the quick-pick buttons on every token panel and on the limit o
 icon: "grip"
 ---
 
-The quick-pick buttons in Dawn are yours: what the buy and sell buttons trade, and where the limit order panel's trigger buttons aim.
-
-`/settings` → **🎛 Presets**, then pick a set:
-
-| Set | What it changes |
-| --- | --- |
-| 💵 **Buy Presets** | The dollar buttons for buying |
-| 📉 **Sell Presets** | The share buttons for selling |
-| 🎯 **Limit Buy Triggers** | The trigger buttons on a limit buy |
-| 🎯 **Limit Sell Triggers** | The trigger buttons on a limit sell |
-
-Tap a button in the set to change it.
+Open `/settings` → **🎛 Presets**, then the set you want to change. Each [profile](/wallets/profiles) has its own.
 
 ## Buy amounts
 
-Dollar amounts, spent from your balance. Five buttons, in the order you put them.
+Five dollar amounts, spent from your balance, in the order you set. The default is **\$1 · \$5 · \$10 · \$25 · \$50**.
 
-| | |
-| --- | --- |
-| Default | **\$1 · \$5 · \$10 · \$25 · \$50** |
-| Range | \$1 to \$10,000 |
-| Decimals | Allowed — `2.50` works |
+<Tip>
+  Keep the **leftmost** buy button small. It's the one nearest your thumb, and the one you'll hit by accident.
+</Tip>
+
+<Accordion title="Example setups">
+  - **Small and fast**: \$1 · \$2 · \$5 · \$10 · \$25, for taking a lot of small shots at new launches.
+  - **Fewer, bigger**: \$50 · \$100 · \$250 · \$500 · \$1000, when you're sizing properly and not scalping.
+</Accordion>
 
 ## Sell amounts
 
-Shares of what you hold, not dollar figures.
-
-| | |
-| --- | --- |
-| Default | **10% · 25% · 50% · 75% · 100%** |
-| Range | Whole percents, 1 to 100 |
-
-Sells are percentages because your position size changes. A percentage stays meaningful after you have bought more or sold some; a dollar figure does not.
+Shares of what you hold, not dollar amounts. The default is **10% · 25% · 50% · 75% · 100%**. For taking profit in stages, `25 · 33 · 50 · 75 · 100` works better.
 
 ## Limit order triggers
 
-The trigger buttons on the [limit order panel](/orders/limit) are moves from the coin's market cap at the moment you tap them. Tap **↑ 40%** on a coin at \$1M and the order waits for \$1.4M.
+Each trigger button on the [limit order panel](/orders/limit) is a move from the coin's market cap at the moment you tap it: **↑ 40%** on a coin at \$1M waits for \$1.4M. Limit buys and limit sells have their own set.
 
-| Set | Rises | Falls |
-| --- | --- | --- |
-| 🎯 **Limit Buy Triggers** | ↑ 15% · ↑ 40% · ↑ 75% · ↑ 100% | ↓ 20% · ↓ 50% · ↓ 75% |
-| 🎯 **Limit Sell Triggers** | ↑ 1.5x · ↑ 2x · ↑ 5x · ↑ 10x | ↓ 20% · ↓ 50% · ↓ 75% |
+<Accordion title="Default triggers">
+  | Set | Rises | Falls |
+  | --- | --- | --- |
+  | 🎯 **Limit Buy Triggers** | ↑ 15% · ↑ 40% · ↑ 75% · ↑ 100% | ↓ 20% · ↓ 50% · ↓ 75% |
+  | 🎯 **Limit Sell Triggers** | ↑ 1.5x · ↑ 2x · ↑ 5x · ↑ 10x | ↓ 20% · ↓ 50% · ↓ 75% |
+</Accordion>
 
-Those are the defaults. Tap one and send its new trigger:
-
-| Type | Means |
-| --- | --- |
-| `+25%` | A quarter above the market cap then |
-| `3x` | Three times it |
-| `-40%` | 40% below it |
-
-A plain `25%` counts as a rise.
-
-## Making them fit how you trade
-
-<Columns cols={2}>
-  <Card title="Small and fast" icon="feather" horizontal>
-    \$1 · \$2 · \$5 · \$10 · \$25 — for taking a lot of small shots at new launches.
-  </Card>
-
-  <Card title="Fewer, bigger" icon="weight-hanging" horizontal>
-    \$50 · \$100 · \$250 · \$500 · \$1000 — when you are sizing properly and not scalping.
-  </Card>
-</Columns>
-
-On the sell side, `25 · 33 · 50 · 75 · 100` suits taking profit in stages better than the default does.
-
-<Tip>
-  Leave the **leftmost** buy button small. It is the one nearest your thumb and the one you will hit by accident.
-</Tip>
-
-## Resetting
-
-**↺ Reset to defaults** on any set puts the original buttons back.
-
-Presets belong to the [profile](/wallets/profiles), so each profile can have its own — and a new profile can copy them from an existing one.
-
-## Beyond the presets
-
-**\$x** on the buy side and **X%** on the sell side always let you type an exact amount, whatever your buttons are set to. On the limit order panel, **Mcap** takes any level or move you type.
+<Info>
+  Whatever your presets, **\$X** on the buy side and **X%** on the sell side take an exact amount, and **Mcap** on the limit order panel takes any level or move you type.
+</Info>

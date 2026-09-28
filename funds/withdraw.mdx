@@ -5,64 +5,72 @@ description: "Move money out to an address, privately if you like, or across to 
 icon: "paper-plane"
 ---
 
-One flow covers both. Send `/send` for the menu, or `/withdraw` to choose a normal or a private withdrawal and then a chain.
-
-You can send **USDC**, a chain's own coin, or **any token you hold**, to an external address or to one of your own wallets.
+Send `/withdraw`, or `/send` for the menu. You can send **USDC**, a chain's own coin, or **any token you hold**.
 
 ## Withdraw to an address
 
 <Steps>
-  <Step title="Choose Normal withdrawal">
-    `/withdraw` first asks how it should go. **📤 Normal withdrawal** goes straight to the address, on any chain. **🕶 Private withdrawal** is routed through exchanges — see [Private withdrawals](#private-withdrawals).
+  <Step title="Normal or private">
+    Tap **📤 Normal withdrawal** to send straight to the address. For **🕶 Private withdrawal**, see [Private withdrawals](#private-withdrawals).
   </Step>
 
-  <Step title="Choose the chain it should arrive on">
-    Any chain Dawn trades on — Solana, BNB Chain, Robinhood Chain, Base, Arc, Ink or HyperEVM — or Ethereum, Arbitrum, Optimism or Polygon. This is the recipient's network, not yours.
+  <Step title="The chain it arrives on">
+    The recipient's network, not yours: any [chain Dawn trades on](/chains) — Solana, BNB Chain, Robinhood Chain, Base, Arc, Ink or HyperEVM — or Ethereum, Arbitrum, Optimism or Polygon.
   </Step>
 
-  <Step title="Choose what should arrive">
-    The panel lists the tokens available on that chain. On Solana, **⭐ USDC** goes straight from your balance; pick any other token and it is swapped on the way out.
+  <Step title="What should arrive">
+    On Solana, **⭐ USDC** goes straight from your balance. Any other token is swapped on the way out.
   </Step>
 
-  <Step title="Add the recipient">
-    Paste the destination address, or pick one of your own profiles or wallets from the buttons.
-
-    Add more than one recipient and the amount is **split evenly** between them. Tap a recipient to remove it.
+  <Step title="The recipient">
+    Paste the address, or pick one of your own [wallets or profiles](#send-to-your-own-wallets). Add several and the amount is **split evenly** between them.
   </Step>
 
-  <Step title="Enter an amount">
-    Type a figure like `12.50`, a percentage of what is available, or `max` for all of it.
-
-    Anything other than USDC on Solana needs at least **\$1 per recipient**.
+  <Step title="The amount">
+    Type it, or `max` for all of it. Anything other than USDC on Solana needs at least **\$1 per recipient**.
   </Step>
 
-  <Step title="Check the confirmation">
-    Dawn shows what leaves, what arrives, the destination address and chain, and roughly how many seconds it takes. The amount is fixed when it goes; the price can move a little on the way.
-  </Step>
-
-  <Step title="Approve it in the wallet app">
-    The card turns into **✍️ Approve to send** with one button, **✅ Approve in Wallet**. It opens the wallet app on this send; check it and tap **Approve**. Nothing leaves until you do.
-
-    Back in the chat, the card goes from **⏳ Sent** to **✅ Sent**.
+  <Step title="Approve">
+    Tap **✅ Approve in Wallet** and approve the send in the wallet app. Nothing leaves until you do.
   </Step>
 </Steps>
 
 ## Approve it in the wallet app
 
-Every send and withdrawal is approved by you in the wallet app.
-
-| What you see | What it means |
-| --- | --- |
-| **✍️ Approve to send** / **Approve to withdraw** | Waiting for you. Tap the button to approve it. |
-| **⚠️** a reason on the same card | The send could not go out — usually not enough balance or gas. Sort it out, then tap **Approve in Wallet** again; the send is still open. |
-| **⏳ Sent** / **⏳ Withdrawing** | On its way. The card follows it. |
-| **✅ Sent** / **🟢 Withdrawn** | Done. |
-
-A send you do not approve within **five minutes** expires — start it again from the chat. With [two-factor authentication](/wallets/two-factor) on, Privy asks for it before the send goes.
+Every send and withdrawal is approved by you in the wallet app, and one you don't approve within **5 minutes** expires. With [2FA](/wallets/two-factor) on, Privy asks for it first.
 
 <Warning>
   Check the address and the chain yourself. A sent transaction cannot be recalled, and an address that is right on one network can be wrong on another. Never paste a token's contract address as the recipient.
 </Warning>
+
+<Info>
+  A send marked **⏳ Sent** is still confirming. Wait for it rather than starting a second withdrawal. If one didn't go through, see [Troubleshooting](/help/troubleshooting).
+</Info>
+
+## What it costs
+
+**Dawn charges no fee to withdraw or send.** You pay the gas and, if the recipient has never held the token, the cost of creating their token account.
+
+| Route | What you pay |
+| --- | --- |
+| **From Solana** | The gas, plus the token account if needed. Paid in USDC from your balance, even when you send SOL or another token. |
+| **From an EVM chain** | The gas, paid in that chain's own coin from your wallet on that chain. Keep a little of it there. |
+| **To another chain** | The gas, in USDC. The confirmation shows the amount that will arrive. |
+| **Private** | The exchanges' fees and the network cost, taken out of what you send. The quote shows the fees and what arrives. |
+
+The gas comes on top of the amount you type, unless you send `max`.
+
+## Send to your own wallets
+
+The recipient picker lists your own profiles and wallets. Use it to fund a new wallet, move money between profiles, or gather funds from several wallets into one. Pick several to split an amount across them.
+
+## Send a coin instead of USDC
+
+To move a coin without selling it, pick it instead of USDC. It stays on its own chain and arrives as the same coin.
+
+<Info>
+  Coins bought on HyperEVM through Dawn can't be sent out as they are: sell them, and the USDC lands on your balance. Some other coins' contracts restrict transfers, so not every balance you can see can be moved.
+</Info>
 
 ## Private withdrawals
 
@@ -70,24 +78,19 @@ A private withdrawal is routed through Husher and paid out by an exchange, so it
 
 <Steps>
   <Step title="Turn Private on">
-    Send `/withdraw` and tap **🕶 Private withdrawal**, or tap **🕶 Private: Off** on the send screen to switch it to **🕶 Private: On**. Then pick the chain and what should arrive, as for a normal withdrawal; only the chains and tokens a private withdrawal can deliver are listed.
+    Tap **🕶 Private withdrawal** in `/withdraw`, or tap **🕶 Private: Off** on the send screen to turn it on. Then pick the chain and what should arrive.
   </Step>
   <Step title="Add the addresses">
-    Tap **📝 Add recipient** and paste up to **100** addresses, one a line, or pick one of your own profiles or wallets.
+    Paste up to **100**, one a line, or pick your own wallets or profiles.
   </Step>
   <Step title="Enter an amount">
-    The screen shows the minimum, fees included. With several addresses, the minimum is per address, plus the network cost once.
-
-    Then tap **Review private send**, or **Review private withdrawal** when it goes to another chain.
+    The screen shows the minimum, fees included. With several addresses, it applies to each one, plus the network cost once.
   </Step>
   <Step title="Shape the send">
-    The quote shows what you send, the chain, how many legs and when they go out, about what arrives and about what the fees come to. Under that, each address lists the legs that pay it: the amount, the exchange and when it goes. Change any of it — see [Split, timing and exchange](#split-timing-and-exchange).
+    Optional. Change how the legs are [split and timed, and which exchange pays](#split-timing-and-exchange).
   </Step>
-  <Step title="Confirm">
-    Tap **🕶 Send privately**, check the **🕶 Confirm private send** card, and tap **✅ Confirm**.
-  </Step>
-  <Step title="Approve it in the wallet app">
-    The card turns into **🕶 Private send waiting for your approval**. Tap **🔐 Approve in app** and approve the deposit; with [2FA](/wallets/two-factor) on, Privy asks for it first. Nothing is sent until you approve, and the send lapses **30 minutes** after you confirmed.
+  <Step title="Confirm and approve">
+    Tap **🕶 Send privately** and confirm, then tap **🔐 Approve in app** and approve the deposit. Nothing is sent until you approve, and the send lapses **30 minutes** after you confirmed.
   </Step>
 </Steps>
 
@@ -97,99 +100,20 @@ A private withdrawal is routed through Husher and paid out by an exchange, so it
 
 ### Split, timing and exchange
 
-Each button on the quote asks in its own message: tap a choice, or type your own.
-
-| Button | What it sets | Choices |
-| --- | --- | --- |
-| **🔀 Split** | How many legs each address's amount goes out in, each a different size | **No split · 2 legs · 3 legs · 5 legs**, or type a number |
-| **⏲ Timing** | The window the legs go out in, each at a random time within it | **All at once · 30m · 1h · 6h · 24h**, or type one like `45m` or `3h`, up to 24h |
-| **🔁 Exchange** | Which exchange pays the legs out | **Auto** picks one for each leg; **Binance · KuCoin · Bybit · Bitget · Gate** pays them all |
-| **🎚 Spread** | How far each leg's size can stray from an even share. Shown once you split | **0% · 10% · 20% · 40%**, or type 0 to 50. **20%** unless you change it |
-| **🎲 Reroll** | New random sizes and times for the legs. Shown once you split or set a timing | — |
-
-A private send carries up to **100** legs in all, counting every address.
-
-Each exchange has its own minimum per leg. A leg under it is marked ⚠️, and **🕶 Send privately** is hidden until every leg clears it: pick fewer legs, or send more.
-
-### Edit a leg
-
-Tap **✏️ Edit legs**, or **Edit** beside a leg on the quote, to change one leg:
-
-| Setting | Choices |
+| Setting | What it does |
 | --- | --- |
-| Exchange | **Binance · KuCoin · Bybit · Bitget · Gate** |
-| Delay after the deposit | **Now · 5m · 30m · 1h · 6h · 24h**, or **⏱ Custom** in minutes, up to 24 hours |
-| **💵 Amount** | Any dollar figure, at least the exchange's minimum |
+| **🔀 Split** | Sends each address's amount in several legs, each a different size |
+| **⏲ Timing** | Spreads the legs over a window of up to 24 hours, each at a random time |
+| **🔁 Exchange** | Which exchange pays the legs out. **Auto** picks one for each leg, or pick one to pay them all |
+| **🎚 Spread** | How far each leg's size can stray from an even share. **20%** unless you change it |
+| **🎲 Reroll** | New random sizes and times for the legs |
 
-**↩️ Reset leg** undoes your changes to that leg. What you set stays when you reroll.
+To change one leg's exchange, its delay after the deposit (up to 24 hours) or its amount, tap **✏️ Edit legs**, or **Edit** beside the leg. Your edits stay when you reroll.
+
+A private send carries up to **100 legs** across all its addresses. Each exchange has a minimum per leg, and every leg must clear it before you can send.
 
 ### Following a private send
 
-The card follows the send until every leg is done.
+Tap **⏩ Send now** on the send's message to pay out the legs still waiting on their delay.
 
-| Card | What it means |
-| --- | --- |
-| 🕶 **Private send waiting for your approval** | Approve the deposit in the app. Nothing has left your wallet yet. |
-| 🕶 **Private send running** | The legs are going out. The card says when the next one pays. |
-| ✅ **Private send finished** | Every leg is done. A message tells you what was delivered. |
-| 🕶 **Private send not sent** | It was never deposited. Its USDC is still in your wallet. |
-
-| Button | What it does |
-| --- | --- |
-| **⏩ Send now** | Pays out the legs still waiting on their delay, straight away |
-| **🔎 Track on Husher** | Opens the send on Husher's own page |
-
-Each leg on the card is marked ✅ delivered, ⏳ paying out, 🕒 scheduled, ⏭ not sent, ⚠️ failed or ↩️ refunded. A leg that was not sent stays in your wallet as USDC, with the reason beside it. For a leg that failed or was refunded, contact [support](/help/support) with the reference on the card.
-
-## What it costs
-
-**Dawn charges no fee to withdraw or send.** You only pay the gas for the send and, if the recipient has never held the token, the cost of creating their token account.
-
-| Route | What you pay |
-| --- | --- |
-| **From Solana** | The gas, plus creating the recipient's token account if they need one. Paid in USDC from your balance, even when you send SOL or another token. |
-| **From an EVM chain** | The gas, paid in that chain's own coin from your wallet on that chain. |
-| **To another chain** | The gas to send it, in USDC. The bridge delivers it, and the confirmation shows the amount that will arrive. |
-| **Private** | The exchanges' fees and the network cost, taken out of what you send. The quote shows the fees and what arrives before you confirm. |
-
-The wallet app shows the exact amount before you approve.
-
-## Send to your own wallets
-
-The recipient picker lists your own profiles and wallets, so moving money internally is the same flow with a different destination.
-
-This is how you:
-
-- fund a new wallet from an existing one,
-- move money between profiles,
-- gather funds spread across several wallets into one.
-
-Select several of your own wallets as recipients to split an amount across them in one go.
-
-## Send a coin instead of USDC
-
-To move a coin you hold without selling it, choose it in the send flow rather than USDC. It stays on its own chain and arrives as the same coin.
-
-The exception is HyperEVM: coins you bought there through Dawn cannot be sent out as they are. Sell them instead, and the USDC lands on your balance.
-
-<Note>
-  Some contracts restrict transfers. A balance you can see is not always a balance you can move, and that is a property of the token rather than of Dawn.
-</Note>
-
-## If a withdrawal does not go through
-
-| What you see | What to do |
-| --- | --- |
-| **Approve to send** with a ⚠️ line | It could not go out — the reason is on the card, usually balance or gas. Fix it and tap **Approve in Wallet** again. |
-| _Not approved in time_ | It was not approved within five minutes. Start the send again. |
-| **Transfer failed** | Read the reason on the card. Recipients marked ❌ received nothing. |
-| **Withdrawal refunded** | The route could not deliver. The USDC is back on your balance. |
-| Not enough available | The gas comes on top of the amount unless you sent `max`. Leave room for it, or use `max`. |
-| Not enough USDC for the gas | A send from Solana pays its gas in USDC, even when you send another coin. Top up USDC, or send a little less. |
-| No gas on that chain | A send from an EVM chain needs a little of that chain's own coin for gas. Send some to your wallet's address, then try again. |
-| Address rejected | Wrong chain for that address shape, or a contract address rather than a wallet. |
-| **Private send not sent** | It was not approved within 30 minutes, or could not be deposited. Nothing left your wallet. Start it again. |
-| No **🕶 Send privately** button | A leg is under its exchange's minimum. Pick fewer legs, or send more. |
-| A private leg marked ⚠️ or ↩️ | Contact [support](/help/support) with the reference on the card. |
-
-A card that says **Sent** and is still confirming is not finished. Wait for it rather than starting a second withdrawal.
+A send that was never deposited, or a leg that wasn't sent, leaves its USDC in your wallet. For a leg marked ⚠️ failed or ↩️ refunded, contact [support](/help/support) with the reference on the message.
