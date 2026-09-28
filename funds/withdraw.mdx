@@ -141,23 +141,6 @@ The card follows the send until every leg is done.
 
 Each leg on the card is marked ✅ delivered, ⏳ paying out, 🕒 scheduled, ⏭ not sent, ⚠️ failed or ↩️ refunded. A leg that was not sent stays in your wallet as USDC, with the reason beside it. For a leg that failed or was refunded, contact [support](/help/support) with the reference on the card.
 
-## Your transfers
-
-Send `/transfers`, or tap **📜 Transfers** in `/wallets` or on the Send menu. It lists every send, withdrawal and private send from all your wallets: **In progress** first, then **Past**. Tap **🔎** and a number to open that one's card.
-
-| Status | What it means |
-| --- | --- |
-| 🔐 **Waiting for your approval** | Open it and approve it in the wallet app |
-| ⏳ **Sending** / **Bridging** | On its way |
-| ✅ **Sent** / **Delivered** | Done |
-| ⌛ **Not approved in time** | Nothing was sent. Start it again. |
-| ❌ **Failed** / ⚠️ **1 failed** | Every recipient, or some of them, received nothing. The card says why. |
-| ↩️ **Refunded** | The route could not deliver. The USDC is back on your balance. |
-| 🕒 **2 of 5 delivered** | A private send with legs still to go |
-| ⏭ **Not sent** | A private send that was never deposited. Its USDC is still in your wallet. |
-
-While a private send is running, `/withdraw` says so, with a **View** link to this list.
-
 ## What it costs
 
 **Dawn charges no fee to withdraw or send.** You only pay the gas for the send and, if the recipient has never held the token, the cost of creating their token account.
