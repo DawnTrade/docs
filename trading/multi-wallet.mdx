@@ -1,22 +1,11 @@
 ---
 title: "Multi-Wallet Trading"
 sidebarTitle: "Multi-Wallet"
-description: "Buy or sell the same coin from every wallet in a profile, and land Solana buys in one block."
+description: "Buy or sell the same coin from every wallet in a profile, and land Solana trades in one block."
 icon: "layer-group"
 ---
 
-Open a coin and tap **👥 Multi-Wallet** on its [panel](/trading/token-panel). **Buying ⇄** switches between buying and selling.
-
-## Buy from several wallets
-
-<Steps>
-  <Step title="Pick the wallets">
-    Only wallets with USDC can buy. Deposit to an empty one first.
-  </Step>
-  <Step title="Pick the amount">
-    Every picked wallet buys that amount.
-  </Step>
-</Steps>
+Open a coin and tap **👥 Multi-Wallet** on its [panel](/trading/token-panel) to buy or sell from any one wallet, or from all of them at once.
 
 <Info>
   The amount is for **each** wallet, not a total split between them: buying from five wallets spends five times the amount.
@@ -24,20 +13,16 @@ Open a coin and tap **👥 Multi-Wallet** on its [panel](/trading/token-panel). 
 
 ## ⚡ Bundle on Solana
 
-On Solana, with two or more wallets picked, you can turn on **⚡ Bundle**: every picked wallet buys in one transaction, at the same price, or none of them do.
+On Solana, **⚡ Bundle** makes **👥 All wallets** trade in one transaction. A single wallet always trades on its own.
 
 |  | ⚡ Bundle on | Bundle off |
 | --- | --- | --- |
-| Entry price | The same for every wallet, and nothing can trade in between them | Each buy walks the price up for the next |
-| If one fails | None of them buy | The others still buy |
+| Price | The same for every wallet, and nothing can trade in between them | Each trade moves the price for the next |
+| If one fails | None of them trade | The others still go through |
 
-Each wallet pays its own trading fee; Dawn covers the network fee, as on any buy.
+Each wallet pays its own trading fee; Dawn covers the network fee on a bundled buy.
 
-On the EVM chains there is no bundle: the buys go out at the same moment, each on its own, so one can fail without the others and fills can land at slightly different prices.
-
-## Sell from several wallets
-
-Works like buying, over the wallets that hold the coin. Pick the wallets, then a share: every picked wallet sells that share of **its own** holding. Each sells on its own, so one can fail without the others.
+On the EVM chains there is no bundle: the trades go out at the same moment, each on its own, so one can fail without the others and fills can land at slightly different prices.
 
 ## What you get back
 

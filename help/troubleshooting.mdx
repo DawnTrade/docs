@@ -17,6 +17,10 @@ Most problems come down to being in a different **wallet** or **profile** than y
     Check the route's minimum on the deposit panel, and open the panel right before you send: a deposit sent long after still lands, but its card may not follow.
   </Accordion>
 
+  <Accordion title="My NEAR sale is not in my Solana USDC" icon="arrow-right-arrow-left">
+    NEAR sales, and failed NEAR buys, stay in your NEAR wallet and still count in **Ready**. See [Trading on NEAR](/trading/near).
+  </Accordion>
+
   <Accordion title="I sent to the wrong chain or the wrong address" icon="triangle-exclamation">
     Sent to a Dawn address on a chain Dawn supports? Open `/deposit` and check: it may still be credited or refunded. Anywhere else, it's gone. Nobody can reverse an on-chain transfer.
   </Accordion>
@@ -49,7 +53,7 @@ Most problems come down to being in a different **wallet** or **profile** than y
   </Accordion>
 
   <Accordion title="I cannot find an order I placed" icon="magnifying-glass">
-    `/orders` shows the wallet and profile you're in, and orders keep running in every profile. Switch profile from the home screen and look again. Price alerts have their own list in `/alerts`.
+    `/orders` shows the wallet and profile you're in, and orders keep running in every profile. Switch profile from the home screen and look again. Price alerts have their own list in `/alerts` → **📈 Price**.
   </Accordion>
 </AccordionGroup>
 
@@ -61,7 +65,7 @@ Most problems come down to being in a different **wallet** or **profile** than y
   </Accordion>
 
   <Accordion title="A mirrored sell did nothing" icon="rotate">
-    It sells the coin the task bought, from the task's wallet. If you already sold it, a TP/SL sold it, or the task never bought it, there is nothing to sell. With **🤝 Hold if Down** on, a sell is also held back while you're at a loss.
+    It sells the coin the task bought, from the task's wallet. If you already sold it, a TP/SL sold it, or the task never bought it, there is nothing to sell. With **🤝 Hold if Down** on, a sell is also held back while you're at a loss, fees included.
   </Accordion>
 
   <Accordion title="My copy filled far from the leader's price" icon="chart-line">
@@ -77,7 +81,7 @@ Most problems come down to being in a different **wallet** or **profile** than y
   </Accordion>
 
   <Accordion title="A price alert never came" icon="chart-line">
-    Price alerts last **7 days**, then end without a message. One still listed in `/alerts` hasn't been reached yet.
+    Price alerts last **7 days**, then end without a message. One still listed in `/alerts` → **📈 Price** hasn't been reached yet.
   </Accordion>
 </AccordionGroup>
 
@@ -85,7 +89,7 @@ Most problems come down to being in a different **wallet** or **profile** than y
 
 <AccordionGroup>
   <Accordion title="A coin I hold is not in my portfolio" icon="chart-pie">
-    Check the wallet and profile, then the **filters** and **hidden tokens**. A minimum-worth or low-liquidity filter hides rows without removing them.
+    Check the wallet and profile, then the **filters** and **hidden tokens**. A minimum-worth or low-liquidity filter hides rows without removing them. A coin you've sold down to a few cents moves to 🚫 **Closed**.
   </Accordion>
 
   <Accordion title="My PnL looks wrong" icon="calculator">
@@ -93,7 +97,7 @@ Most problems come down to being in a different **wallet** or **profile** than y
   </Accordion>
 
   <Accordion title="I cannot sell a coin" icon="lock">
-    Some contracts block transfers, or block selling for everyone except the deployer. No setting in Dawn changes that.
+    Some contracts block transfers, or block selling for everyone except the deployer. No setting in Dawn changes that. Dawn [warns before you buy](/trading/token-panel#risk-warnings) the coins it can catch, not every one.
   </Accordion>
 </AccordionGroup>
 

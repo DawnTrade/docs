@@ -43,6 +43,14 @@ The token panel is where trading happens. Paste a coin's contract address into t
 
 A high **Top 10** share means a handful of wallets can exit into your bid. A coin minutes old with few holders is the highest-risk thing on the screen.
 
+## Risk warnings
+
+Dawn checks Solana and EVM coins for traps that stop you selling: a sell that fails, a sell tax of half or more, or a Solana creator who can freeze, take or block your tokens. Buying a coin it flags asks you to confirm first. Selling never does.
+
+<Info>
+  [Auto Buy](/settings/overview#auto-buy) opens a flagged coin's panel instead of buying, and [copytrade](/copytrade/overview#notifications) skips it.
+</Info>
+
 ## Coins still on a launchpad curve
 
 On Solana (pump.fun) and Robinhood Chain (Pons), a coin that has not graduated to a regular pool shows:
@@ -79,7 +87,7 @@ To hear about new theses from traders you follow as they post them, see [Trader 
 <Danger>
   Market data describes a coin's market, not what its contract can do.
 
-  A contract can let its deployer mint more supply, freeze balances, block selling entirely, or raise its tax after you have bought. Liquidity can be pulled in a single transaction. None of that shows up as a bad number beforehand.
+  A contract can let its deployer mint more supply, freeze balances, block selling entirely, or raise its tax after you have bought. Liquidity can be pulled in a single transaction. [Risk warnings](#risk-warnings) catch some of this before you buy, not all of it, and nothing on the panel warns of a change made later.
 
   Treat every panel as the beginning of your own check, not the end of it.
 </Danger>

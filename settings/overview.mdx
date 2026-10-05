@@ -11,7 +11,7 @@ Send `/settings`. Settings belong to the **profile you're in**: [each profile ha
 
 | Setting | Default | What it changes |
 | --- | --- | --- |
-| 🎯 **Slippage** | **15%** | How far the price may move against you before a trade is refused. See [Execution](/trading/execution#slippage). |
+| 🎯 **Slippage** | **15%** | How far the price may move against you before a trade is refused. Stop losses, trailing sells and dev sells use it too. See [Execution](/trading/execution#slippage). |
 | ⚡ **Auto Buy** | Off | Pasting an address buys a fixed amount right away. |
 | 🛡 **MEV Protection** | **On** | Sends Solana swaps through a private lane so nobody can front-run you. See [Execution](/trading/execution#mev-protection). |
 | ⛽️ **Gas** | Medium | How hard your trades bid to land. See [Execution](/trading/execution#gas-preset). |
@@ -19,7 +19,7 @@ Send `/settings`. Settings belong to the **profile you're in**: [each profile ha
 
 ### Auto Buy
 
-With Auto Buy on, **pasting a coin's address buys it** for the amount you set. With it off, pasting only opens the coin.
+With Auto Buy on, **pasting a coin's address buys it** for the amount you set. With it off, pasting only opens the coin. A coin Dawn [flags as risky](/trading/token-panel#risk-warnings) opens its panel instead of buying.
 
 <Warning>
   This turns pasting into spending: forwarding a message, or pasting an address just to look at it, becomes a trade. Keep the amount to something you'd be relaxed about losing to a mis-tap.
@@ -41,8 +41,9 @@ See [Guardrails](/settings/guardrails).
 | --- | --- |
 | 📉 **Stop Loss** | Off |
 | 📈 **Take Profit** | Off |
+| 👨‍💻 **Dev Sell** | Off |
 
-Levels set here go on **every new position** in the profile, as a percent like `-30%` or a multiple like `2x`. You can still change any position's own afterwards. See [Take profit and stop loss](/orders/tp-sl#defaults-for-every-new-position).
+Exits set here go on **every new position** in the profile, as a percent like `-30%`, a multiple like `2x`, or a [trailing sell](/orders/tp-sl#trailing-take-profit-and-trailing-stop). You can still change any position's own afterwards. See [Take profit and stop loss](/orders/tp-sl#defaults-for-every-new-position).
 
 <Tip>
   A default stop loss is the most valuable setting on this page. It's the difference between a bad trade costing you part of a position and all of it.

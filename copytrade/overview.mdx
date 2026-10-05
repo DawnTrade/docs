@@ -48,7 +48,9 @@ Open it with `/copytrade`, or **🤖 Copytrade** on the home screen. Each trader
     | --- | --- |
     | **Buys Only** | Nothing. You sell when you want. |
     | **Buys + Sells** | You sell the same share of yours, in profit or at a loss. |
-    | **🤝 Buys + Sells, Hold When I'm Down** | You sell with them while you're in profit. If you're down, you keep the position. |
+    | **🤝 Buys + Sells, Hold When I'm Down** | You sell with them while you're in profit, fees included. If you're down, you keep the position. |
+    | **↩️ Hold When Down, Exit at Break-even** | The same, and once the price is back to what you paid, fees included, you sell the share they sold. |
+    | **🔄 Reverse: Buy When They Sell** | You buy the coin they sold, and their buys are ignored. See [Reverse copytrade](#reverse-copytrade). |
 
     <Info>
       **Hold When I'm Down** never sells at a loss for you, so pair it with a stop loss.
@@ -82,7 +84,7 @@ While a task runs, Dawn messages you when a copy:
 
 - 🟢 **Fills**: a buy or sell went through
 - 🔴 **Fails**: nothing was bought or sold, and your USDC is back on your balance
-- ⏩ **Is skipped**: for example, because of a filter or not enough balance
+- ⏩ **Is skipped**: for example, because of a filter, not enough balance, or a coin [flagged as risky](/trading/token-panel#risk-warnings)
 - ⏩ **Is missed**: the price had already run past your slippage
 
 Every copy is also listed in the task's [activity](/copytrade/manage#activity).
@@ -91,7 +93,13 @@ Every copy is also listed in the task's [activity](/copytrade/manage#activity).
 
 Still want in after a miss? Tap **⏳ Limit at Leader's Entry** on the message. It sets a [limit buy](/orders/limit) at the price the leader paid, for 24 hours.
 
-To do this on every miss, turn on **Limit Order On Miss** in the task's [settings](/copytrade/manage#settings).
+To do this on every miss, turn on **📌 Limit Order On Miss** in the task's [settings](/copytrade/manage#settings).
+
+## Reverse copytrade
+
+A reverse task buys the coins the leader sells, sized from what their sale brought in, and its slippage counts from their sell price. It never sells on the leader's buys, so set a stop loss or take profit, or sell by hand.
+
+A task can't be switched to or from reverse later: make a new one.
 
 ## Your tasks
 
