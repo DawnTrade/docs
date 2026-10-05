@@ -75,6 +75,7 @@
             "icon": "chart-candlestick",
             "pages": [
               "trading/trending",
+              "trading/near",
               "trading/multi-wallet",
               "trading/execution",
               "trading/activity",

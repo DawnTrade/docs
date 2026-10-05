@@ -36,6 +36,8 @@ A trailing sell follows the price up. Its sell level sits a set distance under t
 | **Trailing take profit** | Once the price reaches the level you set. Nothing sells before that. |
 | **Trailing stop** | Straight away. |
 
+A trailing sell can't be edited: cancel it and add a new one.
+
 ## Dev Sell
 
 **👨‍💻 Dev Sell** sells your position once the coin's dev has sold a share of what they held, in one sale or several.
@@ -46,7 +48,7 @@ It works on pump.fun coins, and on EVM coins whose creator Dawn can identify.
 
 Set exits once for the profile: `/settings` → **📈 Stop Loss & Take Profit**. Every new position then gets them, and you can still change any position from its own page.
 
-Defaults can be fixed levels or trailing, and take only a percent or a multiple of your entry. Changing a default trail also moves the trailing sells your defaults have already placed.
+Defaults can be fixed levels or trailing, and take only a percent or a multiple of your entry. Changing a default trail also moves the trailing sells your defaults have already placed. A default Dev Sell is skipped on coins whose dev Dawn can't identify.
 
 <Tip>
   A default stop loss is the single most useful setting in Dawn: it sells for you whether or not you are awake.
