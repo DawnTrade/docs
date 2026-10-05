@@ -10,7 +10,7 @@ The token panel is where trading happens. Paste a coin's contract address into t
 ## Opening a coin
 
 - **Contract address**: the exact way. Paste it and Dawn works out the chain.
-- **Ticker**: send `$PEPE`, or `/search pepe`.
+- **Ticker**: send `$PEPE`, or `/search pepe`. Not for [NEAR coins](/trading/near): paste their address.
 - **Chain prefix**: `bnb 0x…`, `base 0x…`, `hype 0x…` when an address is on more than one chain — [every prefix](/chains#naming-the-chain-yourself).
 
 <Warning>
@@ -43,6 +43,14 @@ The token panel is where trading happens. Paste a coin's contract address into t
 
 A high **Top 10** share means a handful of wallets can exit into your bid. A coin minutes old with few holders is the highest-risk thing on the screen.
 
+## Risk warnings
+
+Dawn checks Solana and EVM coins for traps that stop you selling: a sell that fails, a sell tax of half or more, or a Solana creator who can freeze, take or block your tokens. A coin it flags carries a ⚠️ line under its name, and tapping a buy amount opens a warning first. **⚠️ Buy \$X anyway** places the buy. Sells are never held back.
+
+<Info>
+  [Auto Buy](/settings/overview#auto-buy) opens a flagged coin's panel instead of buying, and [copytrade](/copytrade/overview#notifications) skips it.
+</Info>
+
 ## Coins still on a launchpad curve
 
 On Solana (pump.fun) and Robinhood Chain (Pons), a coin that has not graduated to a regular pool shows:
@@ -61,12 +69,8 @@ Once you own some, the **Holding** block shows your position and PnL for the wal
 ## The buttons
 
 - **Amount buttons** send the trade the moment you tap: dollar amounts when buying, shares of your holding when selling. Change them in [Presets](/settings/presets).
-- **⚙️ Automations** holds [limit orders](/orders/limit), [ladders](/orders/ladder), [DCA](/orders/dca), [TWAP](/orders/twap) and [price alerts](/alerts/price) for the coin.
+- **⚙️ Automations** holds [limit orders](/orders/limit), [ladders](/orders/ladder), [DCA](/orders/dca), [TWAP](/orders/twap) and [price alerts](/alerts/price) for the coin. Once you hold it, it also has **📈 Add Take Profit** and **📉 Add Stop Loss**, and on the selling side **👨‍💻 Dev Sell**: see [Take profit and stop loss](/orders/tp-sl).
 - **🔗 Share**, **👥 Multi-Wallet**, **Degen** and **📝 Thesis**: see [Share links](/social/share-links), [Multi-wallet trading](/trading/multi-wallet), [Degen Mode](/settings/guardrails#degen-mode) and [Top theses](#top-theses).
-
-<Info>
-  Take-profit and stop-loss aren't under Automations: open the coin from your [portfolio](/trading/portfolio) and choose **TP/SL**, or **Edit TP/SL** in `/orders`. See [Take profit and stop loss](/orders/tp-sl).
-</Info>
 
 ## Top theses
 
@@ -79,7 +83,7 @@ To hear about new theses from traders you follow as they post them, see [Trader 
 <Danger>
   Market data describes a coin's market, not what its contract can do.
 
-  A contract can let its deployer mint more supply, freeze balances, block selling entirely, or raise its tax after you have bought. Liquidity can be pulled in a single transaction. None of that shows up as a bad number beforehand.
+  A contract can let its deployer mint more supply, freeze balances, block selling entirely, or raise its tax after you have bought. Liquidity can be pulled in a single transaction. [Risk warnings](#risk-warnings) catch some of this before you buy, not all of it, and nothing on the panel warns of a change made later.
 
   Treat every panel as the beginning of your own check, not the end of it.
 </Danger>
