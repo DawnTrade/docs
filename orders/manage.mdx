@@ -5,10 +5,10 @@ description: "Find what is armed, cancel it, and work out why something has not 
 icon: "list-check"
 ---
 
-Send `/orders`, or tap **📋 Limit Orders** on the home screen. Everything armed is listed here by coin: limit buys and sells, ladders, DCA plans, running TWAPs, and the take-profit and stop-loss levels on your positions.
+Send `/orders`, or tap **📋 Limit Orders** on the home screen. Everything armed is listed here by coin: limit buys and sells, ladders, DCA plans, running TWAPs, and the take-profit, stop-loss, trailing and dev-sell orders on your positions.
 
 <Info>
-  [Price alerts](/alerts/price) have their own list: **🔔 Alerts** → **📈 Price** on the home screen, or `/alerts`.
+  [Price alerts](/alerts/price) have their own list: **🔔 Alerts** → **📈 Price** on the home screen or in `/alerts`.
 </Info>
 
 ## Changing a limit buy
@@ -30,7 +30,7 @@ Dawn messages you when an order:
 - **Fills**
 - **Fails**
 - **Expires** before its level is reached
-- **Is paused**: the coin has no live price feed yet. It is still armed, and fires as normal once the feed is back.
+- **Is paused**: Dawn can't read the coin's price right now. It is still armed, and resumes on its own once the price is back.
 
 <Note>
   Failed and expired orders do not retry themselves. If the protection mattered, put it back.
