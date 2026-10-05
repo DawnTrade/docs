@@ -24,8 +24,6 @@ Open it with `/copytrade`, or **🤖 Copytrade** on the home screen. Each trader
   <Step title="Pick the trader">
     Tap **➕ Follow a Trader**, send who you want to copy, and name the task. For an EVM wallet, you also pick its chains.
 
-    A name on both fomo and pump.fun asks which trader you mean. **Both** makes a task for each, with the same settings.
-
     Made a task before? **✅ Same as Last Time** reuses its settings and skips the steps below.
   </Step>
 
@@ -60,11 +58,11 @@ Open it with `/copytrade`, or **🤖 Copytrade** on the home screen. Each trader
   </Step>
 
   <Step title="Slippage">
-    How far above the leader's price your copy may buy. Past that, the copy is [missed](#missed-copies). **15%** suits most tasks; **Off** copies at any price. The task's stop losses and trailing sells use it too.
+    How far above the leader's price your copy may buy. Past that, the copy is [missed](#missed-copies). **15%** suits most tasks; **Off** copies at any price.
   </Step>
 
   <Step title="Stop loss and take profit">
-    Optional. Added to every buy the task makes. Trailing sells and [Dev Sell](/orders/tp-sl#dev-sell) can be added later under the task's **📈 Auto Sell**.
+    Optional. Added to every buy the task makes.
   </Step>
 
   <Step title="Minimum market cap">
@@ -99,11 +97,9 @@ To do this on every miss, turn on **📌 Limit Order On Miss** in the task's [se
 
 ## Reverse copytrade
 
-With **🔄 Reverse: Buy When They Sell**, the task buys the coins the leader sells, sized from what their sale brought in. Their buys are ignored, so you exit with **📈 Auto Sell** or by hand.
+A reverse task buys the coins the leader sells, sized from what their sale brought in, and its slippage counts from their sell price. It never sells on the leader's buys, so set a stop loss or take profit, or sell by hand.
 
-- **🥇 First Buy Wins** starts on, so a leader selling in several pieces gives you one buy.
-- Slippage counts from the leader's sell price, and a missed copy offers **⏳ Limit at Leader's Exit** instead.
-- A task is reverse from the start or not at all: to switch, make a new task.
+A task can't be switched to or from reverse later: make a new one.
 
 ## Your tasks
 

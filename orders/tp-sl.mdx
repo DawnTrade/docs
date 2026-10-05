@@ -36,26 +36,11 @@ A trailing sell follows the price up. Its sell level sits a set distance under t
 | **Trailing take profit** | Once the price reaches the level you set. Nothing sells before that. |
 | **Trailing stop** | Straight away. |
 
-<Steps>
-  <Step title="Choose trailing">
-    Tap **📈 Add Take Profit** or **📉 Add Stop Loss**, then **📶 Trailing instead**.
-  </Step>
-  <Step title="Where it starts">
-    Take profit only. A percent or multiple of your entry, like `100` or `2x`, or a market cap like `$2m`.
-  </Step>
-  <Step title="The trail">
-    How far under its high the price may fall before it sells.
-  </Step>
-  <Step title="How much to sell">
-    A share of your position.
-  </Step>
-</Steps>
-
-A trailing sell can't be edited: cancel it and add a new one.
+Add one with **📶 Trailing instead** after **📈 Add Take Profit** or **📉 Add Stop Loss**. A trailing sell can't be edited: cancel it and add a new one.
 
 ## Dev Sell
 
-**👨‍💻 Dev Sell** sells your position once the coin's dev has sold a share of what they held, in one sale or several: their first sale, everything, or a percent you pick.
+**👨‍💻 Dev Sell** sells your position once the coin's dev has sold a share of what they held, in one sale or several.
 
 It works on pump.fun coins, and on EVM coins whose creator Dawn can identify. Set it on the coin's panel, on the selling side: **⚙️ Automations** → **👨‍💻 Dev Sell**. It is also on the position's TP/SL page.
 
@@ -63,10 +48,7 @@ It works on pump.fun coins, and on EVM coins whose creator Dawn can identify. Se
 
 Set exits once for the profile: `/settings` → **📈 Stop Loss & Take Profit**. Every new position then gets them, and you can still change any position from its own page.
 
-- **📉 Stop Loss** and **📈 Take Profit** each run as **Fixed** levels or **📶 Trailing**. Fixed levels, and a trailing take profit's start, take only a percent or a multiple of your entry.
-- **👨‍💻 Dev Sell** goes on every new position whose dev Dawn can identify, and is skipped on the rest.
-
-Changing a default trail also moves the trailing sells your defaults have already placed.
+Defaults can be fixed levels or trailing, and take only a percent or a multiple of your entry. Changing a default trail also moves the trailing sells your defaults have already placed. A default Dev Sell is skipped on coins whose dev Dawn can't identify.
 
 <Tip>
   A default stop loss is the single most useful setting in Dawn: it sells for you whether or not you are awake.
@@ -80,7 +62,7 @@ Higher gets you out of a falling coin more reliably, at a worse price. Lower pro
 
 ## What happens when one fires
 
-Dawn messages you when an exit fills, fails, expires or is paused. When one sells your whole position, its [PnL banner](/trading/pnl-cards) follows. See [Notifications](/orders/manage#notifications).
+Dawn messages you when an exit fills, fails, expires or is paused. See [Notifications](/orders/manage#notifications).
 
 <Warning>
   A stop loss is not a floor. It sells at whatever the market gives once the level is reached. A coin that gaps down, loses its liquidity, or blocks selling can leave you far below your level, or unable to exit at all.
