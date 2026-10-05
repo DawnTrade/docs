@@ -25,17 +25,24 @@ Each task has its own trading settings. **Default** means it uses your [profile'
 | Setting | What it does |
 | --- | --- |
 | 🔁 **Mirror Sells** | On: when the leader sells, you sell the same share. Off: you only copy their buys. |
-| 🤝 **Hold if Down** | With Mirror Sells on, you sell with the leader only while you're in profit. If you're down, you keep the position. Pair it with a stop loss in **📈 Auto Sell**. |
-| **Limit Order On Miss** | Sets a limit buy at the leader's entry on every [missed copy](/copytrade/overview#missed-copies). Off by default. |
-| 🎯 **Slippage** | How far above the leader's entry price a copy may buy. **15%** unless you change it; **Off** copies at any price. |
+| 🤝 **Hold if Down** | With Mirror Sells on, you sell with the leader only while you're in profit, fees included. If you're down, you keep the position. Pair it with a stop loss in **📈 Auto Sell**. |
+| ↩️ **Break-even Exit** | With Hold if Down on, a sell held back while you're down goes through once the price is back to what you paid, fees included. |
+| 📌 **Limit Order On Miss** | Sets a limit buy at the leader's entry on every [missed copy](/copytrade/overview#missed-copies). Off by default. |
+| 🎯 **Slippage** | How far above the leader's entry price a copy may buy. **15%** unless you change it; **Off** copies at any price. The task's stop losses, trailing sells and dev sells use it too, up to 50%. |
 | 🛡 **MEV** | See [MEV protection](/trading/execution#mev-protection). |
 | ⛽️ **Gas** | See [Gas preset](/trading/execution#gas-preset). |
-| 📈 **Auto Sell** | A stop loss and take profit on every buy the task makes. |
-| 🌐 **Chains** | fomo tasks only. See [Chains](#chains). |
+| 📈 **Auto Sell** | A stop loss, take profit and [Dev Sell](/orders/tp-sl#dev-sell) on every buy the task makes. Stop loss and take profit can each be fixed or [trailing](/orders/tp-sl#trailing-take-profit-and-trailing-stop). |
+| 🌐 **Chains** | fomo traders with an EVM wallet. See [Chains](#chains). |
+
+<Info>
+  In a [reverse task](/copytrade/overview#reverse-copytrade), Mirror Sells, Hold if Down and Break-even Exit don't apply.
+</Info>
 
 ## Filters
 
 Filters decide which of the leader's buys the task copies. A buy that fails a filter, or a coin with no data for it yet, is skipped. Sells are never filtered.
+
+In a [reverse task](/copytrade/overview#reverse-copytrade), the filters judge the leader's sells instead, and 🌱 **First Buys Only** isn't used.
 
 | Filter | Skips a buy when |
 | --- | --- |
@@ -56,13 +63,21 @@ Filters decide which of the leader's buys the task copies. A buy that fails a fi
 
 ## Chains
 
-A task on a fomo trader copies them on every chain they trade. Switch chains off or on under **🌐 Chains** in the task's settings. Switching one off stops new copies there; positions you already hold stay.
+A task on a fomo trader copies them on every chain they trade. When the trader has an EVM wallet, switch chains off or on under **🌐 Chains** in the task's settings. Switching one off stops new copies there; positions you already hold stay.
 
 A task made from an address keeps the chains you picked when you created it.
+
+## Change trader
+
+**👤 Change Trader**, in the settings of a task made from a wallet address or a pump.fun trader, points it at another wallet. The task's settings, history and the coins it already bought stay. From then on only the new wallet is copied, so sells of coins bought from the old one are no longer mirrored.
 
 ## Wallet
 
 **💳 Change Wallet** moves the task to another of your wallets, in any profile. Coins already bought stay in the wallet that bought them.
+
+## Duplicate a task
+
+**📋 Duplicate** makes a new task with every setting of this one. You only send who to copy and name it.
 
 ## Activity
 

@@ -15,11 +15,13 @@ Send `/withdraw`, or `/send` for the menu. You can send **USDC**, a chain's own 
   </Step>
 
   <Step title="The chain it arrives on">
-    The recipient's network, not yours: any [chain Dawn trades on](/chains) — Solana, BNB Chain, Robinhood Chain, Base, Arc, Ink or HyperEVM — or Ethereum, Arbitrum, Optimism or Polygon.
+    The recipient's network, not yours: Solana, BNB Chain, Robinhood Chain, Base, Arc, Ink or HyperEVM, or Ethereum, Arbitrum, Optimism or Polygon.
   </Step>
 
   <Step title="What should arrive">
     On Solana, **⭐ USDC** goes straight from your balance. Any other token is swapped on the way out.
+
+    If your Solana USDC is short, Dawn first moves the rest over from your [NEAR wallet](/trading/near), then the send is ready to approve.
   </Step>
 
   <Step title="The recipient">
@@ -69,7 +71,7 @@ The recipient picker lists your own profiles and wallets. Use it to fund a new w
 To move a coin without selling it, pick it instead of USDC. It stays on its own chain and arrives as the same coin.
 
 <Info>
-  Coins bought on HyperEVM through Dawn can't be sent out as they are: sell them, and the USDC lands on your balance. Some other coins' contracts restrict transfers, so not every balance you can see can be moved.
+  Coins bought on HyperEVM through Dawn, and NEAR coins, can't be sent out as they are: sell them, and the USDC lands on your balance. Some other coins' contracts restrict transfers, so not every balance you can see can be moved.
 </Info>
 
 ## Private withdrawals
@@ -102,6 +104,7 @@ A private withdrawal is routed through Husher and paid out by an exchange, so it
 
 | Setting | What it does |
 | --- | --- |
+| **⚖️ Shares** | How the amount is divided between the addresses. Even unless you change it |
 | **🔀 Split** | Sends each address's amount in several legs, each a different size |
 | **⏲ Timing** | Spreads the legs over a window of up to 24 hours, each at a random time |
 | **🔁 Exchange** | Which exchange pays the legs out. **Auto** picks one for each leg, or pick one to pay them all |
