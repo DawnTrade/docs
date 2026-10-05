@@ -31,18 +31,14 @@ Each task has its own trading settings. **Default** means it uses your [profile'
 | 🎯 **Slippage** | How far above the leader's entry price a copy may buy. **15%** unless you change it; **Off** copies at any price. The task's stop losses, trailing sells and dev sells use it too, up to 50%. |
 | 🛡 **MEV** | See [MEV protection](/trading/execution#mev-protection). |
 | ⛽️ **Gas** | See [Gas preset](/trading/execution#gas-preset). |
-| 📈 **Auto Sell** | A stop loss, take profit and [Dev Sell](/orders/tp-sl#dev-sell) on every buy the task makes. Stop loss and take profit can each be fixed or [trailing](/orders/tp-sl#trailing-take-profit-and-trailing-stop). |
+| 📈 **Auto Sell** | A stop loss, take profit and [Dev Sell](/orders/tp-sl#dev-sell) on every buy the task makes. |
 | 🌐 **Chains** | fomo traders with an EVM wallet. See [Chains](#chains). |
-
-<Info>
-  In a [reverse task](/copytrade/overview#reverse-copytrade), Mirror Sells, Hold if Down and Break-even Exit don't apply.
-</Info>
 
 ## Filters
 
 Filters decide which of the leader's buys the task copies. A buy that fails a filter, or a coin with no data for it yet, is skipped. Sells are never filtered.
 
-In a [reverse task](/copytrade/overview#reverse-copytrade), the filters judge the leader's sells instead, and 🌱 **First Buys Only** isn't used.
+In a [reverse task](/copytrade/overview#reverse-copytrade), they judge the leader's sells instead.
 
 | Filter | Skips a buy when |
 | --- | --- |
@@ -63,21 +59,13 @@ In a [reverse task](/copytrade/overview#reverse-copytrade), the filters judge th
 
 ## Chains
 
-A task on a fomo trader copies them on every chain they trade. When the trader has an EVM wallet, switch chains off or on under **🌐 Chains** in the task's settings. Switching one off stops new copies there; positions you already hold stay.
+A task on a fomo trader copies them on every chain they trade. Switch chains off or on under **🌐 Chains** in the task's settings. Switching one off stops new copies there; positions you already hold stay.
 
 A task made from an address keeps the chains you picked when you created it.
-
-## Change trader
-
-**👤 Change Trader**, in the settings of a task made from a wallet address or a pump.fun trader, points it at another wallet. The task's settings, history and the coins it already bought stay. From then on only the new wallet is copied, so sells of coins bought from the old one are no longer mirrored.
 
 ## Wallet
 
 **💳 Change Wallet** moves the task to another of your wallets, in any profile. Coins already bought stay in the wallet that bought them.
-
-## Duplicate a task
-
-**📋 Duplicate** makes a new task with every setting of this one. You only send who to copy and name it.
 
 ## Activity
 
