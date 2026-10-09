@@ -4,7 +4,7 @@ description: "Degen Mode, Auto-Adjust and Gas Surplus — the three settings tha
 icon: "shield-halved"
 ---
 
-`/settings` → **Guardrails**. All three belong to the [profile](/wallets/profiles), and all three are **off** by default.
+`/settings` → **Guardrails**. All three belong to the [profile](/wallets/profiles). Degen Mode and Auto-Adjust are **off** by default, and Gas Surplus starts at **\$10** on a new account.
 
 ## Degen Mode
 
@@ -25,11 +25,9 @@ On, a buy bigger than your balance is **reduced** to the largest buy your balanc
 
 ## Gas Surplus
 
-Dawn pays up to **\$5** of network gas on every trade. Gas Surplus is how much more a trade may take from your USDC when it needs more than that, up to **\$50**. Past your limit, or with it off, the trade is declined and nothing is spent.
+Dawn pays up to **\$5** of network gas on every trade. Gas Surplus is how much more a trade may take from your USDC when it needs more than that, up to **\$50**.
 
-<Warning>
-  Take-profit and stop-loss sells follow the same limit: **a stop-loss that needs more gas than you allow will not fire.** If you rely on stops, set a limit rather than leaving it off, especially on a volatile chain where gas spikes just when you need to exit.
-</Warning>
+Past your limit, or with it off, a buy or sell you tap on a coin's panel asks you to pay the extra first. Automatic sells, like a take profit, stop loss, trailing or limit sell, or a copy's sell, pay up to **\$50** of extra gas whatever your limit, out of what the sale brings in. Any other trade is declined and nothing is spent.
 
 <Tip>
   **Careful**: Degen off, Auto-Adjust on, Gas Surplus \$2. **Fast**: Degen on, Auto-Adjust on, Gas Surplus \$10, which fills on almost anything, sometimes badly. Keep each in its own [profile](/wallets/profiles) rather than toggling between them.

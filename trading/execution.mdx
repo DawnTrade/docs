@@ -19,13 +19,13 @@ Price impact is your own trade moving the price, because you're buying a big sha
 
 ## Liquidity protection
 
-A buy that would move the price by more than **30%** is refused, even at 100% slippage. A buy from a coin's panel asks you first, and you can go ahead with that one; orders, copies, Auto Buy, buy links and multi-wallet buys are refused outright.
+A buy that would move the price by more than **30%** is refused, even at 100% slippage. A buy from a coin's panel counts its network fees toward that too, and asks you first, so you can go ahead with that one; orders, copies, Auto Buy, buy links and multi-wallet buys are refused outright.
 
 [Degen Mode](/settings/guardrails#degen-mode) turns it off and raises slippage to 100%, so a buy goes through however far it moves the price. Sells keep your normal slippage either way.
 
 ## MEV protection
 
-**On** by default, Solana only. A public Solana trade can be seen before it lands, so a bot can buy in front of you and sell into the price your trade pushes up: a sandwich, which gets you a worse fill. With MEV protection on, your swaps go through a private lane, so nobody sees them in time.
+**On** by default, for Solana trades and Ethereum sells. A public trade can be seen before it lands, so a bot can trade in front of you and profit from the price your trade moves: a sandwich, which gets you a worse fill. With MEV protection on, these trades go through a private lane, so nobody sees them in time.
 
 ## Gas preset
 

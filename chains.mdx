@@ -1,6 +1,6 @@
 ---
 title: "Supported Chains"
-description: "The eight networks Dawn trades on, and how one balance reaches all of them."
+description: "The nine networks Dawn trades on, and how one balance reaches all of them."
 icon: "globe"
 ---
 
@@ -15,13 +15,14 @@ You don't pick a chain: the coin's contract address decides, and Dawn reaches it
 | ⚪ **Arc** | USDC | [Arc Explorer](https://explorer.arc.io) |
 | 🟦 **Ink** | ETH | [Ink Explorer](https://explorer.inkonchain.com) |
 | 🟩 **HyperEVM** | HYPE | [HyperEVMScan](https://hyperevmscan.io) |
+| 🔷 **Ethereum** | ETH | [Etherscan](https://etherscan.io) |
 | 💚 **NEAR** | NEAR | [NearBlocks](https://nearblocks.io) |
 
 <Info>
   Coins you buy on HyperEVM through Dawn cannot be sent out as they are. Sell them instead, and the USDC lands on your balance.
 </Info>
 
-## How one balance reaches eight chains
+## How one balance reaches nine chains
 
 Your balance is USDC on Solana. A Solana coin is bought from it directly. For a coin on any other chain, Dawn moves the value across as part of the trade: no bridging step for you, and no second balance to keep. The cost of that route is [inside the quote](/fees#trading-on-another-chain).
 
@@ -40,4 +41,5 @@ The same `0x…` address can exist on more than one EVM chain, and Dawn asks whi
 | `arc 0x…` | Arc |
 | `ink 0x…` | Ink |
 | `hype 0x…` | HyperEVM |
+| `eth 0x…` | Ethereum |
 | `near <address>` | NEAR |

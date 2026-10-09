@@ -23,7 +23,7 @@ Dawn charges one fee, on trades, and covers your gas up to a cap. Every other co
 
 ## <u>The trading fee</u>
 
-**1%** of every buy and sell, with a **\$0.35** minimum. Each [TWAP](/orders/twap) slice is its own trade and pays it separately.
+**1%** of every buy and sell, with a **\$0.35** minimum. On Ethereum it's **1.5%**, with a **\$1.89** minimum, and **1%** on a trade over **\$2,000**. Each [TWAP](/orders/twap) slice is its own trade and pays it separately.
 
 [Cashback](/rewards/cashback) pays part of it back: **25%** at the entry tier, rising to **55%** with your 30-day volume. That makes the effective fee **0.75%**, down to **0.45%** at the top tier.
 
@@ -31,20 +31,11 @@ Dawn charges one fee, on trades, and covers your gas up to a cap. Every other co
 
 Dawn pays up to **\$5 of gas per trade**, which covers nearly every trade on every chain. You never need to hold SOL, BNB, ETH or HYPE to trade.
 
-When a trade needs more than that, your [Gas Surplus](/settings/guardrails#gas-surplus) setting decides:
-
-| Gas Surplus | What happens |
-| --- | --- |
-| **Off** (default) | The trade is declined before it is sent. Nothing is spent. |
-| **Set to a limit** | The extra comes out of your USDC, up to your limit. Past it, the trade is declined. The limit can be up to **\$50** per trade. |
-
-<Warning>
-  Take-profit and stop-loss sells follow the same limit. A stop that needs more gas than you allow will not fire.
-</Warning>
+When a trade needs more than that, the extra comes out of your USDC, up to your [Gas Surplus](/settings/guardrails#gas-surplus) limit.
 
 ## <u>Minimum trade</u>
 
-**\$1**. Routes that move value between chains have a higher minimum, and the bot tells you when a trade is below it.
+**\$1**, and **\$5** for a buy on Ethereum. Routes that move value between chains have a higher minimum, and the bot tells you when a trade is below it.
 
 ## <u>Trading on another chain</u>
 
