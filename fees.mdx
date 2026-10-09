@@ -8,24 +8,60 @@ Dawn charges one fee, on trades, and covers your gas up to a cap. Every other co
 #### **<u>At a Glance</u>**
 
 <Columns cols={3}>
-  <Card title="Trading Fee" icon="percent">
-    **1%** of the trade, with a **$0.35** minimum
+  <Card title="Trading fee" icon="percent">
+    **1%** of the trade, with a **\$0.35** minimum. Ethereum has [its own rates](#the-trading-fee).
   </Card>
 
-  <Card title="Gas Fees" icon="gas-pump">
+  <Card title="Gas" icon="gas-pump">
     Covered by Dawn up to **$5** per trade
   </Card>
 
   <Card title="Minimum trade" icon="arrow-down-1-9">
-    **$1**, and more on some cross-chain routes
+    **\$1**, and **\$5** for a buy on Ethereum
   </Card>
 </Columns>
 
 ## <u>The trading fee</u>
 
-**1%** of every buy and sell, with a **\$0.35** minimum. On Ethereum it's **1.5%**, with a **\$1.89** minimum, and **1%** on a trade over **\$2,000**. Each [TWAP](/orders/twap) slice is its own trade and pays it separately.
+Every buy and sell pays it, and each [TWAP](/orders/twap) slice counts as its own trade.
 
-[Cashback](/rewards/cashback) pays part of it back: **25%** at the entry tier, rising to **55%** with your 30-day volume. That makes the effective fee **0.75%**, down to **0.45%** at the top tier.
+<Tabs>
+  <Tab title="Standard chains">
+    Applies to Solana, BNB Chain, Robinhood Chain, Base, Arc, Ink, HyperEVM and NEAR.
+
+    | Trade size | Fee |
+    | --- | --: |
+    | Below \$35 | **\$0.35** minimum |
+    | \$35 or more | **1%** of the trade |
+
+    <Accordion title="See examples">
+      | Trade | Fee |
+      | --- | --: |
+      | \$10 | \$0.35 |
+      | \$100 | \$1 |
+      | \$1,000 | \$10 |
+    </Accordion>
+  </Tab>
+  <Tab title="Ethereum">
+    | Trade size | Fee |
+    | --- | --: |
+    | Below \$126 | **\$1.89** minimum |
+    | \$126 to \$2,000 | **1.5%** of the trade |
+    | Over \$2,000 | **1%** of the whole trade |
+
+    <Accordion title="See examples">
+      | Trade | Fee |
+      | --- | --: |
+      | \$50 | \$1.89 |
+      | \$500 | \$7.50 |
+      | \$5,000 | \$50 |
+    </Accordion>
+  </Tab>
+</Tabs>
+
+<Tip>
+  [Cashback](/rewards/cashback) pays part of the fee back: **25%** at the entry tier, rising to **55%** with your 30-day volume. A **1%** fee works out to **0.75%**, down to **0.45%** at the top tier.
+</Tip>
 
 ## <u>Gas</u>
 
@@ -39,9 +75,7 @@ When a trade needs more than that, the extra comes out of your USDC, up to your 
 
 ## <u>Trading on another chain</u>
 
-Your balance is USDC on Solana, so buying a coin on any other chain means moving value across. That routing has its own cost. It is not a Dawn fee and Dawn does not absorb it, but it is already inside the quoted price.
-
-It weighs far more on a \$5 trade than on a \$200 one. A Solana coin bought from your balance has no such cost.
+Your balance is USDC on Solana, so buying a coin on any other chain means moving value across. That route has its own cost, already inside the quoted price. It is not a Dawn fee, and it weighs far more on a \$5 trade than on a \$200 one. Solana coins have no such cost.
 
 ## <u>Withdrawals</u>
 
