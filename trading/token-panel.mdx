@@ -21,6 +21,13 @@ The token panel is where trading happens. Paste a coin's contract address into t
   To browse instead, tap **🔥 Trending** on the home screen or send `/trending` — see [Trending and search](/trading/trending).
 </Tip>
 
+## Beside the name
+
+| Mark | What it means |
+| --- | --- |
+| ✅ | fomo or pump.fun has verified the coin. |
+| 👁 **N** | How many Dawn users have this coin open right now, you included. |
+
 ## The market block
 
 | Line | What it means |
@@ -45,19 +52,19 @@ A high **Top 10** share means a handful of wallets can exit into your bid. A coi
 
 ## Risk warnings
 
-Dawn checks Solana and EVM coins for traps that stop you selling: a sell that fails, a sell tax of half or more, a pool whose creator keeps nearly all of every trade as a fee, or a Solana creator who can freeze, take or block your tokens. On a coin whose pool is under a month old, it also flags liquidity that isn't mostly burned or locked. Buying a coin it flags asks you to confirm first. Selling never does.
+Dawn checks Solana and EVM coins for traps that stop you selling: a sell that fails, a sell tax of half or more, a pool whose creator keeps nearly all of every trade as a fee, an EVM pool with almost nothing left in it, or a Solana creator who can freeze, take or block your tokens. On a coin whose pool is under a month old, it also flags liquidity that isn't mostly burned or locked. Buying a coin it flags asks you to confirm first. Selling never does.
 
 <Info>
-  [Auto Buy](/settings/overview#auto-buy) and a buy link tapped with [group links](/social/group-links) on open a flagged coin's panel instead of buying. [Copytrade](/copytrade/overview#notifications) skips it unless the task's [⚠️ Copy Risky Tokens](/copytrade/manage#filters) is on.
+  [Auto Buy](/settings/overview#auto-buy) and a buy link tapped with [group links](/social/group-links) on open a flagged coin's panel instead of buying. [Copytrade](/copytrade/overview#notifications) skips it when the task's [🛡 Avoid Risky Tokens](/copytrade/manage#filters) is on.
 </Info>
 
 ## Coins still on a launchpad curve
 
-On Solana (pump.fun) and Robinhood Chain (Pons), a coin that has not graduated to a regular pool shows:
+On Solana (pump.fun) and Robinhood Chain (Pons, Four.meme and Standard Reserve), a coin that has not graduated to a regular pool shows:
 
 | Line | What it means |
 | --- | --- |
-| **Bonding curve** | How far along the curve it is. At 100% it graduates to a regular pool. |
+| **Bonding Curve** | How far along the curve it is. At 100% it graduates to a regular pool. |
 | **💸 Cashback coin** | This coin pays a share of every trade back to you. See [Pump.fun cashback](/rewards/pump-fun). |
 
 You can trade these and set [orders](/orders/overview) on them like any other coin. A coin this new can briefly have no live price; its orders are marked **paused** meanwhile, but stay active.

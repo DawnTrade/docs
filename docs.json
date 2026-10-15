@@ -109,7 +109,8 @@
             "icon": "bell",
             "pages": [
               "alerts/traders",
-              "alerts/price"
+              "alerts/price",
+              "alerts/confluence"
             ]
           }
         ]
