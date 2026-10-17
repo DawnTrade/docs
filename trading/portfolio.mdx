@@ -12,6 +12,7 @@ Send `/portfolio`, or tap **Portfolio** on the home screen. Tap a coin to trade 
 - **Invested** is your cost basis for what you still hold: what you spent on the tokens still in the wallet.
 - **Avg Entry MC** is the average market cap you bought at, weighted by what each buy spent. It starts over once you sell out.
 - **PnL** doesn't count what your buys paid in fees unless [Fees in PnL](/settings/overview#trading) is on, which adds them to **Invested**.
+- **Profile balance** and **Positions value** at the bottom add up every wallet in the profile, like **Ready** and **Portfolio** on the home screen.
 - What a position is worth is an **estimate** at the current price. What you actually get depends on liquidity when you sell; on a thin coin the gap can be large.
 
 ## Realised versus unrealised
@@ -41,6 +42,10 @@ Send `/stats`, or tap **📊 Stats** at the bottom of the portfolio, for your re
 </Note>
 
 Coins sent to your wallet that you never bought are hidden when Dawn judges them likely scams, like copycats, phishing links or coins that can't be sold. Show them under **🔍 Filters**.
+
+## Burning dead coins
+
+A Solana coin worth under **\$0.50**, or one Dawn flags as a scam, gets a **Burn** link on its row. Burning destroys the coin and closes its token account, and the small deposit Solana kept for that account comes back to your balance as USDC.
 
 ## If a position is missing
 
